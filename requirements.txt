@@ -1,0 +1,16 @@
+zmq
+pytest
+protobuf
+google-cloud-translate
+websockets
+pynput
+xlrd
+matplotlib
+redis
+BeautifulReport
+parameterized
+pytest-xdist
+allure-pytest
+pytest-rerunfailures
+flask
+apscheduler
