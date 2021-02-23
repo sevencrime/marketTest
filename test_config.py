@@ -7,10 +7,10 @@
 import os
 import sys
 
-# SIT为QA环境， PRD为生产环境
+# SIT 为QA环境， PRD 为生产环境
 env = 'SIT'
 isSummerTime = False    # True:夏令时, False:冬令时
-sub_quote_type = "REAL_QUOTE_MSG"   # REAL_QUOTE_MSG: 实时行情, DELAY_QUOTE_MSG: 延时行情
+sub_quote_type = "DELAY_QUOTE_MSG"   # REAL_QUOTE_MSG: 实时行情, DELAY_QUOTE_MSG: 延时行情
 
 """Returns the base application path."""
 if hasattr(sys, 'frozen'):
@@ -48,18 +48,18 @@ sql_transaction_num = 20    # 为了减少执行sql的次数，此处优化为�
 # log_type = 'getlog'
 log_type = 'onlyconsole'
 
-delay_minute = 5
+delay_minute = 15   # 行情的时间
 tolerance_time = 0  # 容忍误差时间 ms
 
 
 ###############期货###################
 HK_exchange = 'HKFE'
 HK_code1 = 'MHImain'
-HK_code2 = 'HHI2011'
-HK_code3 = 'HSI2011'
+HK_code2 = 'HHI2102'
+HK_code3 = 'HSI2102'
 HK_code4 = 'HTImain'
-HK_code5 = 'HSI2012'
-HK_code6 = 'MHI2012'
+HK_code5 = 'HSI2102'
+HK_code6 = 'MHI2102'
 
 HK_main1 = "CUSmain"
 HK_main2 = "HSImain"
@@ -109,6 +109,7 @@ CME_code11 = "MNQmain"
 CME_code12 = "ESmain"
 CME_code13 = "MESmain"
 CME_code14 = "NIYmain"
+CME_code15 = "MES2203"
 
 SGX_exchange = 'SGX'
 SGX_code1 = "NKmain"
@@ -117,8 +118,8 @@ SGX_code3 = "CNmain"
 SGX_code4 = "NK2012"
 
 ForwardContractLists = {'QC2101', 'HHI2312', 'HSI2212', 'CUS2203', 'HSI2512', 'HSI2312', 'HHI2212', 'HHI2412',
-                   'HSI2412', 'HSI2112', 'CUS2112', 'HHI2512', 'HHI2112', 'CUS2109', 'CUS2106', 'CN2011', 'HHI2010',
-                        'HHI2012', 'HHI2103', 'NIY2011', 'NK2011', 'NK2101', 'NK2010', 'TW2012', 'CN2012', 'TW2011',
+                   'HSI2412', 'HSI2112', 'CUS2112', 'HHI2512', 'HHI2112', 'CUS2109', 'CUS2106', 'CN2011',
+                        'NIY2011', 'NK2011', 'NK2101', 'NK2010', 'TW2012', 'CN2012', 'TW2011',
                         'NIY2010', '6J2101', 'SI2101', 'HG2011', 'GC2011', 'QM2101', 'CUS2206', 'NIY2101', 'GC2606',
                         'NK2106', 'YM2106', 'CN2106', 'CN2103', 'MES2012', 'ZS2307', 'ZS2209', 'ZS2311', 'ZS2208',
                         'NK2212', 'TW2203', 'NK2112', 'NK2712', 'TW2112', 'TW2306', 'NK2306', 'NK2303', 'NK2412',
@@ -137,21 +138,21 @@ SEHK_code2 = "02319"
 SEHK_code3 = "00005"
 SEHK_code4 = "08225"
 SEHK_code5 = "01458"
-SEHK_code6 = "01573"
-SEHK_code7 = "87001"
-SEHK_code8 = "01810"    # 小米
+SEHK_code6 = "87001"
+SEHK_code7 = "01810"
+SEHK_code8 = "01573"    # 小米
 
-SEHK_greyMarketCode1 = "06996"
-SEHK_greyMarketCode2 = "00873"
-SEHK_greyMarketCode1_yesterday = "03913"
+SEHK_greyMarketCode1 = "02170"
+SEHK_greyMarketCode2 = "02161"
+SEHK_greyMarketCode1_yesterday = "02160"
 
-SEHK_newshares_code1 = '02126'
-SEHK_newshares_code2 = '09633'
+SEHK_newshares_code1 = '02160'
+SEHK_newshares_code2 = '06993'
 SEHK_newshares_code3 = '09913'
 SEHK_newshares_code4 = '09987'
 
-SEHK_indexCode1 = "HSI"     # 指数-恒生指数
-SEHK_indexCode2 = "HSCEI"     # 指数-恒生中国企业指数
+SEHK_indexCode1 = "0000100"     # 指数-恒生指数
+SEHK_indexCode2 = "0001400"     # 指数-恒生中国企业指数
 
 SEHK_TrstCode1 = "02778"    # 信托产品-冠君产业信托
 SEHK_TrstCode2 = "00823"    # 信托产品-领展房产基金
@@ -159,7 +160,7 @@ SEHK_TrstCode2 = "00823"    # 信托产品-领展房产基金
 NYSE_TrstCode1 = "ABR"    # 信托产品-阿拉伯房地产信托
 NYSE_TrstCode2 = "AHI"    # 信托产品-
 
-SEHK_WarrantCode1 = "28900"     # 涡轮
+SEHK_WarrantCode1 = "17618"     # 涡轮
 SEHK_WarrantCode2 = "17618"     # 涡轮
 
 SEHK_CbbcCode1 = "54921"        # 牛熊证
@@ -170,6 +171,12 @@ SEHK_InnerCode2 = "48073"       # 界内证
 
 SEHK_FundCode1 = "02800"       # 基金
 SEHK_FundCode2 = "02823"       # 基金
+
+SEHK_DevrivativeCode1 = "29417"        # 认沽权证
+SEHK_DevrivativeCode2 = "13898"        # 认沽权证
+
+SEHK_EquityCode1 = "08015"        # 认购权证
+
 
 ASE_exchange = 'ASE'  # American Stock Exchange美国证券交易所
 ASE_code1 = 'PED'
@@ -191,8 +198,8 @@ BATS_code1 = "ACES"
 BATS_code2 = "ACWV"
 
 IEX_exchange = 'IEX'
-IEX_code1 = "BTC"
-IEX_code2 = "ETH"
+IEX_code1 = "ZEXIT"
+# IEX_code2 = "ETH"
 
 if env == 'SIT':
     mid_auth_address = 'https://eddid-auth-center-qa.eddid.com.cn:1443/v2/token'
@@ -219,7 +226,7 @@ if env == 'SIT':
     ms_sub_address = 'tcp://192.168.80.201:5558'  # MorningStar外期行情采集器, 测试环境
     hk_stock_sub_address = 'tcp://172.16.10.211:5570'  # 港股行情采集器, 测试环境
     us_stock_sub_address = 'tcp://172.16.10.211:5580'  # 美股行情采集器, 测试环境
-    future_cal_sub_address = 'tcp://192.168.80.201:7756'  # 期货计算服务地址，测试环境
+    future_cal_sub_address = 'tcp://192.168.80.201:7556'  # 期货计算服务地址，测试环境
     stock_cal_sub_address = 'tcp://172.16.10.211:7556'  # 证券计算服务地址，测试环境
     grey_stock_sub_address = 'tcp://172.16.10.211:3885'  # 暗盘
 
@@ -231,8 +238,11 @@ if env == 'SIT':
     codegenerate_dealer_address = 'tcp://192.168.80.201:19555'  # 合约生成服务, 测试环境
     # codegenerate_dealer_address = 'tcp://instrcode-qa.eddid.com.cn:19555'  # 合约生成服务, 测试环境
 
-    union_ws_url = 'ws://172.16.10.211:1516'       # 测试环境二期统一订阅地址
+    # union_ws_url = 'ws://172.16.10.211:1516'       # 测试环境二期统一订阅地址
+    # union_ws_url = 'ws://192.168.80.201:1518'       # nginx订阅, QA环境订阅地址
     # union_ws_url = 'ws://publisher-qa.eddid.com.cn:1516'   # 域名地址
+
+    union_ws_url = 'ws://publisher-uat.eddid.com.cn:11516'      # 行情UAT环境订阅地址
 
     future_redis_host = '192.168.80.201'                     # 期货测试环境redis地址
     stock_redis_host = '172.16.10.211'                     # 证券测试环境redis地址
@@ -249,4 +259,10 @@ elif env == 'PRD':
     login_device_id = '26243c56ca7903f4d83d34a8704b6842a'
 
     codegenerate_dealer_address = 'tcp://contract.eddidapp.com:9555'  # 域名合约生成服务
-    union_ws_url = 'ws://publisher.eddidapp.com:11516'  # 域名实时订阅地址
+    union_ws_url = 'ws://publisher.eddidapp.com:11516'  # 生产深圳实时订阅地址
+
+    # ----------香港服务器-------------
+    # union_ws_url = 'ws://publisher-hk-tmp.eddidapp.com:11516'       # 香港阿里云订阅地址
+    # union_ws_url = 'ws://47.242.137.135:11516'                           # 生产香港负载均衡地址
+    # hk_stock_sub_address = "tcp://47.242.143.223:5570"          # 生产-香港港股采集
+    # us_stock_sub_address = "tcp://47.242.143.223:5580"          # 生产-香港证券采集

@@ -4,7 +4,7 @@
 # @Create Time: 2020/4/29
 # @Software: PyCharm
 
-from websocket_py3.ws_api.subscribe_api_for_first_phase import *
+from websocket_py3.ws_api.subscribe_api_for_second_phase import *
 from datetime import datetime
 from http_request.market import MarketHttpClient
 

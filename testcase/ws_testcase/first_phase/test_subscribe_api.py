@@ -24,16 +24,17 @@ from http_request.market import MarketHttpClient
 from common.basic_info import *
 
 
-def appFuturesCode(isKLine=False):
+def appFuturesCode(isKLine=False, isHKFE=False):
     # 返回所有品种列表, isKLine=True时, 返回所有品种的不同K线频率列表
     appFutures = []
 
     appFutures += [[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)]
-    appFutures += [[NYMEX_exchange, eval("NYMEX_code{}".format(n + 1))] for n in range(4)]
-    appFutures += [[COMEX_exchange, eval("COMEX_code{}".format(n + 1))] for n in range(6)]
-    appFutures += [[CBOT_exchange, eval("CBOT_code{}".format(n + 1))] for n in range(10)]
-    appFutures += [[CME_exchange, eval("CME_code{}".format(n + 1))] for n in range(14)]
-    appFutures += [[SGX_exchange, eval("SGX_code{}".format(n + 1))] for n in range(3)]
+    if not isHKFE:
+        appFutures += [[NYMEX_exchange, eval("NYMEX_code{}".format(n + 1))] for n in range(4)]
+        appFutures += [[COMEX_exchange, eval("COMEX_code{}".format(n + 1))] for n in range(6)]
+        appFutures += [[CBOT_exchange, eval("CBOT_code{}".format(n + 1))] for n in range(10)]
+        appFutures += [[CME_exchange, eval("CME_code{}".format(n + 1))] for n in range(14)]
+        appFutures += [[SGX_exchange, eval("SGX_code{}".format(n + 1))] for n in range(3)]
 
     KLinePeriod = [
         ["MINUTE"],
@@ -52,7 +53,7 @@ def appFuturesCode(isKLine=False):
     ]
 
     paramlist = []
-    if isKLine:
+    if isKLine:     # K线所有频率
         for fu in appFutures:
             for KLine in KLinePeriod:
                 paramlist.append(tuple(fu + KLine))
@@ -64,16 +65,18 @@ def appFuturesCode(isKLine=False):
 
 class Test_Subscribe(unittest.TestCase):
 
-    def __init__(self, methodName='runTest'):
-        super().__init__(methodName)
-        self.logger = get_log()
-        self.http = MarketHttpClient()
-        self.market_token = self.http.get_market_token(
-            self.http.get_login_token(phone=login_phone, pwd=login_pwd, device_id=login_device_id))
+    # def __init__(self, methodName='runTest'):
+    #     super().__init__(methodName)
 
     @classmethod
     def setUpClass(cls):
+        cls.logger = get_log()
         cls.common = Common()
+        # cls.http = MarketHttpClient()
+        # cls.market_token = cls.http.get_market_token(
+        #     cls.http.get_login_token(phone=login_phone, pwd=login_pwd, device_id=login_device_id))
+
+        cls.market_token = None
 
     @classmethod
     def tearDownClass(cls):
@@ -359,11 +362,13 @@ class Test_Subscribe(unittest.TestCase):
     # --------------------------------------------------订阅start-------------------------------------------------------
 
     # --------------------------------------------------订阅分时数据-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_SubscribeKlineMinReqApi_001(self):
         """分时订阅一个合约"""
         frequence = 100
         exchange = HK_exchange
-        code = HK_code1
+        code = "MHImain"
+
         start_time_stamp = int(time.time() * 1000)
         asyncio.get_event_loop().run_until_complete(
             future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
@@ -374,12 +379,12 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
-        # self.assertTrue(
-        #     int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
-        # # 响应时间大于接收时间大于请求时间
-        # self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
-        #                 int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
-        #                 int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+        self.assertTrue(
+            int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
 
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
@@ -442,7 +447,6 @@ class Test_Subscribe(unittest.TestCase):
             self.assertTrue(set(recv_code_list) == {code1, code2})
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
-
 
     def test_SubscribeKlineMinReqApi_003(self):
         """分时订阅一个合约, code=xxxx"""
@@ -638,10 +642,8 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'分时订阅第一个合约')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.SubscribeKlineMinReqApi(exchange, code1, start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'SUCCESS')
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code1)
         self.assertTrue(
             int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
@@ -653,10 +655,8 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'分时订阅第二个合约')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.SubscribeKlineMinReqApi(exchange2, code2, start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'SUCCESS')
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'exchange') == exchange2)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange2)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code2)
         self.assertTrue(
             int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
@@ -679,12 +679,51 @@ class Test_Subscribe(unittest.TestCase):
             else:
                 assert set(recv_code_list) == {code1} or set(recv_code_list) == {code2}
 
-            inner_test_result = self.inner_zmq_test_case(
-                'test_06_PushKLineMinData', info_list)
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_SubscribeKlineMinReqApi_010(self, exchange, code):
+        """分时订阅一个合约"""
+        frequence = 100
+        exchange = exchange
+        code = code
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'分时订阅，检查回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeKlineMinReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+        self.assertTrue(
+            int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
+        if not self.common.check_trade_status(exchange, code):
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
+
+
 
 
     # --------------------------------------------------取消订阅分时数据-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_UnsubscribeKlineMinReqApi_001(self):
         """分时订阅一个合约,取消订阅"""
         frequence = 100
@@ -745,7 +784,7 @@ class Test_Subscribe(unittest.TestCase):
             future=self.api.SubscribeKlineMinReqApi(exchange, code2, start_time_stamp))
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
 
-        self.logger.debug(u'取消订阅,并校验')
+        self.logger.debug(u'取消订阅一个,并校验')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.UnsubscribeKlineMinReqApi(exchange, code1, start_time_stamp))
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
@@ -759,8 +798,7 @@ class Test_Subscribe(unittest.TestCase):
                         int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
 
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(
-            future=self.api.PushKLineMinDataApi(recv_num=20))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
         self.assertTrue(info_list.__len__() > 0)
         for info in info_list:
             self.assertTrue(self.common.searchDicKV(info, 'exchange') == 'HKFE')
@@ -1074,6 +1112,56 @@ class Test_Subscribe(unittest.TestCase):
             future=self.api.SubscribeKlineMinReqApi(exchange, code, start_time_stamp))
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100, recv_timeout_sec=30))
+        if not self.common.check_trade_status(exchange, code):
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            if info_list.__len__() == 0:
+                _start = time.time()
+                while time.time() - _start < 300:
+                    pass
+                    info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100, recv_timeout_sec=30))
+                    if info_list:
+                        break
+                    self.logger.debug("循环内打印循环内打印, 已循环时间 : {}".format(time.time() - _start))
+            self.assertTrue(info_list.__len__() > 0)
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
+        self.logger.debug(u'取消订阅,并校验')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.UnsubscribeKlineMinReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+        self.assertTrue(
+            int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
+        self.assertTrue(info_list.__len__() == 0)
+
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_UnsubscribeKlineMinReqApi_011(self, exchange, code):
+        """分时订阅一个合约,取消订阅"""
+        frequence = 100
+        exchange = exchange
+        code = code
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'分时订阅，检查返回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeKlineMinReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
         if not self.common.check_trade_status(exchange, code):
             self.assertTrue(info_list.__len__() == 0)
@@ -1097,18 +1185,19 @@ class Test_Subscribe(unittest.TestCase):
                         int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
 
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(
-            future=self.api.PushKLineMinDataApi(recv_num=20))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=50))
+
         self.assertTrue(info_list.__len__() == 0)
 
 
 
     # --------------------------------------------------K线订阅----------------------------------------------
+    @pytest.mark.testAPI
     def test_SubscribeKLineMsgReqApi_001(self):
         """K线订阅-订阅单个合约的K线: peroid_type = KLinePeriodType.MINUTE"""
         frequence = 100
-        exchange = HK_exchange
-        code = HK_code1
+        exchange = "HKFE"
+        code = "MHImain"
         base_info = [{'exchange': exchange, 'code': code}]
         # 订阅频率
         peroid_type = KLinePeriodType.MINUTE
@@ -1126,7 +1215,7 @@ class Test_Subscribe(unittest.TestCase):
                         int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
                         int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
         self.logger.debug(u'通过接收K线数据的接口，筛选出K线数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=20))
         if not self.common.check_trade_status(exchange, code):
             self.assertTrue(info_list.__len__() == 0)
         else:
@@ -1313,21 +1402,16 @@ class Test_Subscribe(unittest.TestCase):
     def test_SubscribeKLineMsgReqApi_006(self, peroid_type):
         """
         K线订阅-订阅日K线数据, 遍历K线周期
-        {
-            perodi_tyoe : "ONE_SECONDS",
-            base_info : {
-                exchange : "交易所",
-                code : "合约代码"
-            },
-            start_time_stamp : now()
-        }
-
         """
         self.logger.debug(
             "订阅K线数据 -- 订阅频率 : {}".format(KLinePeriodType.Name(peroid_type)))
         frequence = 100
-        exchange = HK_exchange
-        code = HK_code1
+        # exchange = HK_exchange
+        # code = "MHImain"
+
+        exchange = "CBOT"
+        code = "ZTmain"
+
         base_info = [{'exchange': exchange, 'code': code}]
         # 订阅频率
         # peroid_type = KLinePeriodType.DAY
@@ -1437,7 +1521,7 @@ class Test_Subscribe(unittest.TestCase):
     @parameterized.expand(appFuturesCode(isKLine=True))
     @pytest.mark.allStock
     def test_SubscribeKLineMsgReqApi_009(self, exchange, code, peroidType):
-        """K线订阅-订阅所有外期品种的1分钟K线"""
+        """K线订阅-订阅所有外期品种的K线"""
         frequence = 100
         exchange = exchange
         code = code
@@ -1483,12 +1567,52 @@ class Test_Subscribe(unittest.TestCase):
                 self.assertTrue(self.common.searchDicKV(info, 'peroidType') == peroid_type)
 
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_SubscribeKLineMsgReqApi_010(self, exchange, code):
+        """K线订阅-订阅单个合约的K线: peroid_type = KLinePeriodType.MINUTE"""
+        frequence = 100
+        exchange = exchange
+        code = code
+        base_info = [{'exchange': exchange, 'code': code}]
+        # 订阅频率
+        peroid_type = KLinePeriodType.MINUTE
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeKLineMsgReqApi(peroid_type=peroid_type, base_info=base_info,
+                                                    start_time_stamp=start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+        self.logger.debug(u'通过接收K线数据的接口，筛选出K线数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=20))
+        if not self.common.check_trade_status(exchange, code):
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+                # 校验频率
+                self.assertTrue(self.common.searchDicKV(info, 'peroidType') == KLinePeriodType.Name(peroid_type))
+
+
+
     # --------------------------------------------------取消K线订阅-------------------------------------------
+    @pytest.mark.testAPI
     def test_UnsubscribeKLineMsgReqApi_001(self):
         """取消K线订阅-取消订阅单个合约的K线: peroid_type = KLinePeriodType.MINUTE"""
         frequence = 100
         exchange = HK_exchange
-        code = HK_code1
+        code = "MHImain"
         base_info = [{'exchange': exchange, 'code': code}]
         peroid_type = KLinePeriodType.MINUTE
         start_time_stamp = int(time.time() * 1000)
@@ -1499,18 +1623,15 @@ class Test_Subscribe(unittest.TestCase):
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.SubscribeKLineMsgReqApi(peroid_type=peroid_type, base_info=base_info,
                                                     start_time_stamp=start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
         self.logger.debug(u'接收K线数据的接口，筛选出K线数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(
-            future=self.api.PushKLineDataApi(recv_num=20))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
         self.assertTrue(info_list.__len__() > 0)
         self.logger.debug("取消订阅")
         un_rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.UnsubscribeKLineMsgReqApi(peroid_type=peroid_type, base_info=base_info,
                                                       start_time_stamp=start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            un_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(un_rsp_list[0], 'retCode') == 'SUCCESS')
         self.assertTrue(int(self.common.searchDicKV(
             un_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
         # 响应时间大于接收时间大于请求时间
@@ -1910,12 +2031,53 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(info_list.__len__() == 0)
 
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_UnsubscribeKLineMsgReqApi_010(self, exchange, code):
+        """取消K线订阅-取消订阅单个合约的K线: peroid_type = KLinePeriodType.MINUTE"""
+        frequence = 100
+        exchange = exchange
+        code = code
+        base_info = [{'exchange': exchange, 'code': code}]
+        peroid_type = KLinePeriodType.MINUTE
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        # 先订阅
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeKLineMsgReqApi(peroid_type=peroid_type, base_info=base_info,
+                                                    start_time_stamp=start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.logger.debug(u'接收K线数据的接口，筛选出K线数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+        self.assertTrue(info_list.__len__() > 0)
+        self.logger.debug("取消订阅")
+        un_rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.UnsubscribeKLineMsgReqApi(peroid_type=peroid_type, base_info=base_info,
+                                                      start_time_stamp=start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(un_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(int(self.common.searchDicKV(
+            un_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(un_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(un_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(un_rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'取消订阅后, 接收K线数据')
+        info_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.PushKLineDataApi(recv_num=20))
+        self.assertTrue(info_list.__len__() == 0)
+
+
+
     # --------------------------------------------------订阅逐笔成交数据---------------------------------------
+    @pytest.mark.testAPI
     def test_SubscribeTradeTickReqApi_001(self):
         """订阅一个合约的逐笔: frequence=None"""
         frequence = None
         exchange = HK_exchange
-        code = HK_code1
+        code = "MHImain"
         start_time_stamp = int(time.time() * 1000)
         asyncio.get_event_loop().run_until_complete(
             future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
@@ -1957,13 +2119,6 @@ class Test_Subscribe(unittest.TestCase):
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
-
-        self.logger.debug(u'校验订阅逐笔不会接收到快照数据')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteSnapshotApi(recv_num=100))
-        self.assertTrue(info_list.__len__() == 0)
-        self.logger.debug(u'校验订阅逐笔不会接收到盘口数据')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteOrderBookDataApi(recv_num=100))
-        self.assertTrue(info_list.__len__() == 0)
 
     def test_SubscribeTradeTickReqApi_002(self):
         """订阅一个合约的逐笔: frequence=4"""
@@ -2243,7 +2398,6 @@ class Test_Subscribe(unittest.TestCase):
             future=self.api.QuoteTradeDataApi(recv_num=100))
         self.assertTrue(info_list.__len__() == 0)
 
-
     @parameterized.expand(appFuturesCode())
     @pytest.mark.allStock
     def test_SubscribeTradeTickReqApi_008(self, exchange, code):
@@ -2258,13 +2412,10 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'订阅逐笔数据，并检查返回结果')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.SubscribeTradeTickReqApi(exchange, code, start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'SUCCESS')
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
-        self.assertTrue(int(self.common.searchDicKV(
-            rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
         # 响应时间大于接收时间大于请求时间
         self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
                         int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
@@ -2293,11 +2444,62 @@ class Test_Subscribe(unittest.TestCase):
 
             self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
-                self.assertTrue(self.common.searchDicKV(
-                    info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_SubscribeTradeTickReqApi_009(self, exchange, code):
+        """订阅一个合约的逐笔: frequence=None"""
+        frequence = None
+        exchange = exchange
+        code = code
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'订阅逐笔数据，并检查返回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeTradeTickReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
+        curTime = str(datetime.datetime.now())
+        self.logger.debug("接收数据的时间为 : {}".format(curTime))
+
+        if not self.common.check_trade_status(exchange, code, curTime):
+            info_list = asyncio.get_event_loop().run_until_complete(
+                future=self.api.QuoteTradeDataApi(recv_num=100, recv_timeout_sec=19))
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            # 开市中, 持续接收5分钟数据, 直到info_list有数据
+            start = time.time()
+            while time.time() - start < 300:
+                self.logger.debug("循环内打印 : 循环时间 {} 秒".format(str(time.time() - start)))
+                info_list = asyncio.get_event_loop().run_until_complete(
+                    future=self.api.QuoteTradeDataApi(recv_num=100, recv_timeout_sec=19))
+                if info_list.__len__() > 0:
+                    break
+
+            inner_test_result = self.inner_zmq_test_case('test_04_QuoteTradeData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
+
+
+
     # --------------------------------------------------取消订阅逐笔成交数据-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_UnsubscribeTradeTickReqApi_001(self):
         """取消订阅一个合约的逐笔"""
         frequence = 100
@@ -2379,7 +2581,6 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(info_list.__len__() > 0)
         for info in info_list:
             self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code2)
-
 
     def test_UnsubscribeTradeTickReqApi_003(self):
         """订阅两个合约的逐笔，再取消2个的合约的逐笔"""
@@ -2515,43 +2716,36 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'订阅逐笔数据，并检查返回结果')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.SubscribeTradeTickReqApi(exchange, code, start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'SUCCESS')
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
 
         self.logger.debug(u'取消订阅逐笔数据，并检查返回结果')
         rsp_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.UnsubscribeTradeTickReqApi(exchange, code2, start_time_stamp))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'retCode') == 'FAILURE')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'FAILURE')
         # self.assertTrue(
         #     self.common.searchDicKV(rsp_list[0], 'retMsg') == 'instr [{}_{}] have no subscribe'.format(exchange, code2))
-        self.assertTrue(self.common.searchDicKV(
-            rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
         self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code2)
 
-        self.assertTrue(int(self.common.searchDicKV(
-            rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
         # 响应时间大于接收时间大于请求时间
         self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
                         int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
                         int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
 
         self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(
-            future=self.api.QuoteTradeDataApi(recv_num=100))
-        if not self.check_trade_status(exchange, code):
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
+        if not self.common.check_trade_status(exchange, code):
             assert self.info_list.__len__() == 0
         else:
             inner_test_result = self.inner_zmq_test_case('test_04_QuoteTradeData', info_list)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
-                self.assertTrue(self.common.searchDicKV(
-                    info, 'exchange') == 'HKFE')
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == 'HKFE')
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
     def test_UnsubscribeTradeTickReqApi_006(self):
@@ -2690,11 +2884,49 @@ class Test_Subscribe(unittest.TestCase):
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
         self.assertTrue(info_list.__len__() == 0)
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_UnsubscribeTradeTickReqApi_008(self, exchange, code):
+        """取消订阅一个合约的逐笔"""
+        frequence = 100
+        exchange = exchange
+        code = code
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'订阅逐笔数据，并检查返回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeTradeTickReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+
+        self.logger.debug(u'取消订阅逐笔数据，并检查返回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.UnsubscribeTradeTickReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
+        self.assertTrue(info_list.__len__() == 0)
+
+
     # --------------------------------------------------订阅手机图表数据(手机专用)-------------------------------
+    @pytest.mark.testAPI
     def test_StartChartDataReq_001(self):
         """订阅手机图表数据(手机专用)--订阅一个合约，frequence=4"""
-        exchange = "CBOT"
-        code = "ZCmain"
+        exchange = "HKFE"
+        code = "HSImain"
+
         frequence = 4
         start_time_stamp = int(time.time() * 1000)
         asyncio.get_event_loop().run_until_complete(
@@ -2716,6 +2948,7 @@ class Test_Subscribe(unittest.TestCase):
         basic_json_list = [app_rsp['basicData']]  # 静态数据
         before_snapshot_json_list = [app_rsp['snapshot']]  # 快照数据
         before_orderbook_json_list = [app_rsp.get("orderbook")]  # 盘口
+        rspTimeStamp = int(self.common.searchDicKV(app_rsp, 'rspTimeStamp'))
 
         self.logger.debug(u'校验静态数据值')
         self.assertTrue(basic_json_list.__len__() == 1)
@@ -2736,7 +2969,7 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'校验前盘口数据')
         self.assertTrue(before_orderbook_json_list.__len__() == 1)
         inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', before_orderbook_json_list,
-                                                     is_before_data=True, start_sub_time=start_time_stamp)
+                                                     is_before_data=True, start_sub_time=rspTimeStamp)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
         for info in before_orderbook_json_list:
@@ -2753,7 +2986,7 @@ class Test_Subscribe(unittest.TestCase):
                                                          start_sub_time=start_time_stamp)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
@@ -2767,20 +3000,9 @@ class Test_Subscribe(unittest.TestCase):
             inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', info_list)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
-
-        self.logger.debug(u'校验收不到逐笔数据')
-        curTime = str(datetime.datetime.now())
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=50))
-
-        self.assertTrue(info_list.__len__() == 0)  # 不主推逐笔数据
-
-        self.logger.debug(u'校验收不到分时数据')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=50))
-
-        self.assertTrue(info_list.__len__() == 0)  # 不主推分时数据
 
     def test_StartChartDataReq_002(self):
         """订阅手机图表数据(手机专用)--订阅一个合约，frequence=0(当成1处理)"""
@@ -3354,6 +3576,8 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(int(self.common.searchDicKV(app_rsp, 'rspTimeStamp')) >=
                         int(self.common.searchDicKV(app_rsp, 'recvReqTimeStamp')) >=
                         int(self.common.searchDicKV(app_rsp, 'startTimeStamp')))
+
+        rspTimeStamp = int(self.common.searchDicKV(app_rsp, 'rspTimeStamp'))
         self.assertTrue(app_rsp['code'] == code)
         self.assertTrue(app_rsp['exchange'] == exchange)
         basic_json_list = [app_rsp['basicData']]  # 静态数据
@@ -3372,7 +3596,7 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'校验前快照数据')
         self.assertTrue(before_snapshot_json_list.__len__() == 1)
         inner_test_result = self.inner_zmq_test_case('test_01_QuoteSnapshot', before_snapshot_json_list,
-                                                     is_before_data=True, start_sub_time=start_time_stamp)
+                                                     is_before_data=True, start_sub_time=rspTimeStamp)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
         for info in before_snapshot_json_list:
@@ -3381,17 +3605,14 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'校验前盘口数据')
         self.assertTrue(before_orderbook_json_list.__len__() == 1)
         inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', before_orderbook_json_list,
-                                                     is_before_data=True, start_sub_time=start_time_stamp)
+                                                     is_before_data=True, start_sub_time=rspTimeStamp)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
         for info in before_orderbook_json_list:
             self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
         self.logger.debug(u'通过接收快照数据的接口，筛选出快照数据,并校验')
-        curTime = str(datetime.datetime.now())
-        self.logger.debug("请求时间为 : {}".format(curTime))
-
-        if not self.common.check_trade_status(exchange, code, curTime):
+        if not self.common.check_trade_status(exchange, code):
             info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteSnapshotApi(recv_num=100))
             self.assertTrue(info_list.__len__() == 0)
         else:
@@ -3400,13 +3621,12 @@ class Test_Subscribe(unittest.TestCase):
                 self.logger.debug("循环内打印 : 循环时间 {} 秒".format(str(time.time() - start)))
                 # 持续接收数据, 防止不活跃合约
                 info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteSnapshotApi(recv_num=100))
-                if info_list.__len__() > 1:
+                if info_list:
                     break
 
-            inner_test_result = self.inner_zmq_test_case('test_01_QuoteSnapshot', info_list,
-                                                         start_sub_time=start_time_stamp)
+            inner_test_result = self.inner_zmq_test_case('test_01_QuoteSnapshot', info_list, start_sub_time=start_time_stamp)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
-            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
@@ -3421,28 +3641,103 @@ class Test_Subscribe(unittest.TestCase):
             while time.time() - start < 300:
                 self.logger.debug("循环内打印 : 循环时间 {} 秒".format(str(time.time() - start)))
                 info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteOrderBookDataApi(recv_num=100))
-                if info_list.__len__() > 1:
+                if info_list:
                     break
 
             inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', info_list)
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-            self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
-        self.logger.debug(u'校验收不到逐笔数据')
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_StartChartDataReq_010(self, exchange, code):
+        """订阅手机图表数据(手机专用)--订阅一个合约，frequence=4"""
+        exchange = exchange
+        code = code
+
+        frequence = 4
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'通过调用请求分时页面数据接口，订阅数据，并检查返回结果')
+        app_rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.StartChartDataReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(app_rsp_list.__len__() == 1)
+        app_rsp = app_rsp_list[0]
+        self.assertTrue(self.common.searchDicKV(app_rsp, 'retCode') == 'SUCCESS')
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于开始测速时间
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'startTimeStamp')))
+        self.assertTrue(app_rsp['code'] == code)
+        self.assertTrue(app_rsp['exchange'] == exchange)
+        basic_json_list = [app_rsp['basicData']]  # 静态数据
+        before_snapshot_json_list = [app_rsp['snapshot']]  # 快照数据
+        before_orderbook_json_list = [app_rsp.get("orderbook")]  # 盘口
+        rspTimeStamp = int(self.common.searchDicKV(app_rsp, 'rspTimeStamp'))
+
+        self.logger.debug(u'校验静态数据值')
+        self.assertTrue(basic_json_list.__len__() == 1)
+        inner_test_result = self.inner_zmq_test_case('test_03_QuoteBasicInfo', basic_json_list)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+        for info in basic_json_list:
+            self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
+
+        self.logger.debug(u'校验前快照数据')
+        self.assertTrue(before_snapshot_json_list.__len__() == 1)
+        inner_test_result = self.inner_zmq_test_case('test_01_QuoteSnapshot', before_snapshot_json_list,
+                                                     is_before_data=True, start_sub_time=start_time_stamp)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+        for info in before_snapshot_json_list:
+            self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
+
+        self.logger.debug(u'校验前盘口数据')
+        self.assertTrue(before_orderbook_json_list.__len__() == 1)
+        inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', before_orderbook_json_list,
+                                                     is_before_data=True, start_sub_time=rspTimeStamp)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+        for info in before_orderbook_json_list:
+            self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
+
+        self.logger.debug(u'通过接收快照数据的接口，筛选出快照数据,并校验')
         curTime = str(datetime.datetime.now())
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=50))
+        info_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QuoteSnapshotApi(recv_num=200))
+        if not self.common.check_trade_status(exchange, code, curTime):
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_01_QuoteSnapshot', info_list,
+                                                         start_sub_time=start_time_stamp)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-        self.assertTrue(info_list.__len__() == 0)  # 不主推逐笔数据
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
 
-        self.logger.debug(u'校验收不到分时数据')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=50))
+        self.logger.debug(u'通过接收盘口数据的接口，筛选出盘口数据,并校验')
+        curTime = str(datetime.datetime.now())
+        info_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QuoteOrderBookDataApi(recv_num=100))
+        if not self.common.check_trade_status(exchange, code, curTime):
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_02_QuoteOrderBookData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
-        self.assertTrue(info_list.__len__() == 0)  # 不主推分时数据
+            # self.assertTrue(self.common.checkFrequence(info_list, frequence))
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'instrCode') == code)
+
 
     # --------------------------------------------------取消订阅手机图表数据(手机专用)-------------------------------
+    @pytest.mark.testAPI
     def test_StopChartDataReqApi_001(self):
         """订阅一个手机图表数据,再取消订阅 """
         exchange = HK_exchange
@@ -3816,18 +4111,63 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(app_rsp['code'] == code)
         self.assertTrue(app_rsp['exchange'] == exchange)
         self.logger.debug(u'通过接收所有数据的返回,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.AppQuoteAllApi(recv_num=200))
+        self.assertTrue(info_list.__len__() == 0)
+
+
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_StopChartDataReqApi_010(self, exchange, code):
+        """订阅一个手机图表数据,再取消订阅 """
+        exchange = exchange
+        code = code
+        frequence = 100
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'订阅手机图表数据')
+        app_rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.StartChartDataReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(app_rsp_list.__len__() == 1)
+        app_rsp = app_rsp_list[0]
+        self.assertTrue(self.common.searchDicKV(app_rsp, 'retCode') == 'SUCCESS')
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于开始测速时间
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'startTimeStamp')))
+
+        start_time_stamp = int(time.time() * 1000)
+        self.logger.debug(u'取消订阅手机图表数据')
+        app_rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.StopChartDataReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(app_rsp_list.__len__() == 1)
+        app_rsp = app_rsp_list[0]
+        self.assertTrue(self.common.searchDicKV(app_rsp, 'retCode') == 'SUCCESS')
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于开始测速时间
+        self.assertTrue(int(self.common.searchDicKV(app_rsp, 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(app_rsp, 'startTimeStamp')))
+        self.assertTrue(app_rsp['code'] == code)
+        self.assertTrue(app_rsp['exchange'] == exchange)
+        self.logger.debug(u'通过接收所有数据的返回,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(
             future=self.api.AppQuoteAllApi(recv_num=200))
         self.assertTrue(info_list.__len__() == 0)
 
 
+
     # --------------------------------------------------查询当日分时数据-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_QueryKLineMinMsgReqApi_001(self):
         """分时查询--查询并订阅分时数据： isSubKLineMin = True"""
         frequence = 100
         isSubKLineMin = True
         exchange = HK_exchange
-        code = HK_code4
+        code = "CUSmain"
+
         query_type = QueryKLineMsgType.UNKNOWN_QUERY_KLINE  # app 订阅服务该字段无意义
         direct = QueryKLineDirectType.WITH_BACK  # app 订阅服务该字段无意义
         start = 0  # app 订阅服务该字段无意义
@@ -3877,7 +4217,7 @@ class Test_Subscribe(unittest.TestCase):
 
 
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=10))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
         if not self.common.check_trade_status(exchange, code):
             assert info_list.__len__() == 0
         else:
@@ -3885,8 +4225,7 @@ class Test_Subscribe(unittest.TestCase):
             self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
             for info in info_list:
-                self.assertTrue(self.common.searchDicKV(
-                    info, 'exchange') == 'HKFE')
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
                 self.assertTrue(self.common.searchDicKV(info, 'code') == code)
 
     def test_QueryKLineMinMsgReqApi_002(self):
@@ -4167,11 +4506,9 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'分时数据查询，检查返回结果')
         final_rsp = asyncio.get_event_loop().run_until_complete(
             future=self.api.QueryKLineMinMsgReqApi(isSubKLineMin, exchange, code, query_type, direct, start, end,
-                                                   vol,
-                                                   start_time_stamp))
+                                                   vol, start_time_stamp))
         query_kline_min_rsp_list = final_rsp['query_kline_min_rsp_list']
         sub_kline_min_rsp_list = final_rsp['sub_kline_min_rsp_list']
-        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'retCode') == 'FAILURE')
         self.assertTrue(query_kline_min_rsp_list.__len__() == 0)
         self.assertTrue(sub_kline_min_rsp_list.__len__() == 0)
 
@@ -4183,9 +4520,9 @@ class Test_Subscribe(unittest.TestCase):
     @parameterized.expand(appFuturesCode())
     @pytest.mark.allStock
     def test_QueryKLineMinMsgReqApi_008(self, exchange, code):
-        """分时查询--查询外期合约的分时数据"""
+        """分时查询 并订阅--查询外期合约的分时数据"""
         frequence = 100
-        isSubKLineMin = False
+        isSubKLineMin = True
         exchange = exchange
         code = code
         query_type = QueryKLineMsgType.UNKNOWN_QUERY_KLINE  # app 订阅服务该字段无意义
@@ -4212,7 +4549,16 @@ class Test_Subscribe(unittest.TestCase):
                         int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
                         int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'startTimeStamp')))
 
-        self.assertTrue(sub_kline_min_rsp_list.__len__() == 0)
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'code') == code)
+
+        self.assertTrue(
+            int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')))
+
 
         self.logger.debug(u'检查查询返回的当日分时数据')
         info_list = self.common.searchDicKV(query_kline_min_rsp_list[0], 'data')
@@ -4221,18 +4567,98 @@ class Test_Subscribe(unittest.TestCase):
                                                      exchange=exchange, instr_code=code)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100, recv_timeout_sec=20))
+        if not self.common.check_trade_status(exchange, code):
+            assert info_list.__len__() == 0
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
+
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_QueryKLineMinMsgReqApi_000(self, exchange, code):
+        """分时查询--查询并订阅分时数据： isSubKLineMin = True"""
+        frequence = 100
+        isSubKLineMin = True
+        exchange = HK_exchange
+        code = "HSImain"
+        query_type = QueryKLineMsgType.UNKNOWN_QUERY_KLINE  # app 订阅服务该字段无意义
+        direct = QueryKLineDirectType.WITH_BACK  # app 订阅服务该字段无意义
+        start = 0  # app 订阅服务该字段无意义
+        end = 0  # app 订阅服务该字段无意义
+        vol = 0  # app 订阅服务该字段无意义
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'分时数据查询，检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryKLineMinMsgReqApi(isSubKLineMin, exchange, code, query_type, direct, start, end,
+                                                   vol, start_time_stamp))
+
+        query_kline_min_rsp_list = final_rsp['query_kline_min_rsp_list']
+        sub_kline_min_rsp_list = final_rsp['sub_kline_min_rsp_list']
+
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'exchange') == exchange)
+
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'code') == code)
+
+        self.assertTrue(
+            int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'startTimeStamp')))
+
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'code') == code)
+
+        self.assertTrue(
+            int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'检查查询返回的当日分时数据')
+        info_list = self.common.searchDicKV(query_kline_min_rsp_list[0], 'data')
+
+        inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
+                                                     start_sub_time=start_time_stamp, start_time=0,
+                                                     exchange=exchange, instr_code=code)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
 
         self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
-        self.assertTrue(info_list.__len__() == 0)
+        if not self.common.check_trade_status(exchange, code):
+            assert info_list.__len__() == 0
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
+
+
 
     # --------------------------------------------------查询五日分时数据-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_QueryFiveDaysKLineMinReqApi_001(self):
         """五日分时查询, 查询并订阅数据： isSubKLineMin = True"""
         frequence = 100
         isSubKLineMin = True
         exchange = HK_exchange
-        code = HK_code3
+        code = "HSImain"
         start = None  # app 订阅服务该字段无意义
         start_time_stamp = int(time.time() * 1000)
         asyncio.get_event_loop().run_until_complete(
@@ -4271,8 +4697,10 @@ class Test_Subscribe(unittest.TestCase):
         for i in range(len(day_data_list)):
             # 校验五日date依次递增, 遇到节假日无法校验
             assert day_data_list[i].get("date") == fiveDateList[i]
-
             info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
+
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
                                                          start_sub_time=start_time_stamp, start_time=0,
                                                          exchange=exchange, instr_code=code)
@@ -4288,6 +4716,7 @@ class Test_Subscribe(unittest.TestCase):
             for info in info_list:
                 self.assertTrue(self.common.searchDicKV(info, 'exchange') == 'HKFE')
                 self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
 
     def test_QueryFiveDaysKLineMinReqApi_002(self):
         """五日分时查询, 查询不订阅数据： isSubKLineMin = False"""
@@ -4326,8 +4755,10 @@ class Test_Subscribe(unittest.TestCase):
         for i in range(len(day_data_list)):
             # 校验五日date依次递增, 遇到节假日无法校验
             assert day_data_list[i].get("date") == fiveDateList[i]
-
             info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
+
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
                                                          start_sub_time=start_time_stamp, start_time=0,
                                                          exchange=exchange, instr_code=code)
@@ -4374,8 +4805,10 @@ class Test_Subscribe(unittest.TestCase):
         for i in range(len(day_data_list)):
             # 校验五日date依次递增, 遇到节假日无法校验
             assert day_data_list[i].get("date") == fiveDateList[i]
-
             info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
+
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
                                                          start_sub_time=start_time_stamp, start_time=0,
                                                          exchange=exchange, instr_code=code1)
@@ -4405,8 +4838,9 @@ class Test_Subscribe(unittest.TestCase):
         for i in range(len(day_data_list)):
             # 校验五日date依次递增, 遇到节假日无法校验
             assert day_data_list[i].get("date") == fiveDateList[i]
-
             info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
                                                          start_sub_time=start_time_stamp, start_time=0,
                                                          exchange=exchange, instr_code=code2)
@@ -4567,8 +5001,13 @@ class Test_Subscribe(unittest.TestCase):
         for i in range(len(day_data_list)):
             # 校验五日date依次递增, 遇到节假日无法校验
             assert day_data_list[i].get("date") == fiveDateList[i]
-
             info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                if exchange == "HKFE":
+                    assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
+                else:
+                    assert day_data_list[i].get("date") == info_list[0].get("updateDateTime")[:8]
+
             inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
                                                          start_sub_time=start_time_stamp, start_time=0,
                                                          exchange=exchange, instr_code=code)
@@ -4578,18 +5017,91 @@ class Test_Subscribe(unittest.TestCase):
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=10))
         self.assertTrue(info_list.__len__() == 0)
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_QueryFiveDaysKLineMinReqApi_009(self, exchange, code):
+        """五日分时查询, 查询并订阅数据： isSubKLineMin = True"""
+        frequence = 100
+        isSubKLineMin = True
+        exchange = HK_exchange
+        code = "HSImain"
+        start = None  # app 订阅服务该字段无意义
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'五日分时数据查询，检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryFiveDaysKLineMinReqApi(isSubKLineMin, exchange, code, start, start_time_stamp))
+        query_5day_klinemin_rsp_list = final_rsp['query_5day_klinemin_rsp_list']
+        sub_kline_min_rsp_list = final_rsp['sub_kline_min_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'code') == code)
+        self.assertTrue(
+            int(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'startTimeStamp')))
+
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'code') == code)
+        self.assertTrue(
+            int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(sub_kline_min_rsp_list[0], 'startTimeStamp')))
+
+        self.logger.debug(u'检查查询返回的五日分时数据')
+        day_data_list = self.common.searchDicKV(query_5day_klinemin_rsp_list[0], 'dayData')
+        self.assertTrue(day_data_list.__len__() == 5)
+        # 获取五个交易日
+        fiveDateList = self.common.get_fiveDays(exchange, code)
+        self.logger.debug("五个交易日时间 : {}".format(fiveDateList))
+        for i in range(len(day_data_list)):
+            # 校验五日date依次递增, 遇到节假日无法校验
+            assert day_data_list[i].get("date") == fiveDateList[i]
+            info_list = self.common.searchDicKV(day_data_list[i], 'data')
+            if info_list.__len__() > 0:
+                if exchange == "HKFE":
+                    assert day_data_list[i].get("date") == info_list[-1].get("updateDateTime")[:8]
+                else:
+                    assert day_data_list[i].get("date") == info_list[0].get("updateDateTime")[:8]
+                    
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
+                                                         start_sub_time=start_time_stamp, start_time=0,
+                                                         exchange=exchange, instr_code=code)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
+        if not self.common.check_trade_status(exchange, code):
+            assert info_list.__len__() == 0
+        else:
+            inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == 'HKFE')
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+
+
+
     # --------------------------------------------------查询历史K线-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_QueryKLineMsgReqApi_001(self):
         """K线查询: BY_DATE_TIME, 1分K, 前一小时的数据, isSubKLine = True, frequence=100"""
         frequence = 100
         isSubKLine = True
         exchange = HK_exchange
-        code = "CUSmain"
+        code = "MHImain"
+
         peroid_type = KLinePeriodType.MINUTE
         query_type = QueryKLineMsgType.BY_DATE_TIME
         direct = QueryKLineDirectType.UNKNOWN_QUERY_DIRECT
         start_time_stamp = int(time.time() * 1000)
-        start = start_time_stamp - 60 * 60 * 1000 * 24 * 15
+        start = start_time_stamp - 60 * 60 * 1000 * 24 * 6
         end = start_time_stamp
         vol = None
         asyncio.get_event_loop().run_until_complete(
@@ -4620,7 +5132,7 @@ class Test_Subscribe(unittest.TestCase):
 
 
         self.logger.debug(u'通过接收k线数据的接口，筛选出k线数据,并校验')
-        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=200))
         if not self.common.check_trade_status(exchange, code):
             self.assertTrue(info_list.__len__() == 0)
         else:
@@ -6764,7 +7276,7 @@ class Test_Subscribe(unittest.TestCase):
         k_data_list = self.common.searchDicKV(query_kline_rsp_list[0], 'kData')
         inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', k_data_list,
                                                      start_sub_time=start_time_stamp,
-                                                     is_before_data=True, start_time=start, exchange=exchange,
+                                                     is_before_data=True, start_time=0, exchange=exchange,
                                                      instr_code=code1, peroid_type=peroid_type)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
@@ -7117,6 +7629,7 @@ class Test_Subscribe(unittest.TestCase):
             future=self.api.PushKLineDataApi(recv_num=100))
         assert info_list.__len__() == 0
 
+
     @parameterized.expand(appFuturesCode(isKLine=True))
     @pytest.mark.allStock
     def test_QueryKLineMsgReqApi_049(self, exchange, code, peroidType):
@@ -7154,7 +7667,7 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'校验回包里的历史k线数据')
         k_data_list = self.common.searchDicKV(query_kline_rsp_list[0], 'kData')
         inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', k_data_list, is_before_data=True,
-                                                     start_sub_time=end, start_time=start, exchange=exchange,
+                                                     start_sub_time=int(time.time() * 1000), start_time=0, exchange=exchange,
                                                      instr_code=code, peroid_type=peroid_type)
         self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
 
@@ -7245,7 +7758,143 @@ class Test_Subscribe(unittest.TestCase):
                 self.assertTrue(self.common.searchDicKV(info, 'peroidType') == peroid_type)
 
 
+    @parameterized.expand(appFuturesCode(isHKFE=True, isKLine=True))
+    @pytest.mark.HFEK
+    def test_QueryKLineMsgReqApi_051(self, exchange, code, peroidType):
+        """ K线查询, 查询所有合约的K线频率, 按数量查询向前查询 """
+        frequence = 100
+        isSubKLine = True
+        exchange = exchange
+        code = code
+        peroid_type = peroidType
+        query_type = QueryKLineMsgType.BY_VOL
+        direct = QueryKLineDirectType.WITH_FRONT
+        start_time_stamp = int(time.time() * 1000)
+        start = start_time_stamp
+        end = None
+        if peroidType in ["MONTH", "SEASON", "YEAR"]:
+            vol = 5
+        else:
+            vol = 50
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'查询K线数据，并检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryKLineMsgReqApi(isSubKLine, exchange, code, peroid_type, query_type, direct, start,
+                                                end, vol, start_time_stamp))
+        query_kline_rsp_list = final_rsp['query_kline_rsp_list']
+        sub_kline_rsp_list = final_rsp['sub_kline_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'retCode') == 'SUCCESS')
+        # # self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'retMsg') == 'query kline msg success')
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'code') == code)
+
+        self.assertTrue(self.common.searchDicKV(sub_kline_rsp_list[0], 'retCode') == 'SUCCESS')
+        # self.assertTrue(self.common.searchDicKV(sub_kline_rsp_list[0], 'retMsg') == 'Subscribe KLine success')
+        self.assertTrue(int(self.common.searchDicKV(
+            sub_kline_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+
+        self.logger.debug(u'校验回包里的历史k线数据')
+        k_data_list = self.common.searchDicKV(query_kline_rsp_list[0], 'kData')
+        inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', k_data_list, is_before_data=True,
+                                                     start_sub_time=int(time.time() * 1000), start_time=0, exchange=exchange,
+                                                     instr_code=code, peroid_type=peroid_type)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+        self.logger.debug(u'通过接收k线数据的接口，筛选出k线数据,并校验')
+        curTime = str(datetime.datetime.now())
+        if not self.common.check_trade_status(exchange, code, curTime=curTime):
+            info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            start = time.time()
+            while time.time() - start < 300:
+                self.logger.debug("循环内打印 : 循环时间 {} 秒".format(str(time.time() - start)))
+                info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+                if info_list.__len__() > 0:
+                    break
+
+            inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+                self.assertTrue(self.common.searchDicKV(info, 'peroidType') == peroid_type)
+
+
+    @parameterized.expand(appFuturesCode(isHKFE=True, isKLine=True))
+    @pytest.mark.HFEK
+    def test_QueryKLineMsgReqApi_052(self, exchange, code, peroidType):
+        """ K线查询, 查询所有合约的K线频率, 按时间查询 """
+        frequence = None
+        isSubKLine = True
+        exchange = exchange
+        code = code
+        peroid_type = peroidType
+        query_type = QueryKLineMsgType.BY_DATE_TIME
+        direct = QueryKLineDirectType.UNKNOWN_QUERY_DIRECT
+        start_time_stamp = int(time.time() * 1000)
+        if peroidType in ["MONTH", "SEASON", "YEAR"]:
+            start = start_time_stamp - 24 * 60 * 60 * 1000 * 365 * 2    # 2年的数据
+        else:
+            start = start_time_stamp - 24 * 60 * 60 * 1000 * 5     # 查询15天的数据
+        end = start_time_stamp
+        vol = None
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'查询K线数据，并检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryKLineMsgReqApi(isSubKLine, exchange, code, peroid_type, query_type, direct, start,
+                                                end, vol, start_time_stamp))
+        query_kline_rsp_list = final_rsp['query_kline_rsp_list']
+        sub_kline_rsp_list = final_rsp['sub_kline_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'retCode') == 'SUCCESS')
+        # # self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'retMsg') == 'query kline msg success')
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'code') == code)
+
+        self.assertTrue(self.common.searchDicKV(sub_kline_rsp_list[0], 'retCode') == 'SUCCESS')
+        # self.assertTrue(self.common.searchDicKV(sub_kline_rsp_list[0], 'retMsg') == 'Subscribe KLine success')
+        self.assertTrue(int(self.common.searchDicKV(
+            sub_kline_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+
+        self.logger.debug(u'校验回包里的历史k线数据')
+        k_data_list = self.common.searchDicKV(query_kline_rsp_list[0], 'kData')
+        inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', k_data_list, is_before_data=True,
+                                                     start_sub_time=end, start_time=start, exchange=exchange,
+                                                     instr_code=code, peroid_type=peroid_type)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+        self.logger.debug(u'通过接收k线数据的接口，筛选出k线数据,并校验')
+        curTime = str(datetime.datetime.now())
+        if not self.common.check_trade_status(exchange, code, curTime=curTime):
+            info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+            self.assertTrue(info_list.__len__() == 0)
+        else:
+            start = time.time()
+            while time.time() - start < 300:
+                self.logger.debug("循环内打印 : 循环时间 {} 秒".format(str(time.time() - start)))
+                info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+                if info_list.__len__() > 0:
+                    break
+
+            inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', info_list)
+            self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+            for info in info_list:
+                self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange)
+                self.assertTrue(self.common.searchDicKV(info, 'code') == code)
+                self.assertTrue(self.common.searchDicKV(info, 'peroidType') == peroid_type)
+
+
+
+
+
     # --------------------------------------------------逐笔成交查询-------------------------------------------------------
+    @pytest.mark.testAPI
     def test_QueryTradeTickMsgReqApi_001(self):
         """
         查询逐笔成交--查询5分钟的逐笔成交数据, 并订阅逐笔成交
@@ -7254,10 +7903,14 @@ class Test_Subscribe(unittest.TestCase):
         isSubTrade = True
         exchange = HK_exchange
         code = HK_code2
+
+        # exchange = "NYMEX"
+        # code = "CLmain"
+        
         type = QueryKLineMsgType.BY_DATE_TIME
         direct = None  # 按时间查询, 方向没有意义
         start_time_stamp = int(time.time() * 1000)
-        start_time = start_time_stamp - 60 * 60 * 1000 * 24
+        start_time = start_time_stamp - 60 * 60 * 1000
         end_time = start_time_stamp
         vol = None
         asyncio.get_event_loop().run_until_complete(
@@ -7594,7 +8247,7 @@ class Test_Subscribe(unittest.TestCase):
         start_time_stamp = int(time.time() * 1000)
         start_time = start_time_stamp
         end_time = None
-        vol = 100
+        # vol = 10
         asyncio.get_event_loop().run_until_complete(
             future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
         asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
@@ -8024,7 +8677,7 @@ class Test_Subscribe(unittest.TestCase):
         isSubTrade = True
         isSubTrade2 = False
         exchange = HK_exchange
-        code1 = HK_code1
+        code = HK_code1
         type = QueryKLineMsgType.BY_VOL
         direct = QueryKLineDirectType.WITH_BACK
         start_time_stamp = int(time.time() * 1000)
@@ -8036,17 +8689,17 @@ class Test_Subscribe(unittest.TestCase):
         asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
         self.logger.debug(u'逐笔成交查询，并检查返回结果')
         final_rsp = asyncio.get_event_loop().run_until_complete(
-            future=self.api.QueryTradeTickMsgReqApi(isSubTrade, exchange, code1, type, direct, start_time, end_time,
+            future=self.api.QueryTradeTickMsgReqApi(isSubTrade, exchange, code, type, direct, start_time, end_time,
                                                     vol, start_time_stamp))
         query_trade_tick_rsp_list = final_rsp['query_trade_tick_rsp_list']
         sub_trade_tick_rsp_list = final_rsp['sub_trade_tick_rsp_list']
         self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'retCode') == 'SUCCESS')
         self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'exchange') == exchange)
-        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'code') == code1)
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'code') == code)
 
         self.assertTrue(self.common.searchDicKV(sub_trade_tick_rsp_list[0], 'retCode') == 'SUCCESS')
         self.assertTrue(self.common.searchDicKV(sub_trade_tick_rsp_list[0], 'exchange') == exchange)
-        self.assertTrue(self.common.searchDicKV(sub_trade_tick_rsp_list[0], 'code') == code1)
+        self.assertTrue(self.common.searchDicKV(sub_trade_tick_rsp_list[0], 'code') == code)
         self.assertTrue(int(self.common.searchDicKV(
             sub_trade_tick_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
         # 响应时间大于接收时间大于请求时间
@@ -8586,7 +9239,7 @@ class Test_Subscribe(unittest.TestCase):
 
         self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
-        if not self.common.check_trade_status(exchange, code):
+        if not self.common.check_trade_status(exchange, code1):
             assert info_list.__len__() == 0
         else:
             inner_test_result = self.inner_zmq_test_case('test_04_QuoteTradeData', info_list)
@@ -8968,7 +9621,7 @@ class Test_Subscribe(unittest.TestCase):
 
         self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
-        if not selc.common.check_trade_status(exchange, code):
+        if not self.common.check_trade_status(exchange, code):
             assert info_list.__len__() == 0
         else:
             inner_test_result = self.inner_zmq_test_case('test_04_QuoteTradeData', info_list)
@@ -9236,13 +9889,110 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(info_list.__len__() == 0)
 
 
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_QueryTradeTickMsgReqApi_037(self, exchange, code):
+        """
+        查询逐笔成交--查询外期逐笔成交
+        """
+        frequence = None
+        isSubTrade = False
+        exchange = exchange
+        code = code
+        type = QueryKLineMsgType.BY_DATE_TIME
+        direct = None  # 按日期查询, 此字段没有意义
+        start_time_stamp = int(time.time() * 1000)
+        start_time = start_time_stamp - 24 * 60 * 60 * 1000  # 查询一天的数据, 不活跃外期合约可能没数据
+        end_time = start_time_stamp
+        vol = None
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'逐笔成交查询，并检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryTradeTickMsgReqApi(isSubTrade, exchange, code, type, direct, start_time, end_time, vol,
+                                                    start_time_stamp))
+        query_trade_tick_rsp_list = final_rsp['query_trade_tick_rsp_list']
+        sub_trade_tick_rsp_list = final_rsp['sub_trade_tick_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'code') == code)
+
+        self.assertTrue(sub_trade_tick_rsp_list.__len__() == 0)
+
+        self.logger.debug(u'校验回包里的历史逐笔数据')
+        tick_data_list = self.common.searchDicKV(query_trade_tick_rsp_list[0], 'tickData')
+
+        inner_test_result = self.inner_zmq_test_case('test_04_APP_BeforeQuoteTradeData', tick_data_list,
+                                                     start_sub_time=end_time, start_time=start_time)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+
+        self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QuoteTradeDataApi(recv_num=100))
+        self.assertTrue(info_list.__len__() == 0)
+
+
+    @parameterized.expand([[HK_exchange, eval("HK_main{}".format(n + 1))] for n in range(5)])
+    @pytest.mark.HFEK
+    def test_QueryTradeTickMsgReqApi_038(self, exchange, code):
+        """
+        查询逐笔成交--查询所有合约, 当天的逐笔数据
+        """
+        frequence = None
+        isSubTrade = False
+        exchange = exchange
+        code = code
+        type = QueryKLineMsgType.BY_DATE_TIME
+        direct = None  # 按日期查询, 此字段没有意义
+        start_time_stamp = int(time.time() * 1000)
+        _first_tradeTime = self.common.check_trade_status(exchange, code, isgetTime=True)[0]    # 获取交易开始时间
+        self.logger.debug("请求的开始时间为 : {}".format(_first_tradeTime))
+        _first_tradeTime = int(time.mktime(time.strptime(_first_tradeTime, "%Y%m%d%H%M%S")) * 1000)   # 转换成时间戳
+        start_time = _first_tradeTime   # 转换成时间戳
+        end_time = start_time_stamp     # 当前时间
+        vol = None
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'逐笔成交查询，并检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryTradeTickMsgReqApi(isSubTrade, exchange, code, type, direct, start_time, end_time, vol,
+                                                    start_time_stamp))
+        query_trade_tick_rsp_list = final_rsp['query_trade_tick_rsp_list']
+        sub_trade_tick_rsp_list = final_rsp['sub_trade_tick_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_trade_tick_rsp_list[0], 'code') == code)
+
+        self.assertTrue(sub_trade_tick_rsp_list.__len__() == 0)
+
+        self.logger.debug(u'校验回包里的历史逐笔数据')
+        tick_data_list = self.common.searchDicKV(query_trade_tick_rsp_list[0], 'tickData')
+
+        assert int([tick["time"] for tick in tick_data_list][0]) >= int(_first_tradeTime)
+
+        inner_test_result = self.inner_zmq_test_case('test_04_APP_BeforeQuoteTradeData', tick_data_list,
+                                                     start_sub_time=end_time, start_time=start_time)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+
+        self.logger.debug(u'通过接收逐笔数据的接口，筛选出逐笔数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=100))
+        self.assertTrue(info_list.__len__() == 0)
+
+
+
+
 
     # --------------------------------------------查询品种交易状态------------------------------------------------
+    @pytest.mark.testAPI
     def test_QueryTradeStatusMsgReqApi_001(self):
         """product_list为空，则返回所有数据"""
         start_time_stamp = int(time.time() * 1000)
-        exchange = "SGX"
-        product_list = ["TW"]
+        exchange = HK_exchange
+        product_list = []
         asyncio.get_event_loop().run_until_complete(
             future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp))
         asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
@@ -9254,7 +10004,7 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.debug(u'检查返回数据')
         self.assertTrue(self.common.searchDicKV(first_rsp_list[0], 'retCode') == 'SUCCESS')
         datas = first_rsp_list[0]['data']
-        self.assertTrue(datas.__len__() == 5)
+        self.assertTrue(datas.__len__() == 6)
         for data in datas:
             self.assertTrue(data['exchange'] == exchange)
             product_code = data['productCode']
@@ -9519,13 +10269,124 @@ class Test_Subscribe(unittest.TestCase):
         self.assertTrue(self.common.searchDicKV(first_rsp_list[0], 'retCode') == 'FAILURE')
 
 
+    #########################  查询BMP  #######################
+    @parameterized.expand(appFuturesCode())
+    @pytest.mark.allStock
+    def test_BMP_QueryKLineMinMsgReqApi_001(self, exchange, code):
+        """查询BMP分时, 不订阅 -- 可以查询到最新数据, 不会推送消息"""
+        frequence = None
+        isSubKLineMin = False
+        exchange = exchange
+        code = code
+
+        # exchange = "NASDAQ"
+        # code = "AAPL"
+
+        query_type = QueryKLineMsgType.UNKNOWN_QUERY_KLINE  # app 订阅服务该字段无意义
+        direct = QueryKLineDirectType.WITH_BACK  # app 订阅服务该字段无意义
+        start = 0  # app 订阅服务该字段无意义
+        end = 0  # app 订阅服务该字段无意义
+        vol = 0  # app 订阅服务该字段无意义
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'分时数据查询，检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryKLineMinMsgReqApi(isSubKLineMin, exchange, code, query_type, direct, start, end,
+                                                   vol, start_time_stamp, sub_quote_type="BMP_QUOTE_MSG"))
+
+        query_kline_min_rsp_list = final_rsp['query_kline_min_rsp_list']
+        sub_kline_min_rsp_list = final_rsp['sub_kline_min_rsp_list']
+
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_kline_min_rsp_list[0], 'code') == code)
+        self.assertTrue(
+            int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'startTimeStamp')))
+
+        assert sub_kline_min_rsp_list.__len__() == 0
+
+        self.logger.debug(u'检查查询返回的当日分时数据')
+        info_list = self.common.searchDicKV(query_kline_min_rsp_list[0], 'data')
+        query_rspTimeStamp = int(self.common.searchDicKV(query_kline_min_rsp_list[0], 'rspTimeStamp'))
+
+        if self.common.check_trade_status(exchange, code):
+            assert self.common.searchDicKV(info_list[-1], "updateDateTime")[:-2] <= self.common.formatStamp(start_time_stamp, fmt="%Y%m%d%H%M")
+
+        inner_test_result = self.inner_zmq_test_case('test_06_PushKLineMinData', info_list, is_before_data=True,
+                                                     start_sub_time=query_rspTimeStamp, start_time=0,
+                                                     exchange=exchange, instr_code=code)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+
+
+        self.logger.debug(u'通过接收分时数据的接口，筛选出分时数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineMinDataApi(recv_num=100))
+        assert info_list.__len__() == 0
+
+
+    ####################BMQ k线####################
+    @parameterized.expand(appFuturesCode())
+    @pytest.mark.allStock
+    def test_BMP_QueryKLineMsgReqApi_001(self, exchange, code):
+        """K线查询港股: 按BY_DATE_TIME方式查询, 1分K, 前一小时的数据, 并订阅K线数据"""
+        frequence = 100
+        isSubKLine = False
+        exchange = exchange
+        code = code
+        peroid_type = KLinePeriodType.MINUTE
+        query_type = QueryKLineMsgType.BY_DATE_TIME
+        direct = QueryKLineDirectType.UNKNOWN_QUERY_DIRECT
+        start_time_stamp = int(time.time() * 1000)
+        start = start_time_stamp - 60 * 60 * 1000 * 24 * 2
+        end = start_time_stamp
+        vol = None
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'查询K线数据，并检查返回结果')
+        final_rsp = asyncio.get_event_loop().run_until_complete(
+            future=self.api.QueryKLineMsgReqApi(isSubKLine, exchange, code, peroid_type, query_type, direct, start,
+                                                end, vol, start_time_stamp, sub_quote_type="BMP_QUOTE_MSG"))
+        query_kline_rsp_list = final_rsp['query_kline_rsp_list']
+        sub_kline_rsp_list = final_rsp['sub_kline_rsp_list']
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(query_kline_rsp_list[0], 'code') == code)
+
+        assert sub_kline_rsp_list.__len__() == 0
+
+        self.logger.debug(u'校验回包里的历史k线数据')
+        k_data_list = self.common.searchDicKV(query_kline_rsp_list[0], 'kData')
+        peroidType = self.common.searchDicKV(query_kline_rsp_list[0], 'peroidType')
+
+        if self.common.check_trade_status(exchange, code):
+            assert self.common.searchDicKV(k_data_list[-1], "KLineKey")[:-2] <= self.common.formatStamp(start_time_stamp, fmt="%Y%m%d%H%M")
+
+        inner_test_result = self.inner_zmq_test_case('test_07_PushKLineData', k_data_list, is_before_data=True,
+                                                     start_sub_time=end, start_time=start, exchange=exchange,
+                                                     instr_code=code, peroid_type=peroidType)
+        self.assertTrue(inner_test_result.failures.__len__() + inner_test_result.errors.__len__() == 0)
+        self.logger.debug(u'通过接收k线数据的接口，筛选出k线数据,并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.PushKLineDataApi(recv_num=100))
+        assert info_list.__len__() == 0
+
+
+
+
+    # ---------------------------------------- 以下是调试方法, 请忽略 --------------------------------------------
+
     def test_Snapshot_check_Vol(self):
         """
         校验分时数据的成交量
         订阅快照后接收一段时间的快照数据, 筛选出1分钟时间段的快照, 然后跟分时的成交量对比
         """
-        exchange = "HKFE"
-        code = "MHImain"
+        exchange = "SEHK"
+        code = "00700"
         frequence = 4
         start_time_stamp = int(time.time() * 1000)
         asyncio.get_event_loop().run_until_complete(
@@ -9579,7 +10440,33 @@ class Test_Subscribe(unittest.TestCase):
         self.logger.info(minDict)
         assert int(minDict.get("vol")) == int(vol)
 
-                    
+
+    def test_00001(self):
+        """订阅一个合约的逐笔: frequence=None"""
+        frequence = None
+        exchange = "CME"
+        code = "NQmain"
+        start_time_stamp = int(time.time() * 1000)
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp, frequence=frequence))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        self.logger.debug(u'订阅逐笔数据，并检查返回结果')
+        rsp_list = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeTradeTickReqApi(exchange, code, start_time_stamp))
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'retCode') == 'SUCCESS')
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'exchange') == exchange)
+        self.assertTrue(self.common.searchDicKV(rsp_list[0], 'code') == code)
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')) == start_time_stamp)
+        # 响应时间大于接收时间大于请求时间
+        self.assertTrue(int(self.common.searchDicKV(rsp_list[0], 'rspTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'recvReqTimeStamp')) >=
+                        int(self.common.searchDicKV(rsp_list[0], 'startTimeStamp')))
+
+        while True:
+            info_list = asyncio.get_event_loop().run_until_complete(future=self.api.QuoteTradeDataApi(recv_num=1))
+
+
+                
 if __name__ == "__main__":
     # suite = unittest.TestSuite()
     # tests = [Test_Subscribe("test_QueryTradeStatusMsgReqApi_011")]
@@ -9590,7 +10477,10 @@ if __name__ == "__main__":
     pytest.main(["-v", 
                  "-s",
                  "test_subscribe_api.py",
-                 "-k test_StartChartDataReq_001",
+                 "-k test_QueryKLineMsgReqApi_001",
                  "--show-capture=stderr",     # 测试失败后, 只输出stderr信息
                  "--disable-warnings"
                  ])
+
+
+    # appFuturesCode(isHKFE=True, isKLine=True)

@@ -19,8 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='eddid.quote',
   syntax='proto3',
   serialized_options=b'P\001',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14quote_type_def.proto\x12\x0b\x65\x64\x64id.quote*\xec\x16\n\x0cQuoteMsgType\x12\x0f\n\x0bUNKNOWN_MSG\x10\x00\x12\x11\n\rHEARTBEAT_REQ\x10\x01\x12\x11\n\rHEARTBEAT_RSP\x10\x02\x12\x10\n\x0cVELOCITY_REQ\x10\x03\x12\x10\n\x0cVELOCITY_RSP\x10\x04\x12\r\n\tLOGIN_REQ\x10\x05\x12\r\n\tLOGIN_RSP\x10\x06\x12\x0e\n\nLOGOUT_REQ\x10\x07\x12\x0e\n\nLOGOUT_RSP\x10\x08\x12\x12\n\x0eSYNC_INSTR_REQ\x10\t\x12\x12\n\x0eSYNC_INSTR_RSP\x10\n\x12\x13\n\x0fQUERY_KLINE_REQ\x10\x0b\x12\x13\n\x0fQUERY_KLINE_RSP\x10\x0c\x12\x12\n\x0eQUERY_TICK_REQ\x10\r\x12\x12\n\x0eQUERY_TICK_RSP\x10\x0e\x12\x18\n\x14QUERY_TRADE_TICK_REQ\x10\x0f\x12\x18\n\x14QUERY_TRADE_TICK_RSP\x10\x10\x12\x17\n\x13QUERY_KLINE_MIN_REQ\x10\x11\x12\x17\n\x13QUERY_KLINE_MIN_RSP\x10\x12\x12\x1f\n\x1bQUERY_FIVEDAYS_KLINEMIN_REQ\x10\x13\x12\x1f\n\x1bQUERY_FIVEDAYS_KLINEMIN_RSP\x10\x14\x12\x17\n\x13QUERY_TRADE_DAY_REQ\x10\x19\x12\x17\n\x13QUERY_TRADE_DAY_RSP\x10\x1a\x12\x1b\n\x17QUERY_EXCHANGE_RATE_REQ\x10\x1b\x12\x1b\n\x17QUERY_EXCHANGE_RATE_RSP\x10\x1c\x12\x18\n\x14QUERY_INSTR_SORT_REQ\x10\x1d\x12\x18\n\x14QUERY_INSTR_SORT_RSP\x10\x1e\x12\x11\n\rSUBSCRIBE_REQ\x10%\x12\x11\n\rSUBSCRIBE_RSP\x10&\x12\x13\n\x0fUNSUBSCRIBE_REQ\x10\'\x12\x13\n\x0fUNSUBSCRIBE_RSP\x10(\x12\x17\n\x13SUBSCRIBE_KLINE_REQ\x10)\x12\x17\n\x13SUBSCRIBE_KLINE_RSP\x10*\x12\x19\n\x15UNSUBSCRIBE_KLINE_REQ\x10+\x12\x19\n\x15UNSUBSCRIBE_KLINE_RSP\x10,\x12\x1d\n\x19UNSUBSCRIBE_KLINE_MIN_REQ\x10-\x12\x1d\n\x19UNSUBSCRIBE_KLINE_MIN_RSP\x10.\x12\x1b\n\x17SUBSCRIBE_KLINE_MIN_REQ\x10/\x12\x1b\n\x17SUBSCRIBE_KLINE_MIN_RSP\x10\x30\x12\x1c\n\x18SUBSCRIBE_TRADE_TICK_REQ\x10\x31\x12\x1c\n\x18SUBSCRIBE_TRADE_TICK_RSP\x10\x32\x12\x1e\n\x1aUNSUBSCRIBE_TRADE_TICK_REQ\x10\x33\x12\x1e\n\x1aUNSUBSCRIBE_TRADE_TICK_RSP\x10\x34\x12\r\n\tPUSH_OPEN\x10\x35\x12\x0e\n\nPUSH_CLOSE\x10\x36\x12\x0e\n\nPUSH_BASIC\x10\x37\x12\x11\n\rPUSH_SNAPSHOT\x10\x38\x12\x13\n\x0fPUSH_ORDER_BOOK\x10\x39\x12\x13\n\x0fPUSH_TRADE_DATA\x10:\x12\x13\n\x0fPUSH_INSTR_INFO\x10;\x12\x0e\n\nPUSH_KLINE\x10<\x12\x12\n\x0ePUSH_KLINE_MIN\x10=\x12\x12\n\x0ePUSH_TRADE_DAY\x10>\x12\x12\n\x0ePUSH_TICK_DATA\x10?\x12\x12\n\x0eSYNC_BASIC_REQ\x10@\x12\x12\n\x0eSYNC_BASIC_RSP\x10\x41\x12\x10\n\x0cSNAPSHOT_REQ\x10\x42\x12\x10\n\x0cSNAPSHOT_RSP\x10\x43\x12\x16\n\x12LOAD_HIS_KLINE_REQ\x10\x44\x12\x16\n\x12LOAD_HIS_KLINE_RSP\x10\x45\x12\x1a\n\x16QUERY_TRADE_STATUS_REQ\x10\x46\x12\x1a\n\x16QUERY_TRADE_STATUS_RSP\x10G\x12\x15\n\x11PUSH_TRADE_STATUS\x10H\x12!\n\x1dSUBSCRIBE_BROKER_SNAPSHOT_REQ\x10I\x12!\n\x1dSUBSCRIBE_BROKER_SNAPSHOT_RSP\x10J\x12\x18\n\x14PUSH_BROKER_SNAPSHOT\x10K\x12#\n\x1fUNSUBSCRIBE_BROKER_SNAPSHOT_REQ\x10L\x12#\n\x1fUNSUBSCRIBE_BROKER_SNAPSHOT_RSP\x10M\x12\x18\n\x14QUERY_PALTE_SORT_REQ\x10N\x12\x18\n\x14QUERY_PALTE_SORT_RSP\x10O\x12\x1b\n\x17QUERY_EXCHANGE_SORT_REQ\x10P\x12\x1b\n\x17QUERY_EXCHANGE_SORT_RSP\x10Q\x12\x1a\n\x16QUERY_RECOVERYDATA_REQ\x10R\x12\x1a\n\x16QUERY_RECOVERYDATA_RSP\x10S\x12\x19\n\x15QUERY_INDEX_SHARE_REQ\x10T\x12\x19\n\x15QUERY_INDEX_SHARE_RSP\x10U\x12\x18\n\x14QUERY_STOCK_SORT_REQ\x10V\x12\x18\n\x14QUERY_STOCK_SORT_RSP\x10W\x12\x1f\n\x1bQUERY_PLATE_SHARED_LIST_REQ\x10X\x12\x1f\n\x1bQUERY_PLATE_SHARED_LIST_RSP\x10Y\x12\x1f\n\x1bQUERY_INDEX_SHARED_LIST_REQ\x10Z\x12\x1f\n\x1bQUERY_INDEX_SHARED_LIST_RSP\x10[\x12 \n\x1cQUERY_SHARE_WARRANT_SORT_REQ\x10\\\x12 \n\x1cQUERY_SHARE_WARRANT_SORT_RSP\x10]\x12\x19\n\x14START_CHART_DATA_REQ\x10\xf4\x03\x12\x19\n\x14START_CHART_DATA_RSP\x10\xf5\x03\x12\x18\n\x13STOP_CHART_DATA_REQ\x10\xf6\x03\x12\x18\n\x13STOP_CHART_DATA_RSP\x10\xf7\x03\x12\x16\n\x11\x41UTH_CENTER_LOGIN\x10\xd8\x04\x12\x15\n\x10\x41UTH_CENTER_AUTH\x10\xd9\x04\x12\x18\n\x13\x41UTH_CENTER_REFRESH\x10\xda\x04\x12\x17\n\x12\x41UTH_CENTER_REVOKE\x10\xdb\x04\x12\x1e\n\x19SUBSCRIBE_GREY_MARKET_REQ\x10\xe2\x04\x12\x1e\n\x19SUBSCRIBE_GREY_MARKET_RSP\x10\xe3\x04\x12 \n\x1bUNSUBSCRIBE_GREY_MARKET_REQ\x10\xe4\x04\x12 \n\x1bUNSUBSCRIBE_GREY_MARKET_RSP\x10\xe5\x04\x12\x1e\n\x19PUSH_GREY_MARKET_SNAPSHOT\x10\xe6\x04\x12\x1d\n\x18SUBSCRIBE_NEW_SHARES_REQ\x10\xe7\x04\x12\x1d\n\x18SUBSCRIBE_NEW_SHARES_RSP\x10\xe8\x04\x12\x1f\n\x1aUNSUBSCRIBE_NEW_SHARES_REQ\x10\xe9\x04\x12\x1f\n\x1aUNSUBSCRIBE_NEW_SHARES_RSP\x10\xea\x04\x12\x1d\n\x18PUSH_NEW_SHARES_SNAPSHOT\x10\xeb\x04\x12%\n QUERY_LISTED_NEW_SHARED_LIST_REQ\x10\xec\x04\x12%\n QUERY_LISTED_NEW_SHARED_LIST_RSP\x10\xed\x04\x12\x1f\n\x1aQUERY_GRAY_MARKET_LIST_REQ\x10\xee\x04\x12\x1f\n\x1aQUERY_GRAY_MARKET_LIST_RSP\x10\xef\x04\x12!\n\x1cQUERY_TWENTYONE_DAYKLINE_REQ\x10\xbc\x05\x12!\n\x1cQUERY_TWENTYONE_DAYKLINE_RSP\x10\xbd\x05\x12\x17\n\x12\x44\x45L_GREY_INSTR_REQ\x10\xbe\x05\x12\x15\n\x10PUSH_INSTRUMENTS\x10\xa0\x06\x12\x12\n\rORDERBOOK_REQ\x10\xa1\x06\x12\x12\n\rORDERBOOK_RSP\x10\xa2\x06*:\n\x0fSubQuoteMsgType\x12\x13\n\x0f\x44\x45LAY_QUOTE_MSG\x10\x00\x12\x12\n\x0eREAL_QUOTE_MSG\x10\x01*D\n\x0eReqHisDataType\x12\x16\n\x12\x43UR_TRADEDATE_DATA\x10\x00\x12\x1a\n\x16NOT_CUR_TRADEDATE_DATA\x10\x01*\xbc\x02\n\x10SyncInstrMsgType\x12\x16\n\x12UNKNOWN_SYNC_INSTR\x10\x00\x12\r\n\tALL_INSTR\x10\x01\x12\x13\n\x0fINCREMENT_INSTR\x10\x02\x12\x11\n\rFIU_ALL_INSTR\x10\x03\x12\x17\n\x13\x46IU_INCREMENT_INSTR\x10\x04\x12\x11\n\rMST_ALL_INSTR\x10\x05\x12\x17\n\x13MST_INCREMENT_INSTR\x10\x06\x12\x12\n\x0eSEHK_ALL_INSTR\x10\x07\x12\x18\n\x14SEHK_INCREMENT_INSTR\x10\x08\x12\x14\n\x10NASDAQ_ALL_INSTR\x10\t\x12\x1a\n\x16NASDAQ_INCREMENT_INSTR\x10\n\x12\x14\n\x10SEHK_INDEX_INSTR\x10\x0b\x12\x1e\n\x1aSEHK_INDEX_INCREMENT_INSTR\x10\x0c*\x8d\x03\n\x0fKLinePeriodType\x12\x12\n\x0eUNKNOWN_PERIOD\x10\x00\x12\x0f\n\x0bONE_SECONDS\x10\x01\x12\x11\n\rTHREE_SECONDS\x10\x02\x12\x10\n\x0c\x46IVE_SECONDS\x10\x03\x12\x0f\n\x0bTEN_SECONDS\x10\x04\x12\x13\n\x0f\x46IFTEEN_SECONDS\x10\x05\x12\x12\n\x0eTWENTY_SECONDS\x10\x06\x12\x12\n\x0eTHIRTY_SECONDS\x10\x07\x12\n\n\x06MINUTE\x10\x08\x12\x0b\n\x07TWO_MIN\x10\t\x12\r\n\tTHREE_MIN\x10\n\x12\x0c\n\x08\x46IVE_MIN\x10\x0b\x12\x0b\n\x07TEN_MIN\x10\x0c\x12\x0f\n\x0b\x46IFTEEN_MIN\x10\r\x12\x0e\n\nTHIRTY_MIN\x10\x0e\x12\x08\n\x04HOUR\x10\x0f\x12\x0c\n\x08TWO_HOUR\x10\x10\x12\r\n\tFOUR_HOUR\x10\x11\x12\x07\n\x03\x44\x41Y\x10\x12\x12\x08\n\x04WEEK\x10\x13\x12\t\n\x05MONTH\x10\x14\x12\n\n\x06SEASON\x10\x15\x12\x08\n\x04YEAR\x10\x16\x12\x0e\n\nMIN_BY_MIN\x10\x17\x12\x13\n\x0fMAX_PERIOD_TYPE\x10\x18*J\n\x11QueryKLineMsgType\x12\x17\n\x13UNKNOWN_QUERY_KLINE\x10\x00\x12\x10\n\x0c\x42Y_DATE_TIME\x10\x01\x12\n\n\x06\x42Y_VOL\x10\x02*O\n\x14QueryKLineDirectType\x12\x18\n\x14UNKNOWN_QUERY_DIRECT\x10\x00\x12\x0e\n\nWITH_FRONT\x10\x01\x12\r\n\tWITH_BACK\x10\x02*y\n\x10SubscribeMsgType\x12\x0f\n\x0bUNKNOWN_SUB\x10\x00\x12\x12\n\x0eSUB_WITH_INSTR\x10\x01\x12\x14\n\x10SUB_WITH_PRODUCT\x10\x02\x12\x13\n\x0fSUB_WITH_MARKET\x10\x03\x12\x15\n\x11SUB_WITH_MSG_DATA\x10\x04*]\n\x0fSubChildMsgType\x12\x15\n\x11UNKNOWN_SUB_CHILD\x10\x00\x12\r\n\tSUB_BASIC\x10\x01\x12\x10\n\x0cSUB_SNAPSHOT\x10\x02\x12\x12\n\x0eSUB_ORDER_BOOK\x10\x03*d\n\x0eStockTradeType\x12\x17\n\x13UNKNOWN_STOCK_TRADE\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x12\x05\n\x01P\x10\x02\x12\x05\n\x01M\x10\x03\x12\x05\n\x01Y\x10\x04\x12\x05\n\x01X\x10\x05\x12\x05\n\x01\x44\x10\x06\x12\x05\n\x01U\x10\x07\x12\x05\n\x01Z\x10\x08*K\n\x10USStockTradeType\x12\x1a\n\x16UNKNOWN_US_STOCK_TRADE\x10\x00\x12\x06\n\x02\x41T\x10\x01\x12\x05\n\x01\x43\x10\x02\x12\x05\n\x01N\x10\x03\x12\x05\n\x01R\x10\x04*v\n\x0f\x46utureTradeType\x12\x18\n\x14UNKNOWN_FUTURE_TRADE\x10\x00\x12\x17\n\x13\x46UTURE_TRADE_TYPE_P\x10\x01\x12\x17\n\x13\x46UTURE_TRADE_TYPE_O\x10\x02\x12\x17\n\x13\x46UTURE_TRADE_TYPE_R\x10\x03*Q\n\x11QueryTradeDayType\x12\x1b\n\x17UNKNOWN_QUERY_TRADE_DAY\x10\x00\x12\x0f\n\x0bRANGE_QUERY\x10\x01\x12\x0e\n\nPLUS_QUERY\x10\x02*b\n\x12QueryInstrSortType\x12!\n\x1dUNKNOWN_QUERY_INSTR_SORT_TYPE\x10\x00\x12\x13\n\x0f\x41SCENDING_ORDER\x10\x01\x12\x14\n\x10\x44\x45SCENDING_ORDER\x10\x02*\xe5\x02\n\x17QueryInstrSortCondition\x12&\n\"UNKNOWN_QUERY_INSTR_SORT_CONDITION\x10\x00\x12\x0b\n\x07\x42Y_CODE\x10\x01\x12\x10\n\x0c\x42Y_PRE_CLOSE\x10\x02\x12\x1b\n\x17\x42Y_PRE_SETTLEMENT_PRICE\x10\x03\x12\x19\n\x15\x42Y_PRE_OPEN_INTERREST\x10\x04\x12\x0b\n\x07\x42Y_OPEN\x10\x05\x12\x0b\n\x07\x42Y_HIGH\x10\x06\x12\n\n\x06\x42Y_LOW\x10\x07\x12\x0b\n\x07\x42Y_LAST\x10\x08\x12\r\n\tBY_VOLUME\x10\t\x12\x10\n\x0c\x42Y_RISE_FALL\x10\n\x12\x10\n\x0c\x42Y_R_F_RATIO\x10\x0b\x12\x15\n\x11\x42Y_OPEN_INTERREST\x10\x0c\x12\x0e\n\nBY_ASK_VOL\x10\r\x12\x0e\n\nBY_BID_VOL\x10\x0e\x12\x16\n\x12\x42Y_FIRST_ASK_PRICE\x10\x0f\x12\x16\n\x12\x42Y_FIRST_BID_PRICE\x10\x10*+\n\x0b\x43\x61llPutType\x12\x08\n\x04\x43\x41LL\x10\x00\x12\x07\n\x03PUT\x10\x01\x12\t\n\x05OTHER\x10\x02*8\n\x0bWarrentType\x12\n\n\x06NORMAL\x10\x00\x12\n\n\x06\x45XOTIC\x10\x01\x12\x11\n\rNOT_AVAILABLE\x10\x02*\x9b\x01\n\x0eSnapshotExType\x12\x0b\n\x07\x45X_NONE\x10\x00\x12\x0c\n\x08\x45X_STOCK\x10\x01\x12\r\n\tEX_FUTURE\x10\x02\x12\n\n\x06\x45X_OPT\x10\x03\x12\r\n\tEX_FOREXS\x10\x04\x12\x0e\n\nEX_WARRANT\x10\x05\x12\x0b\n\x07\x45X_CBBC\x10\x06\x12\x0c\n\x08\x45X_INNER\x10\x07\x12\x0b\n\x07\x45X_TRST\x10\x08\x12\x0c\n\x08\x45X_INDEX\x10\tB\x02P\x01\x62\x06proto3'
+  serialized_pb=b'\n\x14quote_type_def.proto\x12\x0b\x65\x64\x64id.quote*\xe0\x1a\n\x0cQuoteMsgType\x12\x0f\n\x0bUNKNOWN_MSG\x10\x00\x12\x11\n\rHEARTBEAT_REQ\x10\x01\x12\x11\n\rHEARTBEAT_RSP\x10\x02\x12\x10\n\x0cVELOCITY_REQ\x10\x03\x12\x10\n\x0cVELOCITY_RSP\x10\x04\x12\r\n\tLOGIN_REQ\x10\x05\x12\r\n\tLOGIN_RSP\x10\x06\x12\x0e\n\nLOGOUT_REQ\x10\x07\x12\x0e\n\nLOGOUT_RSP\x10\x08\x12\x12\n\x0eSYNC_INSTR_REQ\x10\t\x12\x12\n\x0eSYNC_INSTR_RSP\x10\n\x12\x13\n\x0fQUERY_KLINE_REQ\x10\x0b\x12\x13\n\x0fQUERY_KLINE_RSP\x10\x0c\x12\x12\n\x0eQUERY_TICK_REQ\x10\r\x12\x12\n\x0eQUERY_TICK_RSP\x10\x0e\x12\x18\n\x14QUERY_TRADE_TICK_REQ\x10\x0f\x12\x18\n\x14QUERY_TRADE_TICK_RSP\x10\x10\x12\x17\n\x13QUERY_KLINE_MIN_REQ\x10\x11\x12\x17\n\x13QUERY_KLINE_MIN_RSP\x10\x12\x12\x1f\n\x1bQUERY_FIVEDAYS_KLINEMIN_REQ\x10\x13\x12\x1f\n\x1bQUERY_FIVEDAYS_KLINEMIN_RSP\x10\x14\x12\x17\n\x13QUERY_TRADE_DAY_REQ\x10\x19\x12\x17\n\x13QUERY_TRADE_DAY_RSP\x10\x1a\x12\x1b\n\x17QUERY_EXCHANGE_RATE_REQ\x10\x1b\x12\x1b\n\x17QUERY_EXCHANGE_RATE_RSP\x10\x1c\x12\x18\n\x14QUERY_INSTR_SORT_REQ\x10\x1d\x12\x18\n\x14QUERY_INSTR_SORT_RSP\x10\x1e\x12\x11\n\rSUBSCRIBE_REQ\x10%\x12\x11\n\rSUBSCRIBE_RSP\x10&\x12\x13\n\x0fUNSUBSCRIBE_REQ\x10\'\x12\x13\n\x0fUNSUBSCRIBE_RSP\x10(\x12\x17\n\x13SUBSCRIBE_KLINE_REQ\x10)\x12\x17\n\x13SUBSCRIBE_KLINE_RSP\x10*\x12\x19\n\x15UNSUBSCRIBE_KLINE_REQ\x10+\x12\x19\n\x15UNSUBSCRIBE_KLINE_RSP\x10,\x12\x1d\n\x19UNSUBSCRIBE_KLINE_MIN_REQ\x10-\x12\x1d\n\x19UNSUBSCRIBE_KLINE_MIN_RSP\x10.\x12\x1b\n\x17SUBSCRIBE_KLINE_MIN_REQ\x10/\x12\x1b\n\x17SUBSCRIBE_KLINE_MIN_RSP\x10\x30\x12\x1c\n\x18SUBSCRIBE_TRADE_TICK_REQ\x10\x31\x12\x1c\n\x18SUBSCRIBE_TRADE_TICK_RSP\x10\x32\x12\x1e\n\x1aUNSUBSCRIBE_TRADE_TICK_REQ\x10\x33\x12\x1e\n\x1aUNSUBSCRIBE_TRADE_TICK_RSP\x10\x34\x12\r\n\tPUSH_OPEN\x10\x35\x12\x0e\n\nPUSH_CLOSE\x10\x36\x12\x0e\n\nPUSH_BASIC\x10\x37\x12\x11\n\rPUSH_SNAPSHOT\x10\x38\x12\x13\n\x0fPUSH_ORDER_BOOK\x10\x39\x12\x13\n\x0fPUSH_TRADE_DATA\x10:\x12\x13\n\x0fPUSH_INSTR_INFO\x10;\x12\x0e\n\nPUSH_KLINE\x10<\x12\x12\n\x0ePUSH_KLINE_MIN\x10=\x12\x12\n\x0ePUSH_TRADE_DAY\x10>\x12\x12\n\x0ePUSH_TICK_DATA\x10?\x12\x12\n\x0eSYNC_BASIC_REQ\x10@\x12\x12\n\x0eSYNC_BASIC_RSP\x10\x41\x12\x10\n\x0cSNAPSHOT_REQ\x10\x42\x12\x10\n\x0cSNAPSHOT_RSP\x10\x43\x12\x16\n\x12LOAD_HIS_KLINE_REQ\x10\x44\x12\x16\n\x12LOAD_HIS_KLINE_RSP\x10\x45\x12\x1a\n\x16QUERY_TRADE_STATUS_REQ\x10\x46\x12\x1a\n\x16QUERY_TRADE_STATUS_RSP\x10G\x12\x15\n\x11PUSH_TRADE_STATUS\x10H\x12!\n\x1dSUBSCRIBE_BROKER_SNAPSHOT_REQ\x10I\x12!\n\x1dSUBSCRIBE_BROKER_SNAPSHOT_RSP\x10J\x12\x18\n\x14PUSH_BROKER_SNAPSHOT\x10K\x12#\n\x1fUNSUBSCRIBE_BROKER_SNAPSHOT_REQ\x10L\x12#\n\x1fUNSUBSCRIBE_BROKER_SNAPSHOT_RSP\x10M\x12\x18\n\x14QUERY_PALTE_SORT_REQ\x10N\x12\x18\n\x14QUERY_PALTE_SORT_RSP\x10O\x12\x1b\n\x17QUERY_EXCHANGE_SORT_REQ\x10P\x12\x1b\n\x17QUERY_EXCHANGE_SORT_RSP\x10Q\x12\x1a\n\x16QUERY_RECOVERYDATA_REQ\x10R\x12\x1a\n\x16QUERY_RECOVERYDATA_RSP\x10S\x12\x19\n\x15QUERY_INDEX_SHARE_REQ\x10T\x12\x19\n\x15QUERY_INDEX_SHARE_RSP\x10U\x12\x18\n\x14QUERY_STOCK_SORT_REQ\x10V\x12\x18\n\x14QUERY_STOCK_SORT_RSP\x10W\x12\x1f\n\x1bQUERY_PLATE_SHARED_LIST_REQ\x10X\x12\x1f\n\x1bQUERY_PLATE_SHARED_LIST_RSP\x10Y\x12\x1f\n\x1bQUERY_INDEX_SHARED_LIST_REQ\x10Z\x12\x1f\n\x1bQUERY_INDEX_SHARED_LIST_RSP\x10[\x12 \n\x1cQUERY_SHARE_WARRANT_SORT_REQ\x10\\\x12 \n\x1cQUERY_SHARE_WARRANT_SORT_RSP\x10]\x12\x15\n\x11PUSH_BMP_SNAPSHOT\x10^\x12\x19\n\x14START_CHART_DATA_REQ\x10\xf4\x03\x12\x19\n\x14START_CHART_DATA_RSP\x10\xf5\x03\x12\x18\n\x13STOP_CHART_DATA_REQ\x10\xf6\x03\x12\x18\n\x13STOP_CHART_DATA_RSP\x10\xf7\x03\x12\x16\n\x11\x41UTH_CENTER_LOGIN\x10\xd8\x04\x12\x15\n\x10\x41UTH_CENTER_AUTH\x10\xd9\x04\x12\x18\n\x13\x41UTH_CENTER_REFRESH\x10\xda\x04\x12\x17\n\x12\x41UTH_CENTER_REVOKE\x10\xdb\x04\x12\x1e\n\x19SUBSCRIBE_GREY_MARKET_REQ\x10\xe2\x04\x12\x1e\n\x19SUBSCRIBE_GREY_MARKET_RSP\x10\xe3\x04\x12 \n\x1bUNSUBSCRIBE_GREY_MARKET_REQ\x10\xe4\x04\x12 \n\x1bUNSUBSCRIBE_GREY_MARKET_RSP\x10\xe5\x04\x12\x1e\n\x19PUSH_GREY_MARKET_SNAPSHOT\x10\xe6\x04\x12\x1d\n\x18SUBSCRIBE_NEW_SHARES_REQ\x10\xe7\x04\x12\x1d\n\x18SUBSCRIBE_NEW_SHARES_RSP\x10\xe8\x04\x12\x1f\n\x1aUNSUBSCRIBE_NEW_SHARES_REQ\x10\xe9\x04\x12\x1f\n\x1aUNSUBSCRIBE_NEW_SHARES_RSP\x10\xea\x04\x12\x1d\n\x18PUSH_NEW_SHARES_SNAPSHOT\x10\xeb\x04\x12%\n QUERY_LISTED_NEW_SHARED_LIST_REQ\x10\xec\x04\x12%\n QUERY_LISTED_NEW_SHARED_LIST_RSP\x10\xed\x04\x12\x1f\n\x1aQUERY_GRAY_MARKET_LIST_REQ\x10\xee\x04\x12\x1f\n\x1aQUERY_GRAY_MARKET_LIST_RSP\x10\xef\x04\x12!\n\x1cQUERY_TWENTYONE_DAYKLINE_REQ\x10\xbc\x05\x12!\n\x1cQUERY_TWENTYONE_DAYKLINE_RSP\x10\xbd\x05\x12\x17\n\x12\x44\x45L_GREY_INSTR_REQ\x10\xbe\x05\x12\x17\n\x12\x44\x45L_GREY_INSTR_RSP\x10\xbf\x05\x12\x16\n\x11\x44\x45L_RANGE_KEY_REQ\x10\xc0\x05\x12\x16\n\x11\x44\x45L_RANGE_KEY_RSP\x10\xc1\x05\x12\x16\n\x11\x41\x44\x44_KEY_VALUE_REQ\x10\xc2\x05\x12\x16\n\x11\x41\x44\x44_KEY_VALUE_RSP\x10\xc3\x05\x12\x15\n\x10PUSH_INSTRUMENTS\x10\xa0\x06\x12\x12\n\rORDERBOOK_REQ\x10\xa1\x06\x12\x12\n\rORDERBOOK_RSP\x10\xa2\x06\x12\x1a\n\x15\x41MEND_BASIC_FIELD_REQ\x10\xa3\x06\x12\x1a\n\x15\x41MEND_BASIC_FIELD_RSP\x10\xa4\x06\x12\"\n\x1dQUERY_MARKET_TRADE_STATUS_REQ\x10\xa5\x06\x12\"\n\x1dQUERY_MARKET_TRADE_STATUS_RSP\x10\xa6\x06\x12\x1d\n\x18PUSH_MARKET_TRADE_STATUS\x10\xa7\x06\x12\x1c\n\x17SUBSCRIBE_EQUIPRRCE_REQ\x10\xa8\x06\x12\x1c\n\x17SUBSCRIBE_EQUIPRRCE_RSP\x10\xa9\x06\x12\x1e\n\x19UNSUBSCRIBE_EQUIPRRCE_REQ\x10\xaa\x06\x12\x1e\n\x19UNSUBSCRIBE_EQUIPRRCE_RSP\x10\xab\x06\x12\x18\n\x13QUERY_EQUIPRRCE_REQ\x10\xac\x06\x12\x18\n\x13QUERY_EQUIPRRCE_RSP\x10\xad\x06\x12\x13\n\x0ePUSH_EQUIPRRCE\x10\xae\x06*M\n\x0fSubQuoteMsgType\x12\x13\n\x0f\x44\x45LAY_QUOTE_MSG\x10\x00\x12\x12\n\x0eREAL_QUOTE_MSG\x10\x01\x12\x11\n\rBMP_QUOTE_MSG\x10\x02*D\n\x0eReqHisDataType\x12\x16\n\x12\x43UR_TRADEDATE_DATA\x10\x00\x12\x1a\n\x16NOT_CUR_TRADEDATE_DATA\x10\x01*\xbc\x02\n\x10SyncInstrMsgType\x12\x16\n\x12UNKNOWN_SYNC_INSTR\x10\x00\x12\r\n\tALL_INSTR\x10\x01\x12\x13\n\x0fINCREMENT_INSTR\x10\x02\x12\x11\n\rFIU_ALL_INSTR\x10\x03\x12\x17\n\x13\x46IU_INCREMENT_INSTR\x10\x04\x12\x11\n\rMST_ALL_INSTR\x10\x05\x12\x17\n\x13MST_INCREMENT_INSTR\x10\x06\x12\x12\n\x0eSEHK_ALL_INSTR\x10\x07\x12\x18\n\x14SEHK_INCREMENT_INSTR\x10\x08\x12\x14\n\x10NASDAQ_ALL_INSTR\x10\t\x12\x1a\n\x16NASDAQ_INCREMENT_INSTR\x10\n\x12\x14\n\x10SEHK_INDEX_INSTR\x10\x0b\x12\x1e\n\x1aSEHK_INDEX_INCREMENT_INSTR\x10\x0c*\x8d\x03\n\x0fKLinePeriodType\x12\x12\n\x0eUNKNOWN_PERIOD\x10\x00\x12\x0f\n\x0bONE_SECONDS\x10\x01\x12\x11\n\rTHREE_SECONDS\x10\x02\x12\x10\n\x0c\x46IVE_SECONDS\x10\x03\x12\x0f\n\x0bTEN_SECONDS\x10\x04\x12\x13\n\x0f\x46IFTEEN_SECONDS\x10\x05\x12\x12\n\x0eTWENTY_SECONDS\x10\x06\x12\x12\n\x0eTHIRTY_SECONDS\x10\x07\x12\n\n\x06MINUTE\x10\x08\x12\x0b\n\x07TWO_MIN\x10\t\x12\r\n\tTHREE_MIN\x10\n\x12\x0c\n\x08\x46IVE_MIN\x10\x0b\x12\x0b\n\x07TEN_MIN\x10\x0c\x12\x0f\n\x0b\x46IFTEEN_MIN\x10\r\x12\x0e\n\nTHIRTY_MIN\x10\x0e\x12\x08\n\x04HOUR\x10\x0f\x12\x0c\n\x08TWO_HOUR\x10\x10\x12\r\n\tFOUR_HOUR\x10\x11\x12\x07\n\x03\x44\x41Y\x10\x12\x12\x08\n\x04WEEK\x10\x13\x12\t\n\x05MONTH\x10\x14\x12\n\n\x06SEASON\x10\x15\x12\x08\n\x04YEAR\x10\x16\x12\x0e\n\nMIN_BY_MIN\x10\x17\x12\x13\n\x0fMAX_PERIOD_TYPE\x10\x18*J\n\x11QueryKLineMsgType\x12\x17\n\x13UNKNOWN_QUERY_KLINE\x10\x00\x12\x10\n\x0c\x42Y_DATE_TIME\x10\x01\x12\n\n\x06\x42Y_VOL\x10\x02*O\n\x14QueryKLineDirectType\x12\x18\n\x14UNKNOWN_QUERY_DIRECT\x10\x00\x12\x0e\n\nWITH_FRONT\x10\x01\x12\r\n\tWITH_BACK\x10\x02*y\n\x10SubscribeMsgType\x12\x0f\n\x0bUNKNOWN_SUB\x10\x00\x12\x12\n\x0eSUB_WITH_INSTR\x10\x01\x12\x14\n\x10SUB_WITH_PRODUCT\x10\x02\x12\x13\n\x0fSUB_WITH_MARKET\x10\x03\x12\x15\n\x11SUB_WITH_MSG_DATA\x10\x04*]\n\x0fSubChildMsgType\x12\x15\n\x11UNKNOWN_SUB_CHILD\x10\x00\x12\r\n\tSUB_BASIC\x10\x01\x12\x10\n\x0cSUB_SNAPSHOT\x10\x02\x12\x12\n\x0eSUB_ORDER_BOOK\x10\x03*d\n\x0eStockTradeType\x12\x17\n\x13UNKNOWN_STOCK_TRADE\x10\x00\x12\x08\n\x04\x41UTO\x10\x01\x12\x05\n\x01P\x10\x02\x12\x05\n\x01M\x10\x03\x12\x05\n\x01Y\x10\x04\x12\x05\n\x01X\x10\x05\x12\x05\n\x01\x44\x10\x06\x12\x05\n\x01U\x10\x07\x12\x05\n\x01Z\x10\x08*K\n\x10USStockTradeType\x12\x1a\n\x16UNKNOWN_US_STOCK_TRADE\x10\x00\x12\x06\n\x02\x41T\x10\x01\x12\x05\n\x01\x43\x10\x02\x12\x05\n\x01N\x10\x03\x12\x05\n\x01R\x10\x04*v\n\x0f\x46utureTradeType\x12\x18\n\x14UNKNOWN_FUTURE_TRADE\x10\x00\x12\x17\n\x13\x46UTURE_TRADE_TYPE_P\x10\x01\x12\x17\n\x13\x46UTURE_TRADE_TYPE_O\x10\x02\x12\x17\n\x13\x46UTURE_TRADE_TYPE_R\x10\x03*Q\n\x11QueryTradeDayType\x12\x1b\n\x17UNKNOWN_QUERY_TRADE_DAY\x10\x00\x12\x0f\n\x0bRANGE_QUERY\x10\x01\x12\x0e\n\nPLUS_QUERY\x10\x02*b\n\x12QueryInstrSortType\x12!\n\x1dUNKNOWN_QUERY_INSTR_SORT_TYPE\x10\x00\x12\x13\n\x0f\x41SCENDING_ORDER\x10\x01\x12\x14\n\x10\x44\x45SCENDING_ORDER\x10\x02*\xe5\x02\n\x17QueryInstrSortCondition\x12&\n\"UNKNOWN_QUERY_INSTR_SORT_CONDITION\x10\x00\x12\x0b\n\x07\x42Y_CODE\x10\x01\x12\x10\n\x0c\x42Y_PRE_CLOSE\x10\x02\x12\x1b\n\x17\x42Y_PRE_SETTLEMENT_PRICE\x10\x03\x12\x19\n\x15\x42Y_PRE_OPEN_INTERREST\x10\x04\x12\x0b\n\x07\x42Y_OPEN\x10\x05\x12\x0b\n\x07\x42Y_HIGH\x10\x06\x12\n\n\x06\x42Y_LOW\x10\x07\x12\x0b\n\x07\x42Y_LAST\x10\x08\x12\r\n\tBY_VOLUME\x10\t\x12\x10\n\x0c\x42Y_RISE_FALL\x10\n\x12\x10\n\x0c\x42Y_R_F_RATIO\x10\x0b\x12\x15\n\x11\x42Y_OPEN_INTERREST\x10\x0c\x12\x0e\n\nBY_ASK_VOL\x10\r\x12\x0e\n\nBY_BID_VOL\x10\x0e\x12\x16\n\x12\x42Y_FIRST_ASK_PRICE\x10\x0f\x12\x16\n\x12\x42Y_FIRST_BID_PRICE\x10\x10*+\n\x0b\x43\x61llPutType\x12\x08\n\x04\x43\x41LL\x10\x00\x12\x07\n\x03PUT\x10\x01\x12\t\n\x05OTHER\x10\x02*8\n\x0bWarrentType\x12\n\n\x06NORMAL\x10\x00\x12\n\n\x06\x45XOTIC\x10\x01\x12\x11\n\rNOT_AVAILABLE\x10\x02*\x9b\x01\n\x0eSnapshotExType\x12\x0b\n\x07\x45X_NONE\x10\x00\x12\x0c\n\x08\x45X_STOCK\x10\x01\x12\r\n\tEX_FUTURE\x10\x02\x12\n\n\x06\x45X_OPT\x10\x03\x12\r\n\tEX_FOREXS\x10\x04\x12\x0e\n\nEX_WARRANT\x10\x05\x12\x0b\n\x07\x45X_CBBC\x10\x06\x12\x0c\n\x08\x45X_INNER\x10\x07\x12\x0b\n\x07\x45X_TRST\x10\x08\x12\x0c\n\x08\x45X_INDEX\x10\tB\x02P\x01\x62\x06proto3'
 )
 
 _QUOTEMSGTYPE = _descriptor.EnumDescriptor(
@@ -28,573 +27,532 @@ _QUOTEMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QuoteMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_MSG', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='HEARTBEAT_REQ', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='HEARTBEAT_RSP', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='VELOCITY_REQ', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='VELOCITY_RSP', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOGIN_REQ', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOGIN_RSP', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOGOUT_REQ', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOGOUT_RSP', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SYNC_INSTR_REQ', index=9, number=9,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SYNC_INSTR_RSP', index=10, number=10,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_KLINE_REQ', index=11, number=11,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_KLINE_RSP', index=12, number=12,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TICK_REQ', index=13, number=13,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TICK_RSP', index=14, number=14,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_TICK_REQ', index=15, number=15,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_TICK_RSP', index=16, number=16,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_KLINE_MIN_REQ', index=17, number=17,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_KLINE_MIN_RSP', index=18, number=18,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_FIVEDAYS_KLINEMIN_REQ', index=19, number=19,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_FIVEDAYS_KLINEMIN_RSP', index=20, number=20,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_DAY_REQ', index=21, number=25,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_DAY_RSP', index=22, number=26,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_EXCHANGE_RATE_REQ', index=23, number=27,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_EXCHANGE_RATE_RSP', index=24, number=28,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INSTR_SORT_REQ', index=25, number=29,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INSTR_SORT_RSP', index=26, number=30,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_REQ', index=27, number=37,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_RSP', index=28, number=38,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_REQ', index=29, number=39,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_RSP', index=30, number=40,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_KLINE_REQ', index=31, number=41,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_KLINE_RSP', index=32, number=42,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_KLINE_REQ', index=33, number=43,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_KLINE_RSP', index=34, number=44,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_KLINE_MIN_REQ', index=35, number=45,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_KLINE_MIN_RSP', index=36, number=46,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_KLINE_MIN_REQ', index=37, number=47,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_KLINE_MIN_RSP', index=38, number=48,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_TRADE_TICK_REQ', index=39, number=49,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_TRADE_TICK_RSP', index=40, number=50,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_TRADE_TICK_REQ', index=41, number=51,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_TRADE_TICK_RSP', index=42, number=52,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_OPEN', index=43, number=53,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_CLOSE', index=44, number=54,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_BASIC', index=45, number=55,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_SNAPSHOT', index=46, number=56,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_ORDER_BOOK', index=47, number=57,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_TRADE_DATA', index=48, number=58,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_INSTR_INFO', index=49, number=59,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_KLINE', index=50, number=60,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_KLINE_MIN', index=51, number=61,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_TRADE_DAY', index=52, number=62,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_TICK_DATA', index=53, number=63,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SYNC_BASIC_REQ', index=54, number=64,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SYNC_BASIC_RSP', index=55, number=65,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SNAPSHOT_REQ', index=56, number=66,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SNAPSHOT_RSP', index=57, number=67,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOAD_HIS_KLINE_REQ', index=58, number=68,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='LOAD_HIS_KLINE_RSP', index=59, number=69,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_STATUS_REQ', index=60, number=70,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_TRADE_STATUS_RSP', index=61, number=71,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_TRADE_STATUS', index=62, number=72,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_BROKER_SNAPSHOT_REQ', index=63, number=73,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUBSCRIBE_BROKER_SNAPSHOT_RSP', index=64, number=74,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUSH_BROKER_SNAPSHOT', index=65, number=75,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_BROKER_SNAPSHOT_REQ', index=66, number=76,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='UNSUBSCRIBE_BROKER_SNAPSHOT_RSP', index=67, number=77,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_PALTE_SORT_REQ', index=68, number=78,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_PALTE_SORT_RSP', index=69, number=79,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_EXCHANGE_SORT_REQ', index=70, number=80,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_EXCHANGE_SORT_RSP', index=71, number=81,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_RECOVERYDATA_REQ', index=72, number=82,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_RECOVERYDATA_RSP', index=73, number=83,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INDEX_SHARE_REQ', index=74, number=84,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INDEX_SHARE_RSP', index=75, number=85,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_STOCK_SORT_REQ', index=76, number=86,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_STOCK_SORT_RSP', index=77, number=87,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_PLATE_SHARED_LIST_REQ', index=78, number=88,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_PLATE_SHARED_LIST_RSP', index=79, number=89,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INDEX_SHARED_LIST_REQ', index=80, number=90,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_INDEX_SHARED_LIST_RSP', index=81, number=91,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_SHARE_WARRANT_SORT_REQ', index=82, number=92,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='QUERY_SHARE_WARRANT_SORT_RSP', index=83, number=93,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='START_CHART_DATA_REQ', index=84, number=500,
+      name='PUSH_BMP_SNAPSHOT', index=84, number=94,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='START_CHART_DATA_RSP', index=85, number=501,
+      name='START_CHART_DATA_REQ', index=85, number=500,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='STOP_CHART_DATA_REQ', index=86, number=502,
+      name='START_CHART_DATA_RSP', index=86, number=501,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='STOP_CHART_DATA_RSP', index=87, number=503,
+      name='STOP_CHART_DATA_REQ', index=87, number=502,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='AUTH_CENTER_LOGIN', index=88, number=600,
+      name='STOP_CHART_DATA_RSP', index=88, number=503,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='AUTH_CENTER_AUTH', index=89, number=601,
+      name='AUTH_CENTER_LOGIN', index=89, number=600,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='AUTH_CENTER_REFRESH', index=90, number=602,
+      name='AUTH_CENTER_AUTH', index=90, number=601,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='AUTH_CENTER_REVOKE', index=91, number=603,
+      name='AUTH_CENTER_REFRESH', index=91, number=602,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='SUBSCRIBE_GREY_MARKET_REQ', index=92, number=610,
+      name='AUTH_CENTER_REVOKE', index=92, number=603,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='SUBSCRIBE_GREY_MARKET_RSP', index=93, number=611,
+      name='SUBSCRIBE_GREY_MARKET_REQ', index=93, number=610,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='UNSUBSCRIBE_GREY_MARKET_REQ', index=94, number=612,
+      name='SUBSCRIBE_GREY_MARKET_RSP', index=94, number=611,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='UNSUBSCRIBE_GREY_MARKET_RSP', index=95, number=613,
+      name='UNSUBSCRIBE_GREY_MARKET_REQ', index=95, number=612,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='PUSH_GREY_MARKET_SNAPSHOT', index=96, number=614,
+      name='UNSUBSCRIBE_GREY_MARKET_RSP', index=96, number=613,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='SUBSCRIBE_NEW_SHARES_REQ', index=97, number=615,
+      name='PUSH_GREY_MARKET_SNAPSHOT', index=97, number=614,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='SUBSCRIBE_NEW_SHARES_RSP', index=98, number=616,
+      name='SUBSCRIBE_NEW_SHARES_REQ', index=98, number=615,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='UNSUBSCRIBE_NEW_SHARES_REQ', index=99, number=617,
+      name='SUBSCRIBE_NEW_SHARES_RSP', index=99, number=616,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='UNSUBSCRIBE_NEW_SHARES_RSP', index=100, number=618,
+      name='UNSUBSCRIBE_NEW_SHARES_REQ', index=100, number=617,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='PUSH_NEW_SHARES_SNAPSHOT', index=101, number=619,
+      name='UNSUBSCRIBE_NEW_SHARES_RSP', index=101, number=618,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_LISTED_NEW_SHARED_LIST_REQ', index=102, number=620,
+      name='PUSH_NEW_SHARES_SNAPSHOT', index=102, number=619,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_LISTED_NEW_SHARED_LIST_RSP', index=103, number=621,
+      name='QUERY_LISTED_NEW_SHARED_LIST_REQ', index=103, number=620,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_GRAY_MARKET_LIST_REQ', index=104, number=622,
+      name='QUERY_LISTED_NEW_SHARED_LIST_RSP', index=104, number=621,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_GRAY_MARKET_LIST_RSP', index=105, number=623,
+      name='QUERY_GRAY_MARKET_LIST_REQ', index=105, number=622,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_TWENTYONE_DAYKLINE_REQ', index=106, number=700,
+      name='QUERY_GRAY_MARKET_LIST_RSP', index=106, number=623,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='QUERY_TWENTYONE_DAYKLINE_RSP', index=107, number=701,
+      name='QUERY_TWENTYONE_DAYKLINE_REQ', index=107, number=700,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='DEL_GREY_INSTR_REQ', index=108, number=702,
+      name='QUERY_TWENTYONE_DAYKLINE_RSP', index=108, number=701,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='PUSH_INSTRUMENTS', index=109, number=800,
+      name='DEL_GREY_INSTR_REQ', index=109, number=702,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='ORDERBOOK_REQ', index=110, number=801,
+      name='DEL_GREY_INSTR_RSP', index=110, number=703,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
-      name='ORDERBOOK_RSP', index=111, number=802,
+      name='DEL_RANGE_KEY_REQ', index=111, number=704,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DEL_RANGE_KEY_RSP', index=112, number=705,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ADD_KEY_VALUE_REQ', index=113, number=706,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ADD_KEY_VALUE_RSP', index=114, number=707,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_INSTRUMENTS', index=115, number=800,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ORDERBOOK_REQ', index=116, number=801,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ORDERBOOK_RSP', index=117, number=802,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='AMEND_BASIC_FIELD_REQ', index=118, number=803,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='AMEND_BASIC_FIELD_RSP', index=119, number=804,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='QUERY_MARKET_TRADE_STATUS_REQ', index=120, number=805,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='QUERY_MARKET_TRADE_STATUS_RSP', index=121, number=806,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_MARKET_TRADE_STATUS', index=122, number=807,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SUBSCRIBE_EQUIPRRCE_REQ', index=123, number=808,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SUBSCRIBE_EQUIPRRCE_RSP', index=124, number=809,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UNSUBSCRIBE_EQUIPRRCE_REQ', index=125, number=810,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UNSUBSCRIBE_EQUIPRRCE_RSP', index=126, number=811,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='QUERY_EQUIPRRCE_REQ', index=127, number=812,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='QUERY_EQUIPRRCE_RSP', index=128, number=813,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PUSH_EQUIPRRCE', index=129, number=814,
+      serialized_options=None,
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=38,
-  serialized_end=2962,
+  serialized_end=3462,
 )
 _sym_db.RegisterEnumDescriptor(_QUOTEMSGTYPE)
 
@@ -604,23 +562,24 @@ _SUBQUOTEMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.SubQuoteMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='DELAY_QUOTE_MSG', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='REAL_QUOTE_MSG', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMP_QUOTE_MSG', index=2, number=2,
+      serialized_options=None,
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2964,
-  serialized_end=3022,
+  serialized_start=3464,
+  serialized_end=3541,
 )
 _sym_db.RegisterEnumDescriptor(_SUBQUOTEMSGTYPE)
 
@@ -630,23 +589,20 @@ _REQHISDATATYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.ReqHisDataType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='CUR_TRADEDATE_DATA', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='NOT_CUR_TRADEDATE_DATA', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3024,
-  serialized_end=3092,
+  serialized_start=3543,
+  serialized_end=3611,
 )
 _sym_db.RegisterEnumDescriptor(_REQHISDATATYPE)
 
@@ -656,78 +612,64 @@ _SYNCINSTRMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.SyncInstrMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_SYNC_INSTR', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='ALL_INSTR', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='INCREMENT_INSTR', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIU_ALL_INSTR', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIU_INCREMENT_INSTR', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MST_ALL_INSTR', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MST_INCREMENT_INSTR', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SEHK_ALL_INSTR', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SEHK_INCREMENT_INSTR', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='NASDAQ_ALL_INSTR', index=9, number=9,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='NASDAQ_INCREMENT_INSTR', index=10, number=10,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SEHK_INDEX_INSTR', index=11, number=11,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SEHK_INDEX_INCREMENT_INSTR', index=12, number=12,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3095,
-  serialized_end=3411,
+  serialized_start=3614,
+  serialized_end=3930,
 )
 _sym_db.RegisterEnumDescriptor(_SYNCINSTRMSGTYPE)
 
@@ -737,138 +679,112 @@ _KLINEPERIODTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.KLinePeriodType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_PERIOD', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='ONE_SECONDS', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='THREE_SECONDS', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIVE_SECONDS', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='TEN_SECONDS', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIFTEEN_SECONDS', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='TWENTY_SECONDS', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='THIRTY_SECONDS', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MINUTE', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='TWO_MIN', index=9, number=9,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='THREE_MIN', index=10, number=10,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIVE_MIN', index=11, number=11,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='TEN_MIN', index=12, number=12,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FIFTEEN_MIN', index=13, number=13,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='THIRTY_MIN', index=14, number=14,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='HOUR', index=15, number=15,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='TWO_HOUR', index=16, number=16,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FOUR_HOUR', index=17, number=17,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='DAY', index=18, number=18,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='WEEK', index=19, number=19,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MONTH', index=20, number=20,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SEASON', index=21, number=21,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='YEAR', index=22, number=22,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MIN_BY_MIN', index=23, number=23,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='MAX_PERIOD_TYPE', index=24, number=24,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3414,
-  serialized_end=3811,
+  serialized_start=3933,
+  serialized_end=4330,
 )
 _sym_db.RegisterEnumDescriptor(_KLINEPERIODTYPE)
 
@@ -878,28 +794,24 @@ _QUERYKLINEMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QueryKLineMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_QUERY_KLINE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_DATE_TIME', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_VOL', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3813,
-  serialized_end=3887,
+  serialized_start=4332,
+  serialized_end=4406,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYKLINEMSGTYPE)
 
@@ -909,28 +821,24 @@ _QUERYKLINEDIRECTTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QueryKLineDirectType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_QUERY_DIRECT', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='WITH_FRONT', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='WITH_BACK', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3889,
-  serialized_end=3968,
+  serialized_start=4408,
+  serialized_end=4487,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYKLINEDIRECTTYPE)
 
@@ -940,38 +848,32 @@ _SUBSCRIBEMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.SubscribeMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_SUB', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_WITH_INSTR', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_WITH_PRODUCT', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_WITH_MARKET', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_WITH_MSG_DATA', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3970,
-  serialized_end=4091,
+  serialized_start=4489,
+  serialized_end=4610,
 )
 _sym_db.RegisterEnumDescriptor(_SUBSCRIBEMSGTYPE)
 
@@ -981,33 +883,28 @@ _SUBCHILDMSGTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.SubChildMsgType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_SUB_CHILD', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_BASIC', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_SNAPSHOT', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='SUB_ORDER_BOOK', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4093,
-  serialized_end=4186,
+  serialized_start=4612,
+  serialized_end=4705,
 )
 _sym_db.RegisterEnumDescriptor(_SUBCHILDMSGTYPE)
 
@@ -1017,58 +914,48 @@ _STOCKTRADETYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.StockTradeType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_STOCK_TRADE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='AUTO', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='P', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='M', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='Y', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='X', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='D', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='U', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='Z', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4188,
-  serialized_end=4288,
+  serialized_start=4707,
+  serialized_end=4807,
 )
 _sym_db.RegisterEnumDescriptor(_STOCKTRADETYPE)
 
@@ -1078,38 +965,32 @@ _USSTOCKTRADETYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.USStockTradeType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_US_STOCK_TRADE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='AT', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='C', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='N', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='R', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4290,
-  serialized_end=4365,
+  serialized_start=4809,
+  serialized_end=4884,
 )
 _sym_db.RegisterEnumDescriptor(_USSTOCKTRADETYPE)
 
@@ -1119,33 +1000,28 @@ _FUTURETRADETYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.FutureTradeType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_FUTURE_TRADE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FUTURE_TRADE_TYPE_P', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FUTURE_TRADE_TYPE_O', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='FUTURE_TRADE_TYPE_R', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4367,
-  serialized_end=4485,
+  serialized_start=4886,
+  serialized_end=5004,
 )
 _sym_db.RegisterEnumDescriptor(_FUTURETRADETYPE)
 
@@ -1155,28 +1031,24 @@ _QUERYTRADEDAYTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QueryTradeDayType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_QUERY_TRADE_DAY', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='RANGE_QUERY', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PLUS_QUERY', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4487,
-  serialized_end=4568,
+  serialized_start=5006,
+  serialized_end=5087,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYTRADEDAYTYPE)
 
@@ -1186,28 +1058,24 @@ _QUERYINSTRSORTTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QueryInstrSortType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_QUERY_INSTR_SORT_TYPE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='ASCENDING_ORDER', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='DESCENDING_ORDER', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4570,
-  serialized_end=4668,
+  serialized_start=5089,
+  serialized_end=5187,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYINSTRSORTTYPE)
 
@@ -1217,98 +1085,80 @@ _QUERYINSTRSORTCONDITION = _descriptor.EnumDescriptor(
   full_name='eddid.quote.QueryInstrSortCondition',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_QUERY_INSTR_SORT_CONDITION', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_CODE', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_PRE_CLOSE', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_PRE_SETTLEMENT_PRICE', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_PRE_OPEN_INTERREST', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_OPEN', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_HIGH', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_LOW', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_LAST', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_VOLUME', index=9, number=9,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_RISE_FALL', index=10, number=10,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_R_F_RATIO', index=11, number=11,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_OPEN_INTERREST', index=12, number=12,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_ASK_VOL', index=13, number=13,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_BID_VOL', index=14, number=14,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_FIRST_ASK_PRICE', index=15, number=15,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='BY_FIRST_BID_PRICE', index=16, number=16,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4671,
-  serialized_end=5028,
+  serialized_start=5190,
+  serialized_end=5547,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYINSTRSORTCONDITION)
 
@@ -1318,28 +1168,24 @@ _CALLPUTTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.CallPutType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='CALL', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='PUT', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='OTHER', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5030,
-  serialized_end=5073,
+  serialized_start=5549,
+  serialized_end=5592,
 )
 _sym_db.RegisterEnumDescriptor(_CALLPUTTYPE)
 
@@ -1349,28 +1195,24 @@ _WARRENTTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.WarrentType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='NORMAL', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EXOTIC', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='NOT_AVAILABLE', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5075,
-  serialized_end=5131,
+  serialized_start=5594,
+  serialized_end=5650,
 )
 _sym_db.RegisterEnumDescriptor(_WARRENTTYPE)
 
@@ -1380,63 +1222,52 @@ _SNAPSHOTEXTYPE = _descriptor.EnumDescriptor(
   full_name='eddid.quote.SnapshotExType',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='EX_NONE', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_STOCK', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_FUTURE', index=2, number=2,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_OPT', index=3, number=3,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_FOREXS', index=4, number=4,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_WARRANT', index=5, number=5,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_CBBC', index=6, number=6,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_INNER', index=7, number=7,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_TRST', index=8, number=8,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='EX_INDEX', index=9, number=9,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5134,
-  serialized_end=5289,
+  serialized_start=5653,
+  serialized_end=5808,
 )
 _sym_db.RegisterEnumDescriptor(_SNAPSHOTEXTYPE)
 
@@ -1525,6 +1356,7 @@ QUERY_INDEX_SHARED_LIST_REQ = 90
 QUERY_INDEX_SHARED_LIST_RSP = 91
 QUERY_SHARE_WARRANT_SORT_REQ = 92
 QUERY_SHARE_WARRANT_SORT_RSP = 93
+PUSH_BMP_SNAPSHOT = 94
 START_CHART_DATA_REQ = 500
 START_CHART_DATA_RSP = 501
 STOP_CHART_DATA_REQ = 502
@@ -1550,11 +1382,29 @@ QUERY_GRAY_MARKET_LIST_RSP = 623
 QUERY_TWENTYONE_DAYKLINE_REQ = 700
 QUERY_TWENTYONE_DAYKLINE_RSP = 701
 DEL_GREY_INSTR_REQ = 702
+DEL_GREY_INSTR_RSP = 703
+DEL_RANGE_KEY_REQ = 704
+DEL_RANGE_KEY_RSP = 705
+ADD_KEY_VALUE_REQ = 706
+ADD_KEY_VALUE_RSP = 707
 PUSH_INSTRUMENTS = 800
 ORDERBOOK_REQ = 801
 ORDERBOOK_RSP = 802
+AMEND_BASIC_FIELD_REQ = 803
+AMEND_BASIC_FIELD_RSP = 804
+QUERY_MARKET_TRADE_STATUS_REQ = 805
+QUERY_MARKET_TRADE_STATUS_RSP = 806
+PUSH_MARKET_TRADE_STATUS = 807
+SUBSCRIBE_EQUIPRRCE_REQ = 808
+SUBSCRIBE_EQUIPRRCE_RSP = 809
+UNSUBSCRIBE_EQUIPRRCE_REQ = 810
+UNSUBSCRIBE_EQUIPRRCE_RSP = 811
+QUERY_EQUIPRRCE_REQ = 812
+QUERY_EQUIPRRCE_RSP = 813
+PUSH_EQUIPRRCE = 814
 DELAY_QUOTE_MSG = 0
 REAL_QUOTE_MSG = 1
+BMP_QUOTE_MSG = 2
 CUR_TRADEDATE_DATA = 0
 NOT_CUR_TRADEDATE_DATA = 1
 UNKNOWN_SYNC_INSTR = 0

@@ -5,7 +5,7 @@
 # @Software: PyCharm
 
 import unittest
-from websocket_py3.ws_api.subscribe_api_for_first_phase import *
+from websocket_py3.ws_api.subscribe_api_for_second_phase import *
 from common.common_method import *
 from common.test_log.ed_log import get_log
 from http_request.market import MarketHttpClient

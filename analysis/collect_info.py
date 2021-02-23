@@ -4,7 +4,7 @@
 # @Create Time: 2020/5/28
 # @Software: PyCharm
 
-from websocket_py3.ws_api.subscribe_api_for_first_phase import *
+from websocket_py3.ws_api.subscribe_api_for_second_phase import *
 from datetime import datetime
 from http_request.market import MarketHttpClient
 
@@ -35,7 +35,7 @@ def market_sub():
 if __name__ == '__main__':
     common = Common()
     new_loop = common.getNewLoop()
-    api = SubscribeApi(realtime_ws_url, new_loop, is_record=False)
+    api = SubscribeApi(union_ws_url, new_loop, is_record=False)
     re_table_sql = '''
     DROP table %s;
     CREATE TABLE "%s" (

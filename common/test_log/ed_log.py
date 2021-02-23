@@ -8,6 +8,7 @@ import sys
 import logging
 import logging.config
 
+from common.test_log import SafeFileHandler
 from test_config import *
 
 global test_logger
@@ -18,9 +19,14 @@ def get_log(loggerName=None):
     global test_logger
     if test_logger and not loggerName:
         return test_logger
-    logging.log_file = SETUP_DIR + "/common/test_log/MarkerTest.log"  # 设置log文件输出地址
-    logging.err_file = SETUP_DIR + "/common/test_log/MarkerTest_Error.log"  # 设置log文件输出地址
-    logging.TimerTask = SETUP_DIR + "/common/test_log/TimerTask.log"  # 设置log文件输出地址
+    logFileFolder = SETUP_DIR + "/common/test_log/log_file/"
+    if not os.path.exists(logFileFolder):
+        os.makedirs(logFileFolder)
+
+    logging.log_file = logFileFolder + "MarkerTest.log"  # 设置log文件输出地址
+    logging.err_file = logFileFolder + "MarkerTest_Error.log"  # 设置log文件输出地址
+    logging.TimerTask = logFileFolder + "TimerTask.log"  # 设置log文件输出地址
+
     logging.Safe = SETUP_DIR + "/common/test_log/Safe.log"  # 设置log文件输出地址
     if sys.platform == 'win32':
         logging.config.fileConfig(log_path + 'windows_logging.conf')
@@ -38,8 +44,31 @@ def get_log(loggerName=None):
 
     return test_logger
 
+
+    # logging.basicConfig(
+    #     level=logging.DEBUG,
+    #     format='%(asctime)s %(name)s %(levelname)-8s  %(message)s',
+    #     datefmt='(%H:%M:%S)')
+    #
+    # logging.getLogger("websockets").setLevel(logging.DEBUG)
+    #
+    # logging.getLogger('asyncio').setLevel(logging.DEBUG)
+    # logging.getLogger('asyncio.coroutines').setLevel(logging.DEBUG)
+    # logging.getLogger('websockets.server').setLevel(logging.DEBUG)
+    # logging.getLogger('websockets.protocol').setLevel(logging.DEBUG)
+    # logging.getLogger("requests").setLevel(logging.WARNING)
+    # logging.getLogger("urllib3").setLevel(logging.WARNING)
+    # logging.getLogger("http_request").setLevel(logging.WARNING)
+    #
+    # test_logger = logging.getLogger()
+    # return test_logger
+
+
+
 if __name__ == '__main__':
     log = get_log()
     log = get_log("timerTask")
-    log.debug("sss")
-    log.error("222")
+    # log.debug("sss")
+    # log.error("222")
+    log.debug(111)
+    log.debug(b"x86")

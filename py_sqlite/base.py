@@ -4,6 +4,7 @@
 # @Create Time: 2020/4/14
 # @Software: PyCharm
 
+import threading
 import time
 import os
 
@@ -15,31 +16,39 @@ from test_config import *
 
 
 class SqliteDB(object):
+
+    __instance = None
+    __first_init = False
+
     def __new__(cls, *args, **kwargs):
         # 单例模式
-        if not hasattr(cls, 'instance'):
-            cls.instance = super(SqliteDB, cls).__new__(cls)
-        return cls.instance
+        if not cls.__instance:
+            cls.__instance = object.__new__(cls)
+        return cls.__instance
+
 
     def __init__(self, is_subscribe_record=False):
-        # 先创建目录
-        if not os.path.exists(db_save_folder):
-            os.makedirs(db_save_folder)
+        if not SqliteDB.__first_init:
+            # 先创建目录
+            if not os.path.exists(db_save_folder):
+                os.makedirs(db_save_folder)
 
-        self.common = Common()
-        self.logger = get_log()
-        self.conn = sqlite3.connect(dbPath, check_same_thread=False, timeout=15)
-        currentDayTimeStampInfo = self.common.getCurrentDayTimeStampInfo()
-        self.todayBeginTimeStamp = currentDayTimeStampInfo['todayBeginTimeStamp']
-        self.todayEndTimeStamp = currentDayTimeStampInfo['todayEndTimeStamp']
-
-        self.is_subscribe_record = is_subscribe_record
-        self.assemble_num = sql_assemble_num
-        self.assemble_sql = ''
-        self.assemble_float_num = 0
-        self.transaction_num = sql_transaction_num
-        self.transaction_float_num = 0
-        self.create_table()
+            self.common = Common()
+            self.logger = get_log()
+            self.conn = sqlite3.connect(dbPath, check_same_thread=False, timeout=15)
+            currentDayTimeStampInfo = self.common.getCurrentDayTimeStampInfo()
+            self.todayBeginTimeStamp = currentDayTimeStampInfo['todayBeginTimeStamp']
+            self.todayEndTimeStamp = currentDayTimeStampInfo['todayEndTimeStamp']
+            self.is_subscribe_record = is_subscribe_record
+            self.assemble_num = sql_assemble_num
+            self.assemble_sql = ''
+            self.assemble_float_num = 0
+            self.transaction_num = sql_transaction_num
+            self.transaction_float_num = 0
+            # db_file = SETUP_DIR + "\\zmq_py3\\zmq_save_files\\db\\SIT_market_test.db"
+            # if not os.path.exists(db_file):
+            self.create_table()
+            SqliteDB.__first_init = True
 
     def create_table(self):
         # 创建DB目录
@@ -211,7 +220,6 @@ class SqliteDB(object):
                 self.finaly_sql = self.finaly_sql + single_finaly_sql
             elif self.transaction_float_num > 1 and self.transaction_float_num == self.transaction_num:
                 self.finaly_sql = self.finaly_sql + single_finaly_sql + 'commit;'
-                
             if self.transaction_num == 1:
                 self.finaly_sql = self.finaly_sql + 'commit;'
             if self.transaction_float_num >= self.transaction_num:

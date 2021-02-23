@@ -17,9 +17,9 @@ if __name__ == '__main__':
     startTime = datetime.now()
     now_time_stamp = int(time.time() * 1000)  # 毫秒级
     fail_rerun_time = 1
-    pytest_html_filename = report_folder + 'SubscribeQuoteMsgReq_testcase_PytestReport_' + str(now_time_stamp) + '.html'
+    pytest_html_filename = report_folder + 'stock_SubscribeQuoteMsgReq_testcase_PytestReport_' + str(now_time_stamp) + '.html'
     pytest_param_list = []
-    pytest_param_list.append(SETUP_DIR + '/testcase/ws_testcase/SubscribeQuoteMsgReq_testcase.py')  # 遍历的测试用例文件
+    pytest_param_list.append(SETUP_DIR + '/testcase/ws_testcase/second_phase/stock_SubscribeQuoteMsgReq_testcase.py')  # 遍历的测试用例文件
     pytest_param_list.append('-v')  # 使得输出信息更详细
     pytest_param_list.append('-l')  # 在测试失败时会打印出局部变量名和他们的值以避免不必要的 print 语句
     pytest_param_list.append('--reruns=%d' % fail_rerun_time)     # 失败case重跑次数

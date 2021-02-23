@@ -38,14 +38,14 @@ def run_firstPhase_test():
     pytest.main([
                  "-v",
                  testcase_file,
-                 # "--reruns=3",                                  # 失败重跑3次
-                 # "-k test_SubscribeKLineMsgReqApi_009",       # -k, 模糊匹配testcase
-                 # "-m=allStock",
-                 "--show-capture=stderr",     # 测试失败后, 只输出stderr信息, 减少内存
-                 "-n 60",  # 分布式运行用例, -n 进程数
-                 "--alluredir",  # allure报告
-                 allure_result_folder,  # allure报告XML文件目录
-                 "--clean-alluredir",  # 每次执行清空上次执行的allure缓存
+                 # "--reruns=1",                        # 失败重跑3次
+                 # "-k test_BMP_QueryKLineMsgReqApi_001",          # -k, 模糊匹配testcase
+                 "-m=testAPI",
+                 "--show-capture=stderr",               # 测试失败后, 只输出stderr信息, 减少内存
+                 "-n 20",                               # 分布式运行用例, -n 进程数
+                 "--alluredir",                         
+                 allure_result_folder,                  # allure报告XML文件目录
+                 "--clean-alluredir",                   # 每次执行清空上次执行的allure缓存
                  "--disable-warnings"
                  ])
 
@@ -70,17 +70,18 @@ def run_secondPhase_test():
     testcase_file = SETUP_DIR + "/testcase/ws_testcase/second_phase/test_stock_subscribe_api.py"
     print(testcase_file)
     log_file = SETUP_DIR + "\\common\\test_log\\MarkerTest_Error.log"
-    # if os.path.exists(log_file):
+    # if os.path.exists(log_file):76545
     #     os.remove(log_file)
     
 
     start = time.time()
     pytest.main([
+
                  "-v",
                  testcase_file,
                  # "--reruns=3",                                  # 失败重跑3次
-                 "-k test_stock_QueryExchangeSortMsgReq_003",       # -k, 模糊匹配testcase
-                 # "-m=allStock",
+                 # "-k test_stock_UnsubscribeKlineMinReqApi",       # -k, 模糊匹配testcase
+                 "-m=testAPI",
                  "--show-capture=stderr",     # 测试失败后, 只输出stderr信息, 减少内存
                  "-n 20",  # 分布式运行用例, -n 进程数
                  "--alluredir",  # allure报告
@@ -104,10 +105,14 @@ def run_secondPhase_test():
         get_time_stamp(start), get_time_stamp(end), end - start))
 
 
+
+
 if __name__ == '__main__':
-    # run_firstPhase_test()
-    # time.sleep(60 * 60 * 4)
-    run_secondPhase_test()
+    run_firstPhase_test()
+    # time.sleep(60 * 60 * 4.5)
+    # run_secondPhase_test()
+
+
 
 # @pytest.mark.testAPI : 运行所有API, 校验API是否可用
 # @pytest.mark.allStock : 遍历所有类型股票

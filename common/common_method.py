@@ -18,6 +18,7 @@ from common.basic_info import *
 from common.pb_method import k_type_min
 from common.test_log.ed_log import get_log
 from common.basic_info import *
+from pb_files.quote_type_def_pb2 import KLinePeriodType
 from test_config import *
 
 
@@ -239,6 +240,7 @@ class Common(object):
                 if return_dic:
                     return return_dic
 
+
     def fixIntNum(self, num, length):
         if str(num).__len__() < length:
             num = '0' + str(num)
@@ -360,6 +362,7 @@ class Common(object):
         return True
 
     def to_json(self, data):
+        # json 格式化输出
         from json import JSONEncoder
         return json.dumps(data, sort_keys=False, indent=4, separators=(', ', ': '), cls=JSONEncoder, ensure_ascii=False)
 
@@ -393,7 +396,13 @@ class Common(object):
         return wrapper
 
     @use_logging_trade_status
-    def check_trade_status(self, exchange, code=None, curTime=None, peroidType="MINUTE", isgetTime=False, _fmt="%Y%m%d%H%M%S", _isSummerTime=isSummerTime):
+    def check_trade_status(self, exchange, code=None, curTime=None, peroidType="MINUTE", isgetTime=False, 
+                           _fmt="%Y%m%d%H%M%S", _isSummerTime=isSummerTime, sub_quote_type=sub_quote_type):
+        self.check_trade_status_sub(exchange=exchange, code=code, curTime=curTime, peroidType="MINUTE", isgetTime=False,
+                           _fmt="%Y%m%d%H%M%S", _isSummerTime=isSummerTime, sub_quote_type=sub_quote_type)
+
+    def check_trade_status_sub(self, exchange, code=None, curTime=None, peroidType="MINUTE", isgetTime=False,
+                           _fmt="%Y%m%d%H%M%S", _isSummerTime=isSummerTime, sub_quote_type=sub_quote_type):
         '''
         判断品种在 curTime 时是否交易时间
         !!! 假期无法判断
@@ -469,6 +478,8 @@ class Common(object):
             curTime = strptimeFunc(curTime)
             curDate = strftimeFunc(curTime)
 
+        if isinstance(peroidType, int):
+            peroidType = KLinePeriodType.Name(peroidType)
         if k_type_min(peroidType) >= 24*60:
             return curDate
 
@@ -476,7 +487,9 @@ class Common(object):
         _curTime = curTime      # 赋值一个变量
         isFlag = True   # 保证只能减少一个交易日
         tradeTimeList = []
-        remainTime = None
+        remainTime = None 
+        us_start_time = None    # 记录美股竞价时间
+        grey_start_time = None  # 记录暗盘
         for i in range(0, len(trade_time), 2):
             _temp = trade_time[i: i + 2]
 
@@ -487,6 +500,12 @@ class Common(object):
             # 范围时间
             startTime = strptimeFunc(curDate + _temp[0], '%Y-%m-%d%H%M')
             endTime = strptimeFunc(curDate + _temp[1], '%Y-%m-%d%H%M')
+
+            # 延时行情(判断交易状态时), 每个时间段加15分钟
+            if sub_quote_type == "DELAY_QUOTE_MSG" and not isgetTime:
+                startTime = startTime + datetime.timedelta(minutes=15)
+                endTime = endTime + datetime.timedelta(minutes=15)
+
 
             # 当开始时间大于发起请求的时间, 说明是上一个交易日时间
             if startTime > _curTime and isFlag:
@@ -537,7 +556,11 @@ class Common(object):
 
             # 如果是获取美股的K线时间, 开始时间需变成整点, 因为美股的K线从盘前竞价开始算
             if isgetTime and exchange in ["ASE", "NYSE", "NASDAQ", "BATS", "IEX"]:
-                _start -= datetime.timedelta(minutes=30)
+                pass
+                # us_start_time = _start      
+                # _start -= datetime.timedelta(hours=5.5)     # 美股K线从17点(竞价)开始计算
+            elif isgetTime and exchange == "Grey":
+                grey_start_time 
 
             while _start <= _end:
                 # 增加超过时间                
@@ -556,7 +579,12 @@ class Common(object):
                     remainTime = _start - _end    # 记录剩余时间
                     break
 
-                tradeTimeList.append(strftimeFunc(_start, _fmt))
+                if us_start_time:
+                    if _start >= us_start_time:
+                        tradeTimeList.append(strftimeFunc(_start, _fmt))
+                else:
+                    tradeTimeList.append(strftimeFunc(_start, _fmt))
+
 
             # 添加交易日收盘时刻K线
             if i+2 == len(trade_time) and strptimeFunc(tradeTimeList[-1], _fmt) != _end:
@@ -581,17 +609,38 @@ class Common(object):
         return False
 
 
-    def get_fiveDays(self, exchange, code=None, curTime=None):
+    def get_fiveDays(self, exchange, code=None, curTime=None, is_init=None):
         '''获取五个交易日时间, 用于五日分时校验 (无法判断节假日)'''
         fiveDaysList = []
         strptimeFunc = lambda x, fmt="%Y%m%d%H%M%S":  datetime.datetime.strptime(x, fmt)    # str 转 detetime
         strftimeFunc = lambda x, fmt="%Y%m%d": datetime.datetime.strftime(x, fmt)  # datetime 转 str
 
+        # 获取请求的时间
         if not curTime:
-            curTime = datetime.datetime.now()
+            curTime = datetime.datetime.now()  # 当前时间
+        else:
+            # 去掉掉curTime 中的字符, 保留%Y%m%d%H%M%S格式
+            curTime = ''.join(e for e in str(curTime) if e.isalnum())
+            try:
+                assert len(curTime) >= 8
+                if len(curTime) > 14:
+                    curTime = curTime[:14]
+                # 后面添0, 构造成%Y%m%d%H%M%S
+                curTime += "0" * int(14 - len(curTime))
+            except AssertionError:
+                self.logger.debug("传入时间 {} 错误".format(curTime))
+                raise AssertionError
+
+            curTime = strptimeFunc(curTime)
 
         _tradeTime = self.check_trade_status(exchange, code, isgetTime=True, curTime=str(curTime))
-        if exchange in ["HKFE", "SGX"]:
+
+        if is_init and strftimeFunc(curTime, fmt="%H%M%S") < _tradeTime[0][8:]:
+            curTime += datetime.timedelta(days=1)
+
+        _tradeTime = self.check_trade_status(exchange, code, isgetTime=True, curTime=str(curTime))
+
+        if exchange in ["HKFE"]:
             days = strptimeFunc(_tradeTime[-1])
         else:
             days = strptimeFunc(_tradeTime[0])
@@ -621,18 +670,28 @@ class Common(object):
         # 获得每个品种的 品种类型、品种简体简称、品种英文简称
         return procDict[code]
 
+    def new_round(self, _float, _len=0):
+        # 四舍五入, 解决round 遇5不进问题
+        if isinstance(_float, float):
+            if str(_float)[::-1].find('.') <= _len:
+                return(_float)
+            if str(_float)[-1] == '5':
+                return(round(float(str(_float)[:-1]+'6'), _len))
+            else:
+                return(round(_float, _len))
+        else:
+            return(round(_float, _len))
+
+    def formatStamp(self, timestamp, fmt="%Y-%m-%d %H:%M:%S.%f"):
+        timestamp = int(str(timestamp)[:13])
+        d = datetime.datetime.fromtimestamp(timestamp/1000)
+        return d.strftime(fmt)
+
 if __name__ == '__main__':
     now = time.localtime()
-    # a = Common().check_trade_status("CME", "6A2009")
 
-    # print(str(datetime.datetime.now()))
-    # a = Common().check_trade_status("CBOT", "YM", isgetTime=True,  peroidType="THREE_MIN", curTime="20200914000000")
-    # a = Common().check_trade_status("NASDAQ", isgetTime=True, _fmt="%Y-%m-%d %H:%M:%S")
-    # a = Common().check_trade_status("NYSE", isgetTime=True)
-    # print(a)
+    common = Common()
+    # a = common.check_trade_status("SEHK", "00700", isgetTime=True)
+    # print(a.__len__())
 
-    # b = Common().check_trade_status("SEHK", "00700", isgetTime=True, peroidType="FOUR_HOUR", _fmt="%Y-%m-%d %H:%M:%S")
-    b = Common().check_trade_status("NASDAQ", "AAPL", isgetTime=True, peroidType="HOUR", _fmt="%Y-%m-%d %H:%M:%S")
-    for i in b:
-        print(i)
-
+    print(common.get_fiveDays("SEHK", "00700", is_init=True, curTime=20210206095500))

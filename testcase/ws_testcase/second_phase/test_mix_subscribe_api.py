@@ -652,8 +652,35 @@ class Test_Subscribe(unittest.TestCase):
                 self.fail('延时行情不应推送经济席位')
 
     # --------------------------------------------------暗盘行情订阅(证券专用)-------------------------------
-
     def test_SubscribeGreyMarketQuoteMsgReqApi_001(self):
+        """延时订阅一个单市场，单合约的暗盘数据"""
+        sub_quote_type1 = SubQuoteMsgType.DELAY_QUOTE_MSG
+        start_time_stamp = int(time.time() * 1000)
+        exchange1 = SEHK_exchange
+        code1 = SEHK_greyMarketCode1
+        base_info1 = [{'exchange': exchange1, 'code': code1}]
+
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        quote_rsp1 = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeGreyMarketQuoteMsgReqApi(base_info=base_info1,
+                                              start_time_stamp=start_time_stamp, sub_quote_type=sub_quote_type1))
+
+        self.logger.debug(u'通过调用行情订阅接口，订阅数据，并检查返回结果')
+        self.assertTrue(self.common.searchDicKV(quote_rsp1['first_rsp_list'][0], 'retCode') == 'SUCCESS')
+
+        self.logger.debug(u'通过接收暗盘数据的接口，筛选出暗盘数据，并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.GreyMarketQuoteSnapshotApi(recv_num=100))
+        self.assertTrue(info_list.__len__() > 0)
+        for info in info_list:
+            sourceUpdateTime = int(self.common.searchDicKV(info, 'sourceUpdateTime'))
+            self.assertTrue(self.common.searchDicKV(info, 'exchange') == exchange1)
+            self.assertTrue(
+                int(sourceUpdateTime / (pow(10,
+                                            6))) <= start_time_stamp - delay_minute * 60 * 1000 + tolerance_time)  # 毫秒级别对比，延迟delay_minute分钟
+
+    def test_SubscribeGreyMarketQuoteMsgReqApi_002(self):
         """实时订阅一个单市场，单合约的暗盘数据, 延时订阅一个单市场，单合约的暗盘数据"""
         sub_quote_type1 = SubQuoteMsgType.REAL_QUOTE_MSG
         start_time_stamp = int(time.time() * 1000)
@@ -695,8 +722,34 @@ class Test_Subscribe(unittest.TestCase):
                                                 6))) <= start_time_stamp - delay_minute * 60 * 1000 + tolerance_time)  # 毫秒级别对比，延迟delay_minute分钟
 
     # --------------------------------------------------取消暗盘行情订阅接口(证券专用)-------------------------------
-
     def test_UnsubscribeGreyMarketQuoteMsgReqApi_001(self):
+        """实延时订阅一个单市场，单合约的暗盘数据, 取消订阅成功"""
+        sub_quote_type1 = SubQuoteMsgType.DELAY_QUOTE_MSG
+        start_time_stamp = int(time.time() * 1000)
+        exchange1 = SEHK_exchange
+        code1 = SEHK_newshares_code1
+        base_info1 = [{'exchange': exchange1, 'code': code1}]
+
+        asyncio.get_event_loop().run_until_complete(
+            future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp))
+        asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
+        quote_rsp1 = asyncio.get_event_loop().run_until_complete(
+            future=self.api.SubscribeGreyMarketQuoteMsgReqApi(base_info=base_info1,
+                                              start_time_stamp=start_time_stamp, sub_quote_type=sub_quote_type1))
+
+        quote_rsp1 = asyncio.get_event_loop().run_until_complete(
+            future=self.api.UnsubscribeGreyMarketQuoteMsgReqApi(base_info=base_info1,
+                                                              start_time_stamp=start_time_stamp,
+                                                              sub_quote_type=sub_quote_type1, recv_num=20))
+
+        self.logger.debug(u'通过调用行情订阅接口，订阅数据，并检查返回结果')
+        self.assertTrue(self.common.searchDicKV(quote_rsp1[0], 'retCode') == 'SUCCESS')
+
+        self.logger.debug(u'通过接收快照数据的接口，筛选出快照数据，并校验')
+        info_list = asyncio.get_event_loop().run_until_complete(future=self.api.GreyMarketQuoteSnapshotApi(recv_num=100))
+        self.assertTrue(info_list.__len__() == 0)
+
+    def test_UnsubscribeGreyMarketQuoteMsgReqApi_002(self):
         """实时订阅一个单市场，单合约的暗盘数据, 延时订阅一个单市场，单合约的暗盘数据, 取消订阅成功"""
         sub_quote_type1 = SubQuoteMsgType.REAL_QUOTE_MSG
         start_time_stamp = int(time.time() * 1000)
@@ -736,7 +789,7 @@ class Test_Subscribe(unittest.TestCase):
         info_list = asyncio.get_event_loop().run_until_complete(future=self.api.GreyMarketQuoteSnapshotApi(recv_num=100))
         self.assertTrue(info_list.__len__() == 0)
 
-    def test_UnsubscribeGreyMarketQuoteMsgReqApi_002(self):
+    def test_UnsubscribeGreyMarketQuoteMsgReqApi_003(self):
         """实时订阅一个单市场，单合约的暗盘数据, 延时订阅一个单市场，单合约的暗盘数据, 错位取消，取消失败"""
         sub_quote_type1 = SubQuoteMsgType.REAL_QUOTE_MSG
         start_time_stamp = int(time.time() * 1000)
@@ -1567,7 +1620,7 @@ if __name__ == "__main__":
     # inner_test_result = runner.run(suite)
 
     pytest.main(["-v", "-s",
-                 "test_mix_subscribe_api.py",
-                 "-k test_SubsQutoMsgReqApi_001",
+                 "test_stock_subscribe_api.py",
+                 "-k test_SubscribeBrokerSnapshotReq001",
                  "--show-capture=stderr"
                  ])

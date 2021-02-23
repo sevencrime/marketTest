@@ -5,7 +5,7 @@
 # @Software: PyCharm
 
 import unittest
-from websocket_py3.ws_api.subscribe_api_for_first_phase import *
+from websocket_py3.ws_api.subscribe_api_for_second_phase import *
 from common.common_method import *
 from common.test_log.ed_log import get_log
 from http_request.market import MarketHttpClient
@@ -29,7 +29,7 @@ class SubscribeTestCases(unittest.TestCase):
     def setUp(self):
         self.new_loop = self.common.getNewLoop()
         asyncio.set_event_loop(self.new_loop)
-        self.api = SubscribeApi(delay_ws_url, self.new_loop)
+        self.api = SubscribeApi(union_ws_url, self.new_loop, is_record=False)
         asyncio.get_event_loop().run_until_complete(future=self.api.client.ws_connect())
 
     def tearDown(self):
@@ -48,7 +48,7 @@ class SubscribeTestCases(unittest.TestCase):
             future=self.api.LoginReq(token=self.market_token, start_time_stamp=start_time_stamp))
         asyncio.run_coroutine_threadsafe(self.api.hearbeat_job(), self.new_loop)
         quote_rsp = asyncio.get_event_loop().run_until_complete(
-            future=self.api.DelaySubsQutoMsgReqApi(sub_type=sub_type, child_type=None, base_info=base_info,
+            future=self.api.DelayDelaySubsQutoMsgReqApi(sub_type=sub_type, child_type=None, base_info=base_info,
                                               start_time_stamp=start_time_stamp))
 
         first_rsp_list = quote_rsp['first_rsp_list']
@@ -3072,7 +3072,6 @@ class SubscribeTestCases(unittest.TestCase):
             self.assertTrue(self.common.compareSubData(info, db_json_info))  # 数据与入库记录一致
 
     # --------------------------------------------------取消订阅end----------------------------------------------------
-
 
 if __name__ == '__main_':
     unittest.main()

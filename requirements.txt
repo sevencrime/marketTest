@@ -14,3 +14,7 @@ allure-pytest
 pytest-rerunfailures
 flask
 apscheduler
+fastapi
+uvicorn
+nest_asyncio
+aiomultiprocess

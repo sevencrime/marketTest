@@ -5,9 +5,11 @@ import os
 import time
 from logging import FileHandler
 
-
+'''
+重写FileHandler , 防止多进程报错
+'''
 class SafeFileHandler(FileHandler):
-    def __init__(self, filename, mode="a", encoding=None, delay=0, suffix="%Y-%m-%d_%H"):
+    def __init__(self, filename, mode="a", encoding=None, delay=0, suffix="%Y-%m-%d"):
         if codecs is None:
             encoding = None
         current_time = time.strftime(suffix, time.localtime())

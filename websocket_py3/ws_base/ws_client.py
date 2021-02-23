@@ -12,7 +12,7 @@ from common.test_log.ed_log import get_log
 
 
 class BaseWebSocketClient(object):
-    def __init__(self, url, loop=None, close_timeout=1):
+    def __init__(self, url, loop=None, close_timeout=5):
         self.url = url
         self.loop = loop
         self.close_timeout = close_timeout
@@ -21,13 +21,17 @@ class BaseWebSocketClient(object):
     async def ws_connect(self, extra_headers=None):
         try:
             asyncio.set_event_loop(self.loop)
+            _start = time.time()
             self._ws = await websockets.connect(self.url, 
                                                 close_timeout=self.close_timeout, 
-                                                max_queue=9**100, 
-                                                max_size=9**100, 
-                                                read_limit=9**100, 
-                                                write_limit=9**100, 
-                                                extra_headers=extra_headers)
+                                                # max_queue=9**20,
+                                                # max_size=9**20,
+                                                # read_limit=9**20,
+                                                # write_limit=9**20,
+                                                extra_headers=extra_headers,
+                                                ping_interval = 60
+                                                )
+            self.logger.debug("WS连接时间 : {}".format(time.time() - _start))
             self.logger.debug('Creat a new ws connect! Url is {}'.format(self.url))
         except Exception as e:
             self.logger.debug('Connect Error: {}'.format(e))
@@ -51,7 +55,7 @@ class BaseWebSocketClient(object):
         finally:
             return rsp
 
-    async def recv(self, recv_num=1, recv_timeout_sec=10):
+    async def recv(self, recv_num=1, recv_timeout_sec=8):
         rspList = []
         try:
             if not self.is_disconnect():
@@ -82,13 +86,14 @@ class BaseWebSocketClient(object):
         try:
             asyncio.set_event_loop(self.loop)
             asyncio.get_event_loop().run_until_complete(self._ws.close())
-            self.logger.debug("websocket close, time : {}".format(time.time()))
+            self.logger.debug("断开连接")
         except Exception as e:
             self.logger.debug('disconnect ws error:\n{}'.format(e))
 
     async def stress_disconnect(self):
         try:
             await self._ws.close()
+            self.logger.debug("断开连接")
         except Exception as e:
             self.logger.debug('disconnect ws error:\n{}'.format(e))
 
@@ -103,26 +108,7 @@ class BaseWebSocketClient(object):
 
 if __name__ =='__main__':
     start = time.time()
-    # ipAddress = 'ws://127.0.0.1'
-    # port = 10080
-    # url = ipAddress + ':' + str(port)
-    #
-    # if sys.platform == 'win32':
-    #     new_loop = asyncio.ProactorEventLoop()
-    # else:
-    #     new_loop = asyncio.new_event_loop()
-    # asyncio.set_event_loop(new_loop)
-    # client = BaseWebSocketClient(url, new_loop)
-    # asyncio.get_event_loop().run_until_complete(client.ws_connect())
-    # asyncio.get_event_loop().run_until_complete(client.send('11111111'))
-    # asyncio.get_event_loop().run_until_complete(client.send('222222222'))
-    # print((client.is_disconnect()))
-    # client.disconnect()
-    #
-    # print(client.is_disconnect())
-
-    url = 'wss://route-service-tcp-qa.eddid.com.cn:1443/socket.io/?transport=websocket&EIO=3'
-
+    url = 'ws://publisher-qa.eddid.com.cn:1516'
     headers = {'Device-Id': '2c259502820523853b3e817f8c8aabb6b', 'Authorization': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0ZXN0YXBwMiIsImV4cCI6MTYwMjIzODYyOSwic3ViIjoiZDA5NDI5MmQtNTlkYS00YjMwLWIxNTktYzNiZTgxY2I4ZjIwIiwic2NvcGUiOiJiYXNpYyJ9.YdrvWA-t0t4JXU17Yw4kzSpNe42CsUS0UL9lWPL9YtFNleOQsw1TJ0wXRI02KvRxBDWcDhmvjbv3RaOBibTfsivPDdz-KEiXsQSdTlOHLvjH52xK_ucvlemVPpMYonG3PFvPZ74l5xaykjP4G40_7rUv90ugZ7CLGYgCoRl8SsE'}
     # headers = None
     if sys.platform == 'win32':
@@ -132,9 +118,7 @@ if __name__ =='__main__':
 
     asyncio.set_event_loop(new_loop)
     client = BaseWebSocketClient(url, new_loop)
-    asyncio.get_event_loop().run_until_complete(client.ws_connect(extra_headers=headers))
-    asyncio.get_event_loop().run_until_complete(client.recv())
-
-    asyncio.get_event_loop().run_until_complete(client.send('11111111'))
-    asyncio.get_event_loop().run_until_complete(client.send('222222222'))
+    
+    while True:
+        asyncio.get_event_loop().run_until_complete(client.ws_connect(extra_headers=headers))
 

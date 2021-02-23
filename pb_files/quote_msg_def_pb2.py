@@ -22,8 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='eddid.quote',
   syntax='proto3',
   serialized_options=b'P\001',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13quote_msg_def.proto\x12\x0b\x65\x64\x64id.quote\x1a\x15\x63ommon_type_def.proto\x1a\x14quote_type_def.proto\x1a\x14\x63ommon_msg_def.proto\"\x80\x01\n\x0fQuoteMsgCarrier\x12\n\n\x02id\x18\x01 \x01(\x04\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.eddid.quote.QuoteMsgType\x12*\n\x07version\x18\x03 \x01(\x0e\x32\x19.eddid.quote.ProtoVersion\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\"E\n\tRetResult\x12\'\n\x08ret_code\x18\x01 \x01(\x0e\x32\x15.eddid.common.RetCode\x12\x0f\n\x07ret_msg\x18\x02 \x01(\t\"^\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x12\n\nauto_token\x18\x02 \x01(\t\x12\x11\n\tfrequence\x18\x03 \x01(\r\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\"\x98\x01\n\x08LoginRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"8\n\tLogoutReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\"\x99\x01\n\tLogoutRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cSyncInstrReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbc\x01\n\x0cSyncInstrRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x31\n\x0binstruments\x18\x02 \x03(\x0b\x32\x1c.eddid.common.InstrumentInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"+\n\x0fRecoveryDataReq\x12\x18\n\x10start_time_stamp\x18\x01 \x01(\x04\"\xa2\x03\n\x0fRecoveryDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12>\n\x15\x62roker_snapshot_infos\x18\x02 \x03(\x0b\x32\x1f.eddid.quote.PushBrokerSnapshot\x12\x30\n\x0b\x62\x61sic_infos\x18\x03 \x03(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12\x32\n\x0esnapshot_Infos\x18\x04 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x38\n\x0forderbook_Infos\x18\x05 \x03(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\x12\x34\n\x0ftradetick_Infos\x18\x06 \x03(\x0b\x32\x1b.eddid.quote.QuoteTradeData\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\"\x81\x02\n\x15QueryIndexShareMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x11\n\tindexCode\x18\x03 \x01(\t\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xb1\x02\n\x15QueryIndexShareMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x11\n\tindexCode\x18\x03 \x01(\t\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x92\x02\n\x14QueryPlateSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x03 \x01(\x0e\x32\x17.eddid.common.PlateType\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc2\x02\n\x14QueryPlateSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x03 \x01(\x0e\x32\x17.eddid.common.PlateType\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\xee\x01\n\x17QueryExchangeSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\r\n\x05\x63ount\x18\x04 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x06 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd4\x02\n\x17QueryExchangeSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x99\x02\n\x14QueryStockSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xff\x02\n\x14QueryStockSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12)\n\x04info\x18\x05 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x06 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\"\xa8\x02\n\x1bQueryShareWarrantSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x8e\x03\n\x1bQueryShareWarrantSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12)\n\x04info\x18\x05 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x06 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\"{\n\x1aQueryIndexSharedListMsgReq\x12\r\n\x05index\x18\x01 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc5\x01\n\x1aQueryIndexSharedListMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x05infos\x18\x02 \x03(\x0b\x32\x1d.eddid.common.IndexSharedInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"\xbf\x01\n\x1aQueryPlateSharedListMsgReq\x12$\n\x04zone\x18\x01 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x02 \x01(\x0e\x32\x17.eddid.common.PlateType\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc5\x01\n\x1aQueryPlateSharedListMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x05infos\x18\x02 \x03(\x0b\x32\x1d.eddid.common.PlateSharedInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cSyncBasicReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbb\x01\n\x0cSyncBasicRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x30\n\x0b\x62\x61sic_infos\x18\x02 \x03(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"g\n\x0bSnapshotReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbc\x01\n\x0bSnapshotRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x32\n\x0esnapshot_Infos\x18\x02 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cOrderbookReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xc3\x01\n\x0cOrderbookRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x38\n\x0forderbook_Infos\x18\x02 \x03(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"w\n\x10PushKLineMinData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\xa2\x01\n\x14SubscribeKlineMinReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xcd\x01\n\x14SubscribeKlineMinRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xa4\x01\n\x16UnsubscribeKlineMinReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xcf\x01\n\x16UnsubscribeKlineMinRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\x9f\x01\n\x11StartChartDataReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xdd\x02\n\x11StartChartDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12/\n\nbasic_data\x18\x07 \x01(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12,\n\x08snapshot\x18\x08 \x01(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x32\n\torderbook\x18\t \x01(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\"\x9e\x01\n\x10StopChartDataReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc9\x01\n\x10StopChartDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xc2\x02\n\x13QueryKLineMinMsgReq\x12\x15\n\risSubKLineMin\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\t \x01(\x04\x12\x34\n\x0esub_quote_type\x18\n \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xf5\x01\n\x13QueryKLineMinMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12\'\n\x04\x64\x61ta\x18\x07 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\xd9\x01\n\x18QueryFiveDaysKLineMinReq\x12\x15\n\risSubKLineMin\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\r\n\x05start\x18\x04 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"d\n\x11OneDayKLineMinMsg\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\x04\x12\x18\n\x10settlement_price\x18\x02 \x01(\x04\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\x82\x02\n\x18QueryFiveDaysKLineMinRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12/\n\x07\x64\x61yData\x18\x07 \x03(\x0b\x32\x1e.eddid.quote.OneDayKLineMinMsg\"\xbe\x01\n\x0cKlineDataMin\x12\x0c\n\x04high\x18\x01 \x01(\x03\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\r\n\x05\x63lose\x18\x04 \x01(\x03\x12\x0f\n\x07\x61verage\x18\x05 \x01(\x03\x12\x0b\n\x03vol\x18\x06 \x01(\x04\x12\x11\n\trise_fall\x18\x07 \x01(\x12\x12\x11\n\tr_f_ratio\x18\x08 \x01(\x12\x12\x18\n\x10update_date_time\x18\t \x01(\x04\x12\x18\n\x10settlement_price\x18\n \x01(\x04\"\xef\x02\n\x10QueryKLineMsgReq\x12\x12\n\nisSubKLine\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x31\n\x0bperoid_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12,\n\x04type\x18\x05 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x06 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x07 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x08 \x01(\x04\x12\x0b\n\x03vol\x18\t \x01(\x04\x12\x18\n\x10start_time_stamp\x18\n \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x0b \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xa3\x02\n\x10QueryKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x31\n\x0bperoid_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x05 \x03(\x0b\x32\x16.eddid.quote.KlineData\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x86\x03\n\tKlineData\x12\x0c\n\x04high\x18\x01 \x01(\x03\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\r\n\x05\x63lose\x18\x04 \x01(\x03\x12\x10\n\x08\x63urr_vol\x18\x05 \x01(\x04\x12\x0b\n\x03vol\x18\x06 \x01(\x04\x12\x15\n\ropen_interest\x18\x07 \x01(\x04\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x03\x12\x11\n\trise_fall\x18\t \x01(\x12\x12\x11\n\tr_f_ratio\x18\n \x01(\x12\x12\x18\n\x10settlement_price\x18\x0b \x01(\x03\x12\x16\n\x0epre_settlement\x18\x0c \x01(\x03\x12\x11\n\tpre_close\x18\r \x01(\x03\x12\x18\n\x10update_date_time\x18\x0e \x01(\x04\x12\x31\n\x0bperoid_type\x18\x0f \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x10\n\x08KLineKey\x18\x10 \x01(\x04\x12\x14\n\x0ctotal_amount\x18\x11 \x01(\x03\x12\x1b\n\x13incr_open_interrest\x18\x12 \x01(\x03\"\x8b\x02\n\x10QueryKLineHisReq\x12,\n\x08\x65xchange\x18\x01 \x03(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\"\xa4\x01\n\x0cKlineDataHis\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x04 \x03(\x0b\x32\x16.eddid.quote.KlineData\"\x99\x01\n\x10QueryKLineHisRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12+\n\x08kDataHis\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataHis\"\xa5\x01\n\rPushKLineData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x04 \x01(\x0b\x32\x16.eddid.quote.KlineData\"\xf1\x01\n\x0fQueryTickMsgReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\n \x01(\x04\"\x80\x02\n\x08TickData\x12\x0c\n\x04last\x18\x01 \x01(\x03\x12\x0c\n\x04high\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\x10\n\x08turnover\x18\x04 \x01(\x03\x12\x0f\n\x07\x61verage\x18\x05 \x01(\x03\x12\x0e\n\x06volume\x18\x06 \x01(\x04\x12\x15\n\ropen_interest\x18\x07 \x01(\x04\x12\x11\n\tbuy_price\x18\x08 \x01(\x03\x12\x12\n\nbuy_volume\x18\t \x01(\x05\x12\x12\n\nsell_price\x18\n \x01(\x03\x12\x13\n\x0bsell_volume\x18\x0b \x01(\x04\x12\x17\n\x0fupdate_datetime\x18\x0c \x01(\x04\x12\x18\n\x10last_update_mill\x18\r \x01(\r\"\xf1\x01\n\x0fQueryTickMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\'\n\x08tickData\x18\x04 \x03(\x0b\x32\x15.eddid.quote.TickData\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x06 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x07 \x01(\x04\"s\n\x0cPushTickData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\'\n\x08tickData\x18\x03 \x01(\x0b\x32\x15.eddid.quote.TickData\"\x81\x02\n\x14SubscribeQuoteMsgReq\x12/\n\x08sub_type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x02 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x36\n\tbase_info\x18\x03 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"j\n\x16SubscribeInstrBaseInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\"\xf4\x01\n\x14SubscribeQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12/\n\x08sub_type\x18\x02 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\x83\x02\n\x16UnsubscribeQuoteMsgReq\x12/\n\x08sub_type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x02 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x36\n\tbase_info\x18\x03 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x93\x01\n\x16UnsubscribeQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa8\x01\n\x1eSubscribeGreyMarketQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9b\x01\n\x1eSubscribeGreyMarketQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xaa\x01\n UnsubscribeGreyMarketQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9d\x01\n UnsubscribeGreyMarketQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa7\x01\n\x1dSubscribeNewSharesQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9a\x01\n\x1dSubscribeNewSharesQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa9\x01\n\x1fUnsubscribeNewSharesQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9c\x01\n\x1fUnsubscribeNewSharesQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xd1\x01\n\x14SubscribeKLineMsgReq\x12\x31\n\x0bperoid_type\x18\x01 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x36\n\tbase_info\x18\x02 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x91\x01\n\x14SubscribeKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xd3\x01\n\x16UnSubscribeKLineMsgReq\x12\x31\n\x0bperoid_type\x18\x01 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x36\n\tbase_info\x18\x02 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x93\x01\n\x16UnSubscribeKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xef\x01\n\tQuoteOpen\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12+\n\x04init\x18\x02 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12-\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12*\n\x03\x64\x61y\x18\x04 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12,\n\x05night\x18\x05 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\"\xf0\x01\n\x0fQuoteCommonInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x14\n\x0cproduct_code\x18\x02 \x01(\t\x12\x12\n\ninstr_code\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x01(\r\x12\x1b\n\x13\x63ollector_recv_time\x18\x05 \x01(\x04\x12\x1b\n\x13\x63ollector_send_time\x18\x06 \x01(\x04\x12\x1b\n\x13publisher_recv_time\x18\x07 \x01(\x04\x12\x1b\n\x13publisher_send_time\x18\x08 \x01(\x04\"\xdf\x04\n\x0eQuoteBasicInfo\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.eddid.common.ProductType\x12\x13\n\x0btradind_day\x18\x03 \x01(\t\x12\x12\n\ninstr_name\x18\x04 \x01(\t\x12\x15\n\rinstr_en_name\x18\x05 \x01(\t\x12\x16\n\x0e\x65xchange_instr\x18\x06 \x01(\t\x12\x31\n\rmarket_status\x18\x07 \x01(\x0e\x32\x1a.eddid.common.MarketStatus\x12\x33\n\x0cinstr_status\x18\x08 \x01(\x0e\x32\x1d.eddid.common.InstrStatusType\x12\x13\n\x0bupper_limit\x18\n \x01(\x03\x12\x13\n\x0blower_limit\x18\x0b \x01(\x03\x12\x11\n\tpre_close\x18\x0c \x01(\x03\x12\x0e\n\x06source\x18\r \x01(\t\x12\x18\n\x10update_timestamp\x18\x0e \x01(\x04\x12,\n\x05stock\x18\x0f \x01(\x0b\x32\x1b.eddid.quote.StockBasicInfoH\x00\x12.\n\x06\x66uture\x18\x10 \x01(\x0b\x32\x1c.eddid.quote.FutureBasicInfoH\x00\x12+\n\x03opt\x18\x11 \x01(\x0b\x32\x1c.eddid.quote.OptionBasicInfoH\x00\x12\x37\n\x06\x66orexs\x18\x12 \x01(\x0b\x32%.eddid.quote.ForeignExchangeBasicInfoH\x00\x42\x06\n\x04\x64\x61ta\"\xc4\x02\n\x0eStockBasicInfo\x12\x10\n\x08lot_size\x18\x01 \x01(\r\x12\x15\n\rissued_shares\x18\x02 \x01(\x03\x12\x1a\n\x12outstanding_shares\x18\x03 \x01(\x03\x12\x0f\n\x07\x63\x61sflag\x18\x04 \x01(\t\x12\x0f\n\x07vcmflag\x18\x05 \x01(\t\x12\x14\n\x0clasttradeday\x18\x06 \x01(\t\x12\x13\n\x0brelease_day\x18\x07 \x01(\t\x12\x15\n\rmaturity_date\x18\x08 \x01(\t\x12\x32\n\x0etrade_currency\x18\t \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x13\n\x0blistingdate\x18\n \x01(\t\x12\x15\n\rdelistingdate\x18\x0b \x01(\t\x12\x12\n\ncall_price\x18\x0c \x01(\x05\x12\x15\n\rdecimal_price\x18\r \x01(\x05\"K\n\x0f\x46utureBasicInfo\x12\x1c\n\x14pre_settlement_price\x18\x01 \x01(\x03\x12\x1a\n\x12pre_open_interrest\x18\x02 \x01(\x04\"\"\n\x0fOptionBasicInfo\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"+\n\x18\x46oreignExchangeBasicInfo\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"\xfe\x05\n\rQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0c\n\x04high\x18\x03 \x01(\x03\x12\x0b\n\x03low\x18\x04 \x01(\x03\x12\r\n\x05\x63lose\x18\x05 \x01(\x03\x12\x0c\n\x04last\x18\x06 \x01(\x03\x12\x0e\n\x06normal\x18\x07 \x01(\x03\x12\x10\n\x08turnover\x18\x08 \x01(\x03\x12\x0e\n\x06volume\x18\t \x01(\x04\x12\x0f\n\x07\x61verage\x18\n \x01(\x03\x12\x11\n\trise_fall\x18\x0b \x01(\x12\x12\x11\n\tr_f_ratio\x18\x0c \x01(\x12\x12\x16\n\x0e\x64\x61ily_increase\x18\r \x01(\x03\x12\x1a\n\x12source_update_time\x18\x0f \x01(\x04\x12+\n\x05stock\x18\x11 \x01(\x0b\x32\x1a.eddid.quote.StockSnapshotH\x00\x12-\n\x06\x66uture\x18\x12 \x01(\x0b\x32\x1b.eddid.quote.FutureSnapshotH\x00\x12*\n\x03opt\x18\x13 \x01(\x0b\x32\x1b.eddid.quote.OptionSnapshotH\x00\x12\x36\n\x06\x66orexs\x18\x14 \x01(\x0b\x32$.eddid.quote.ForeignExchangeSnapshotH\x00\x12/\n\x07warrant\x18\x15 \x01(\x0b\x32\x1c.eddid.quote.WarrantSnapshotH\x00\x12)\n\x04\x63\x62\x62\x63\x18\x16 \x01(\x0b\x32\x19.eddid.quote.CBBCSnapshotH\x00\x12+\n\x05inner\x18\x17 \x01(\x0b\x32\x1a.eddid.quote.InnerSnapshotH\x00\x12)\n\x04trst\x18\x18 \x01(\x0b\x32\x19.eddid.quote.TrstSnapshotH\x00\x12+\n\x05index\x18\x19 \x01(\x0b\x32\x1a.eddid.quote.IndexSnapshotH\x00\x12.\n\tdata_type\x18\x32 \x01(\x0e\x32\x1b.eddid.quote.SnapshotExTypeB\x06\n\x04\x64\x61ta\"\x9c\x01\n\x17GreyMarketQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04last\x18\x02 \x01(\x03\x12\x11\n\trise_fall\x18\x03 \x01(\x12\x12\x11\n\tr_f_ratio\x18\x04 \x01(\x12\x12\x1a\n\x12source_update_time\x18\x05 \x01(\x04\"\xf3\x02\n\x16NewsharesQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04last\x18\x02 \x01(\x03\x12\x1d\n\x15grey_market_rise_fall\x18\x03 \x01(\x03\x12\x1d\n\x15grey_market_r_f_ratio\x18\x04 \x01(\x03\x12\x17\n\x0f\x66irst_rise_fall\x18\x05 \x01(\x03\x12\x17\n\x0f\x66irst_r_f_ratio\x18\x06 \x01(\x03\x12\x1f\n\x17highest20days_rise_fall\x18\x07 \x01(\x03\x12\x1f\n\x17highest20days_r_f_ratio\x18\x08 \x01(\x03\x12$\n\x1ctophighestfromyesr_rise_fall\x18\t \x01(\x03\x12$\n\x1ctophighestfromyesr_r_f_ratio\x18\n \x01(\x03\x12\x1a\n\x12source_update_time\x18\x0b \x01(\x04\"\xcc\x01\n\rIndexSnapshot\x12\x13\n\x0bindexstatus\x18\x01 \x01(\t\x12\x10\n\x08preclose\x18\x02 \x01(\x03\x12\x10\n\x08\x65\x61svalue\x18\x03 \x01(\x04\x12\x11\n\tamplitude\x18\x04 \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x05 \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\x06 \x01(\x03\x12\x0f\n\x07\x61\x64vance\x18\x07 \x01(\x05\x12\x0f\n\x07\x64\x65\x63line\x18\x08 \x01(\x05\x12\x12\n\nflat_flate\x18\t \x01(\x05\"\x86\x03\n\rStockSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x11\n\tamplitude\x18\x02 \x01(\x12\x12\x11\n\tcommittee\x18\x03 \x01(\x12\x12\x16\n\x0equantity_ratio\x18\x04 \x01(\x12\x12\x18\n\x10total_market_val\x18\x05 \x01(\x03\x12\x1b\n\x13\x63ircular_market_val\x18\x06 \x01(\x03\x12\x15\n\rturnover_rate\x18\x07 \x01(\x03\x12\x10\n\x08pe_ratio\x18\x08 \x01(\x12\x12\x14\n\x0cpe_ttm_ratio\x18\t \x01(\x12\x12\x10\n\x08pb_ratio\x18\n \x01(\x12\x12\x14\n\x0c\x64ividend_ttm\x18\x0b \x01(\x05\x12\x14\n\x0c\x64ividend_lfy\x18\x0c \x01(\x05\x12\x1a\n\x12\x64ividend_ratio_ttm\x18\r \x01(\x12\x12\x1a\n\x12\x64ividend_ratio_lfy\x18\x0e \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x0f \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\x10 \x01(\x03\"B\n\x0e\x46utureSnapshot\x12\x16\n\x0eopen_interrest\x18\x01 \x01(\x04\x12\x18\n\x10settlement_price\x18\x02 \x01(\x03\"!\n\x0eOptionSnapshot\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"*\n\x17\x46oreignExchangeSnapshot\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"\x8f\x03\n\x0fWarrantSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x13\n\x0bstrikeprice\x18\x02 \x01(\x03\x12\x0f\n\x07premium\x18\x03 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x04 \x01(\x12\x12\x12\n\nmake_point\x18\x05 \x01(\x05\x12\x1a\n\x12\x65\x66\x66\x65\x63tive_leverage\x18\x06 \x01(\x05\x12\x18\n\x10\x63onversion_price\x18\x07 \x01(\x03\x12.\n\x0c\x63\x61llput_type\x18\x08 \x01(\x0e\x32\x18.eddid.quote.CallPutType\x12\x18\n\x10\x63onversion_ratio\x18\n \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x0b \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x0c \x01(\x03\x12\x1a\n\x12implied_volatility\x18\r \x01(\x03\x12\x13\n\x0bhedge_value\x18\x0e \x01(\x03\x12.\n\x0cwarrent_type\x18\x10 \x01(\x0e\x32\x18.eddid.quote.WarrentType\"\xda\x02\n\x0c\x43\x42\x42\x43Snapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x13\n\x0bstrikeprice\x18\x02 \x01(\x03\x12\x0f\n\x07premium\x18\x03 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x04 \x01(\x12\x12\x12\n\nmake_point\x18\x05 \x01(\x05\x12\x17\n\x0f\x64ist_call_price\x18\x08 \x01(\x05\x12\x1a\n\x12\x64ist_decimal_price\x18\t \x01(\x05\x12\x18\n\x10\x63onversion_price\x18\n \x01(\x03\x12.\n\x0c\x63\x61llput_type\x18\x0b \x01(\x0e\x32\x18.eddid.quote.CallPutType\x12\x18\n\x10\x63onversion_ratio\x18\r \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x0e \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x0f \x01(\x03\x12\x14\n\x0cin_out_price\x18\x10 \x01(\x03\"\x96\x03\n\rInnerSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x0f\n\x07premium\x18\x02 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x03 \x01(\x12\x12\x18\n\x10\x63onversion_ratio\x18\x05 \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x06 \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x07 \x01(\x03\x12\x1a\n\x12\x65\x66\x66\x65\x63tive_leverage\x18\x08 \x01(\x05\x12\x1a\n\x12implied_volatility\x18\t \x01(\x03\x12\x13\n\x0bhedge_value\x18\n \x01(\x03\x12\x12\n\nin_out_ner\x18\x0b \x01(\x03\x12\x13\n\x0bupper_price\x18\x0c \x01(\x03\x12\x13\n\x0blower_price\x18\r \x01(\x03\x12\x1c\n\x14\x64istance_upper_price\x18\x0e \x01(\x12\x12\x1c\n\x14\x64istance_lower_price\x18\x0f \x01(\x12\x12\x18\n\x10potential_profit\x18\x10 \x01(\x12\x12\x16\n\x0epotential_loss\x18\x11 \x01(\x12\"\x9e\x02\n\x0cTrstSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x11\n\tamplitude\x18\x02 \x01(\x12\x12\x11\n\tcommittee\x18\x03 \x01(\x12\x12\x16\n\x0equantity_ratio\x18\x04 \x01(\x12\x12\x15\n\rturnover_rate\x18\x05 \x01(\x03\x12\x14\n\x0c\x64ividend_ttm\x18\x06 \x01(\x05\x12\x1a\n\x12\x64ividend_ratio_ttm\x18\x07 \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x08 \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\t \x01(\x03\x12\x10\n\x08\x65y_ratio\x18\n \x01(\x12\x12\x11\n\tnet_asset\x18\x0b \x01(\x03\x12\x15\n\rexpense_price\x18\r \x01(\x12\"4\n\x08\x42rokerBS\x12\x13\n\x0b\x62roker_code\x18\x01 \x01(\t\x12\x13\n\x0b\x62roker_name\x18\x02 \x01(\t\"A\n\x06\x42roker\x12\x10\n\x08position\x18\x01 \x01(\x05\x12%\n\x06\x62rokes\x18\x02 \x03(\x0b\x32\x15.eddid.quote.BrokerBS\"\x9e\x01\n\x0e\x42rokerSnapshot\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12&\n\tqueue_buy\x18\x02 \x03(\x0b\x32\x13.eddid.quote.Broker\x12\'\n\nqueue_sell\x18\x03 \x03(\x0b\x32\x13.eddid.quote.Broker\x12\x15\n\rtimestamp_buy\x18\x04 \x01(\x04\x12\x16\n\x0etimestamp_sell\x18\x05 \x01(\x04\"\x8f\x01\n\x12QuoteOrderBookData\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12*\n\norder_book\x18\x02 \x01(\x0b\x32\x16.eddid.quote.OrderBook\x12\x1a\n\x12source_update_time\x18\x03 \x01(\x04\"D\n\x0eOrderBookEntry\x12\r\n\x05price\x18\x01 \x01(\x03\x12\x0e\n\x06volume\x18\x02 \x01(\x04\x12\x13\n\x0border_count\x18\x03 \x01(\x05\"\x8d\x01\n\tOrderBook\x12\x0f\n\x07\x61sk_vol\x18\x01 \x01(\x03\x12\x0f\n\x07\x62id_vol\x18\x02 \x01(\x03\x12.\n\tasks_data\x18\x03 \x03(\x0b\x32\x1b.eddid.quote.OrderBookEntry\x12.\n\tbids_data\x18\x04 \x03(\x0b\x32\x1b.eddid.quote.OrderBookEntry\"\x8b\x01\n\x0eQuoteTradeData\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12*\n\ntrade_tick\x18\x02 \x01(\x0b\x32\x16.eddid.quote.TradeTick\x12\x1a\n\x12source_update_time\x18\x03 \x01(\x04\"\xfe\x01\n\tTradeTick\x12\r\n\x05price\x18\x01 \x01(\x03\x12\x0b\n\x03vol\x18\x02 \x01(\x04\x12\x0c\n\x04time\x18\x03 \x01(\x04\x12)\n\x06\x64irect\x18\x04 \x01(\x0e\x32\x19.eddid.common.TicksDirect\x12,\n\x05stock\x18\x05 \x01(\x0e\x32\x1b.eddid.quote.StockTradeTypeH\x00\x12.\n\x06\x66uture\x18\x06 \x01(\x0e\x32\x1c.eddid.quote.FutureTradeTypeH\x00\x12\x31\n\x08us_stock\x18\x07 \x01(\x0e\x32\x1d.eddid.quote.USStockTradeTypeH\x00\x42\x0b\n\ttradeType\"\xa8\x01\n\x1aSubscribeBrokerSnapshotReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd3\x01\n\x1aSubscribeBrokerSnapshotRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xaa\x01\n\x1cUnSubscribeBrokerSnapshotReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd5\x01\n\x1cUnSubscribeBrokerSnapshotRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"{\n\x12PushBrokerSnapshot\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12)\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1b.eddid.quote.BrokerSnapshot\"\xf7\x02\n\x14QueryTradeTickMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\t \x01(\x04\x12\x34\n\x0esub_quote_type\x18\n \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\x12\x35\n\x10req_hisdata_type\x18\x0b \x01(\x0e\x32\x1b.eddid.quote.ReqHisDataType\"\xa3\x01\n\x15SubscribeTradeTickReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xce\x01\n\x15SubscribeTradeTickRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xa5\x01\n\x17UnsubscribeTradeTickReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd0\x01\n\x17UnsubscribeTradeTickRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xf7\x01\n\x14QueryTradeTickMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12(\n\x08tickData\x18\x04 \x03(\x0b\x32\x16.eddid.quote.TradeTick\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x06 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x07 \x01(\x04\"\xa4\x01\n\x10QueryTradeDayReq\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.eddid.quote.QueryTradeDayType\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x12\n\nstart_date\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_date\x18\x04 \x01(\r\x12\x0e\n\x06\x61\x64\x64\x65nd\x18\x05 \x01(\x05\"F\n\x08TradeDay\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\r\x12,\n\x05times\x18\x02 \x03(\x0b\x32\x1d.eddid.common.TradingTimespin\"\x91\x01\n\x10QueryTradeDayRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12#\n\x04\x64\x61ys\x18\x03 \x03(\x0b\x32\x15.eddid.quote.TradeDay\"\xa4\x01\n\x10\x45xchangeRateInfo\x12\x32\n\x0elocal_currency\x18\x01 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x14\n\x0c\x65xchangeRate\x18\x02 \x01(\x04\x12\x33\n\x0ftarget_currency\x18\x03 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x11\n\tprecision\x18\x04 \x01(\r\"J\n\x13QueryExchageRateReq\x12\x33\n\x0ftarget_currency\x18\x01 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\"n\n\x13QueryExchageRateRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12+\n\x04rate\x18\x02 \x03(\x0b\x32\x1d.eddid.quote.ExchangeRateInfo\"u\n\x11QueryInstrSortReq\x12-\n\x04type\x18\x01 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\x31\n\x03\x63on\x18\x02 \x01(\x0e\x32$.eddid.quote.QueryInstrSortCondition\"F\n\x08SortInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"e\n\x11QueryInstrSortRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x05infos\x18\x02 \x03(\x0b\x32\x15.eddid.quote.SortInfo\"[\n\x16QueryTradeStatusMsgReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x13\n\x0bproductList\x18\x02 \x03(\t\"\x9a\x01\n\x0fTradeStatusData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x30\n\x06status\x18\x03 \x01(\x0e\x32 .eddid.common.ProductTradeStatus\x12\x12\n\ntime_stamp\x18\x04 \x01(\x04\"p\n\x16QueryTradeStatusMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12*\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x1c.eddid.quote.TradeStatusData\"\x18\n\x07\x41uthReq\x12\r\n\x05token\x18\x01 \x01(\t\"{\n\x07\x41uthRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x01(\t\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x03\x12\r\n\x05scope\x18\x05 \x01(\t\x12\x0e\n\x06\x63ustom\x18\x06 \x01(\t\"\xd6\x01\n\tPlateInfo\x12\x12\n\nplate_name\x18\x01 \x01(\t\x12\x17\n\x0fmain_net_inflow\x18\x02 \x01(\x03\x12\x13\n\x0bp_r_f_ratio\x18\x03 \x01(\x12\x12\x11\n\tl_r_stock\x18\x04 \x01(\t\x12\x1b\n\x13l_r_stock_r_f_ratio\x18\x05 \x01(\x12\x12\x15\n\rr_stock_count\x18\x06 \x01(\x05\x12\x15\n\rf_stock_count\x18\x07 \x01(\x05\x12\x13\n\x0bmain_inflow\x18\x08 \x01(\x03\x12\x14\n\x0cmain_outflow\x18\t \x01(\x03\"o\n\x0c\x42reakNewHigh\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x11\n\tlastprice\x18\x03 \x01(\x03\x12\x0e\n\x06\x63hange\x18\x04 \x01(\x11\x12\x1c\n\x14\x62reak_new_high_price\x18\x05 \x01(\x03\"\xb0\x01\n\x0eListedNewShare\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x11\n\tlastprice\x18\x03 \x01(\x03\x12\x12\n\nissueprice\x18\x04 \x01(\x03\x12\x14\n\x0c\x66irstday_chg\x18\x05 \x01(\x11\x12\x1a\n\x12\x63hange_rate_20_day\x18\x06 \x01(\x11\x12\x0f\n\x07ytd_chg\x18\x07 \x01(\x11\x12\x14\n\x0cListing_date\x18\x08 \x01(\t\"\x94\x02\n\x0bRangeChange\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x15\n\rfive_mins_chg\x18\x03 \x01(\x11\x12\x11\n\ttoday_chg\x18\x04 \x01(\x11\x12\x19\n\x11\x63hange_rate_5_day\x18\x05 \x01(\x11\x12\x1a\n\x12\x63hange_rate_10_day\x18\x06 \x01(\x11\x12\x1a\n\x12\x63hange_rate_20_day\x18\x07 \x01(\x11\x12\x1a\n\x12\x63hange_rate_60_day\x18\x08 \x01(\x11\x12\x1b\n\x13\x63hange_rate_120_day\x18\t \x01(\x11\x12\x1b\n\x13\x63hange_rate_250_day\x18\n \x01(\x11\x12\x12\n\nchange_ytd\x18\x0b \x01(\x11\"{\n\x1bQueryListedNewSharedListRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x30\n\x05infos\x18\x02 \x03(\x0b\x32!.eddid.common.ListedNewSharedInfo\"q\n\x16QueryGreyMarketInfoRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12+\n\x05infos\x18\x02 \x03(\x0b\x32\x1c.eddid.common.GreyMarketInfo*,\n\x0cProtoVersion\x12\r\n\tVERSION_0\x10\x00\x12\r\n\tVERSION_1\x10\x01\x42\x02P\x01\x62\x06proto3'
+  serialized_pb=b'\n\x13quote_msg_def.proto\x12\x0b\x65\x64\x64id.quote\x1a\x15\x63ommon_type_def.proto\x1a\x14quote_type_def.proto\x1a\x14\x63ommon_msg_def.proto\"\x80\x01\n\x0fQuoteMsgCarrier\x12\n\n\x02id\x18\x01 \x01(\x04\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.eddid.quote.QuoteMsgType\x12*\n\x07version\x18\x03 \x01(\x0e\x32\x19.eddid.quote.ProtoVersion\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\"E\n\tRetResult\x12\'\n\x08ret_code\x18\x01 \x01(\x0e\x32\x15.eddid.common.RetCode\x12\x0f\n\x07ret_msg\x18\x02 \x01(\t\"^\n\x08LoginReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x12\n\nauto_token\x18\x02 \x01(\t\x12\x11\n\tfrequence\x18\x03 \x01(\r\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\"\x98\x01\n\x08LoginRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"8\n\tLogoutReq\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\"\x99\x01\n\tLogoutRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cSyncInstrReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbc\x01\n\x0cSyncInstrRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x31\n\x0binstruments\x18\x02 \x03(\x0b\x32\x1c.eddid.common.InstrumentInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"+\n\x0fRecoveryDataReq\x12\x18\n\x10start_time_stamp\x18\x01 \x01(\x04\"\xd7\x03\n\x0fRecoveryDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12>\n\x15\x62roker_snapshot_infos\x18\x02 \x03(\x0b\x32\x1f.eddid.quote.PushBrokerSnapshot\x12\x30\n\x0b\x62\x61sic_infos\x18\x03 \x03(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12\x32\n\x0esnapshot_Infos\x18\x04 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x38\n\x0forderbook_Infos\x18\x05 \x03(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\x12\x34\n\x0ftradetick_Infos\x18\x06 \x03(\x0b\x32\x1b.eddid.quote.QuoteTradeData\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\x12\x33\n\x0f\x65quiprice_infos\x18\n \x03(\x0b\x32\x1a.eddid.quote.EquipriceData\"\x81\x02\n\x15QueryIndexShareMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x11\n\tindexCode\x18\x03 \x01(\t\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xb1\x02\n\x15QueryIndexShareMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x11\n\tindexCode\x18\x03 \x01(\t\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x92\x02\n\x14QueryPlateSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x03 \x01(\x0e\x32\x17.eddid.common.PlateType\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc2\x02\n\x14QueryPlateSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x03 \x01(\x0e\x32\x17.eddid.common.PlateType\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\xee\x01\n\x17QueryExchangeSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\r\n\x05\x63ount\x18\x04 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x06 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd4\x02\n\x17QueryExchangeSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12)\n\x04info\x18\x04 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x05 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x99\x02\n\x14QueryStockSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xff\x02\n\x14QueryStockSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x04zone\x18\x02 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12)\n\x04info\x18\x05 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x06 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\"\xa8\x02\n\x1bQueryShareWarrantSortMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\r\n\x05\x63ount\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x8e\x03\n\x1bQueryShareWarrantSortMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x32\n\tsortFiled\x18\x03 \x01(\x0e\x32\x1f.eddid.common.SnapshotSortField\x12\x34\n\x0bsort_direct\x18\x04 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12)\n\x04info\x18\x05 \x03(\x0b\x32\x1b.eddid.common.InstrBaseInfo\x12\x31\n\rsnapshot_data\x18\x06 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x07 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x08 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\t \x01(\x04\"{\n\x1aQueryIndexSharedListMsgReq\x12\r\n\x05index\x18\x01 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc5\x01\n\x1aQueryIndexSharedListMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x05infos\x18\x02 \x03(\x0b\x32\x1d.eddid.common.IndexSharedInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"\xbf\x01\n\x1aQueryPlateSharedListMsgReq\x12$\n\x04zone\x18\x01 \x01(\x0e\x32\x16.eddid.common.ZoneType\x12+\n\nplate_type\x18\x02 \x01(\x0e\x32\x17.eddid.common.PlateType\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc5\x01\n\x1aQueryPlateSharedListMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x05infos\x18\x02 \x03(\x0b\x32\x1d.eddid.common.PlateSharedInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cSyncBasicReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbb\x01\n\x0cSyncBasicRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x30\n\x0b\x62\x61sic_infos\x18\x02 \x03(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"g\n\x0bSnapshotReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xbc\x01\n\x0bSnapshotRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x32\n\x0esnapshot_Infos\x18\x02 \x03(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"h\n\x0cOrderbookReq\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SyncInstrMsgType\x12\x11\n\tdate_time\x18\x02 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\xc3\x01\n\x0cOrderbookRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x38\n\x0forderbook_Infos\x18\x02 \x03(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x04 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x05 \x01(\x04\"w\n\x10PushKLineMinData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\xa2\x01\n\x14SubscribeKlineMinReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xcd\x01\n\x14SubscribeKlineMinRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xa4\x01\n\x16UnsubscribeKlineMinReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xcf\x01\n\x16UnsubscribeKlineMinRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\x9f\x01\n\x11StartChartDataReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xdd\x02\n\x11StartChartDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12/\n\nbasic_data\x18\x07 \x01(\x0b\x32\x1b.eddid.quote.QuoteBasicInfo\x12,\n\x08snapshot\x18\x08 \x01(\x0b\x32\x1a.eddid.quote.QuoteSnapshot\x12\x32\n\torderbook\x18\t \x01(\x0b\x32\x1f.eddid.quote.QuoteOrderBookData\"\x9e\x01\n\x10StopChartDataReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xc9\x01\n\x10StopChartDataRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\">\n\x11PushEquipriceData\x12)\n\x05\x65\x44\x61ta\x18\x01 \x03(\x0b\x32\x1a.eddid.quote.EquipriceData\"\\\n\rEquipriceData\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0b\n\x03iep\x18\x02 \x01(\x03\x12\x0b\n\x03iev\x18\x03 \x01(\x04\"m\n\x15SubscribeEquipriceReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x03(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\x92\x01\n\x15SubscribeEquipriceRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"o\n\x17UnsubscribeEquipriceReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x03(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\"\x94\x01\n\x17UnsubscribeEquipriceRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xc2\x02\n\x13QueryKLineMinMsgReq\x12\x15\n\risSubKLineMin\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\t \x01(\x04\x12\x34\n\x0esub_quote_type\x18\n \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xf5\x01\n\x13QueryKLineMinMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12\'\n\x04\x64\x61ta\x18\x07 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\xd9\x01\n\x18QueryFiveDaysKLineMinReq\x12\x15\n\risSubKLineMin\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\r\n\x05start\x18\x04 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x05 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x07 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"d\n\x11OneDayKLineMinMsg\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\x04\x12\x18\n\x10settlement_price\x18\x02 \x01(\x04\x12\'\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataMin\"\x82\x02\n\x18QueryFiveDaysKLineMinRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\x12/\n\x07\x64\x61yData\x18\x07 \x03(\x0b\x32\x1e.eddid.quote.OneDayKLineMinMsg\"\xbe\x01\n\x0cKlineDataMin\x12\x0c\n\x04high\x18\x01 \x01(\x03\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\r\n\x05\x63lose\x18\x04 \x01(\x03\x12\x0f\n\x07\x61verage\x18\x05 \x01(\x03\x12\x0b\n\x03vol\x18\x06 \x01(\x04\x12\x11\n\trise_fall\x18\x07 \x01(\x12\x12\x11\n\tr_f_ratio\x18\x08 \x01(\x12\x12\x18\n\x10update_date_time\x18\t \x01(\x04\x12\x18\n\x10settlement_price\x18\n \x01(\x04\"\xef\x02\n\x10QueryKLineMsgReq\x12\x12\n\nisSubKLine\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x31\n\x0bperoid_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12,\n\x04type\x18\x05 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x06 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x07 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x08 \x01(\x04\x12\x0b\n\x03vol\x18\t \x01(\x04\x12\x18\n\x10start_time_stamp\x18\n \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x0b \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xa3\x02\n\x10QueryKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x31\n\x0bperoid_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x05 \x03(\x0b\x32\x16.eddid.quote.KlineData\x12\x18\n\x10start_time_stamp\x18\x06 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x07 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x08 \x01(\x04\"\x86\x03\n\tKlineData\x12\x0c\n\x04high\x18\x01 \x01(\x03\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\r\n\x05\x63lose\x18\x04 \x01(\x03\x12\x10\n\x08\x63urr_vol\x18\x05 \x01(\x04\x12\x0b\n\x03vol\x18\x06 \x01(\x04\x12\x15\n\ropen_interest\x18\x07 \x01(\x04\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x03\x12\x11\n\trise_fall\x18\t \x01(\x12\x12\x11\n\tr_f_ratio\x18\n \x01(\x12\x12\x18\n\x10settlement_price\x18\x0b \x01(\x03\x12\x16\n\x0epre_settlement\x18\x0c \x01(\x03\x12\x11\n\tpre_close\x18\r \x01(\x03\x12\x18\n\x10update_date_time\x18\x0e \x01(\x04\x12\x31\n\x0bperoid_type\x18\x0f \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x10\n\x08KLineKey\x18\x10 \x01(\x04\x12\x14\n\x0ctotal_amount\x18\x11 \x01(\x03\x12\x1b\n\x13incr_open_interrest\x18\x12 \x01(\x03\"\x8b\x02\n\x10QueryKLineHisReq\x12,\n\x08\x65xchange\x18\x01 \x03(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\"\xa4\x01\n\x0cKlineDataHis\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x04 \x03(\x0b\x32\x16.eddid.quote.KlineData\"\x99\x01\n\x10QueryKLineHisRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12+\n\x08kDataHis\x18\x03 \x03(\x0b\x32\x19.eddid.quote.KlineDataHis\"\xa5\x01\n\rPushKLineData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x31\n\x0bperoid_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12%\n\x05kData\x18\x04 \x01(\x0b\x32\x16.eddid.quote.KlineData\"\xf1\x01\n\x0fQueryTickMsgReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\n \x01(\x04\"\x80\x02\n\x08TickData\x12\x0c\n\x04last\x18\x01 \x01(\x03\x12\x0c\n\x04high\x18\x02 \x01(\x03\x12\x0b\n\x03low\x18\x03 \x01(\x03\x12\x10\n\x08turnover\x18\x04 \x01(\x03\x12\x0f\n\x07\x61verage\x18\x05 \x01(\x03\x12\x0e\n\x06volume\x18\x06 \x01(\x04\x12\x15\n\ropen_interest\x18\x07 \x01(\x04\x12\x11\n\tbuy_price\x18\x08 \x01(\x03\x12\x12\n\nbuy_volume\x18\t \x01(\x05\x12\x12\n\nsell_price\x18\n \x01(\x03\x12\x13\n\x0bsell_volume\x18\x0b \x01(\x04\x12\x17\n\x0fupdate_datetime\x18\x0c \x01(\x04\x12\x18\n\x10last_update_mill\x18\r \x01(\r\"\xf1\x01\n\x0fQueryTickMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\'\n\x08tickData\x18\x04 \x03(\x0b\x32\x15.eddid.quote.TickData\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x06 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x07 \x01(\x04\"s\n\x0cPushTickData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\'\n\x08tickData\x18\x03 \x01(\x0b\x32\x15.eddid.quote.TickData\"\x81\x02\n\x14SubscribeQuoteMsgReq\x12/\n\x08sub_type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x02 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x36\n\tbase_info\x18\x03 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"j\n\x16SubscribeInstrBaseInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\"\xf4\x01\n\x14SubscribeQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12/\n\x08sub_type\x18\x02 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\x83\x02\n\x16UnsubscribeQuoteMsgReq\x12/\n\x08sub_type\x18\x01 \x01(\x0e\x32\x1d.eddid.quote.SubscribeMsgType\x12\x30\n\nchild_type\x18\x02 \x01(\x0e\x32\x1c.eddid.quote.SubChildMsgType\x12\x36\n\tbase_info\x18\x03 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x93\x01\n\x16UnsubscribeQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa8\x01\n\x1eSubscribeGreyMarketQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9b\x01\n\x1eSubscribeGreyMarketQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xaa\x01\n UnsubscribeGreyMarketQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9d\x01\n UnsubscribeGreyMarketQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa7\x01\n\x1dSubscribeNewSharesQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9a\x01\n\x1dSubscribeNewSharesQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xa9\x01\n\x1fUnsubscribeNewSharesQuoteMsgReq\x12\x36\n\tbase_info\x18\x01 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x03 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x9c\x01\n\x1fUnsubscribeNewSharesQuoteMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xd1\x01\n\x14SubscribeKLineMsgReq\x12\x31\n\x0bperoid_type\x18\x01 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x36\n\tbase_info\x18\x02 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x91\x01\n\x14SubscribeKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xd3\x01\n\x16UnSubscribeKLineMsgReq\x12\x31\n\x0bperoid_type\x18\x01 \x01(\x0e\x32\x1c.eddid.quote.KLinePeriodType\x12\x36\n\tbase_info\x18\x02 \x03(\x0b\x32#.eddid.quote.SubscribeInstrBaseInfo\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\x93\x01\n\x16UnSubscribeKLineMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x02 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x03 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x04 \x01(\x04\"\xef\x01\n\tQuoteOpen\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12+\n\x04init\x18\x02 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12-\n\x06\x61\x63tion\x18\x03 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12*\n\x03\x64\x61y\x18\x04 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\x12,\n\x05night\x18\x05 \x01(\x0b\x32\x1d.eddid.common.TradingTimespin\"\xf0\x01\n\x0fQuoteCommonInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x14\n\x0cproduct_code\x18\x02 \x01(\t\x12\x12\n\ninstr_code\x18\x03 \x01(\t\x12\x11\n\tprecision\x18\x04 \x01(\r\x12\x1b\n\x13\x63ollector_recv_time\x18\x05 \x01(\x04\x12\x1b\n\x13\x63ollector_send_time\x18\x06 \x01(\x04\x12\x1b\n\x13publisher_recv_time\x18\x07 \x01(\x04\x12\x1b\n\x13publisher_send_time\x18\x08 \x01(\x04\"\xdf\x04\n\x0eQuoteBasicInfo\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\'\n\x04type\x18\x02 \x01(\x0e\x32\x19.eddid.common.ProductType\x12\x13\n\x0btradind_day\x18\x03 \x01(\t\x12\x12\n\ninstr_name\x18\x04 \x01(\t\x12\x15\n\rinstr_en_name\x18\x05 \x01(\t\x12\x16\n\x0e\x65xchange_instr\x18\x06 \x01(\t\x12\x31\n\rmarket_status\x18\x07 \x01(\x0e\x32\x1a.eddid.common.MarketStatus\x12\x33\n\x0cinstr_status\x18\x08 \x01(\x0e\x32\x1d.eddid.common.InstrStatusType\x12\x13\n\x0bupper_limit\x18\n \x01(\x03\x12\x13\n\x0blower_limit\x18\x0b \x01(\x03\x12\x11\n\tpre_close\x18\x0c \x01(\x03\x12\x0e\n\x06source\x18\r \x01(\t\x12\x18\n\x10update_timestamp\x18\x0e \x01(\x04\x12,\n\x05stock\x18\x0f \x01(\x0b\x32\x1b.eddid.quote.StockBasicInfoH\x00\x12.\n\x06\x66uture\x18\x10 \x01(\x0b\x32\x1c.eddid.quote.FutureBasicInfoH\x00\x12+\n\x03opt\x18\x11 \x01(\x0b\x32\x1c.eddid.quote.OptionBasicInfoH\x00\x12\x37\n\x06\x66orexs\x18\x12 \x01(\x0b\x32%.eddid.quote.ForeignExchangeBasicInfoH\x00\x42\x06\n\x04\x64\x61ta\"\xc4\x02\n\x0eStockBasicInfo\x12\x10\n\x08lot_size\x18\x01 \x01(\r\x12\x15\n\rissued_shares\x18\x02 \x01(\x03\x12\x1a\n\x12outstanding_shares\x18\x03 \x01(\x03\x12\x0f\n\x07\x63\x61sflag\x18\x04 \x01(\t\x12\x0f\n\x07vcmflag\x18\x05 \x01(\t\x12\x14\n\x0clasttradeday\x18\x06 \x01(\t\x12\x13\n\x0brelease_day\x18\x07 \x01(\t\x12\x15\n\rmaturity_date\x18\x08 \x01(\t\x12\x32\n\x0etrade_currency\x18\t \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x13\n\x0blistingdate\x18\n \x01(\t\x12\x15\n\rdelistingdate\x18\x0b \x01(\t\x12\x12\n\ncall_price\x18\x0c \x01(\x05\x12\x15\n\rdecimal_price\x18\r \x01(\x05\"K\n\x0f\x46utureBasicInfo\x12\x1c\n\x14pre_settlement_price\x18\x01 \x01(\x03\x12\x1a\n\x12pre_open_interrest\x18\x02 \x01(\x04\"\"\n\x0fOptionBasicInfo\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"+\n\x18\x46oreignExchangeBasicInfo\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"\xfe\x05\n\rQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04open\x18\x02 \x01(\x03\x12\x0c\n\x04high\x18\x03 \x01(\x03\x12\x0b\n\x03low\x18\x04 \x01(\x03\x12\r\n\x05\x63lose\x18\x05 \x01(\x03\x12\x0c\n\x04last\x18\x06 \x01(\x03\x12\x0e\n\x06normal\x18\x07 \x01(\x03\x12\x10\n\x08turnover\x18\x08 \x01(\x03\x12\x0e\n\x06volume\x18\t \x01(\x04\x12\x0f\n\x07\x61verage\x18\n \x01(\x03\x12\x11\n\trise_fall\x18\x0b \x01(\x12\x12\x11\n\tr_f_ratio\x18\x0c \x01(\x12\x12\x16\n\x0e\x64\x61ily_increase\x18\r \x01(\x03\x12\x1a\n\x12source_update_time\x18\x0f \x01(\x04\x12+\n\x05stock\x18\x11 \x01(\x0b\x32\x1a.eddid.quote.StockSnapshotH\x00\x12-\n\x06\x66uture\x18\x12 \x01(\x0b\x32\x1b.eddid.quote.FutureSnapshotH\x00\x12*\n\x03opt\x18\x13 \x01(\x0b\x32\x1b.eddid.quote.OptionSnapshotH\x00\x12\x36\n\x06\x66orexs\x18\x14 \x01(\x0b\x32$.eddid.quote.ForeignExchangeSnapshotH\x00\x12/\n\x07warrant\x18\x15 \x01(\x0b\x32\x1c.eddid.quote.WarrantSnapshotH\x00\x12)\n\x04\x63\x62\x62\x63\x18\x16 \x01(\x0b\x32\x19.eddid.quote.CBBCSnapshotH\x00\x12+\n\x05inner\x18\x17 \x01(\x0b\x32\x1a.eddid.quote.InnerSnapshotH\x00\x12)\n\x04trst\x18\x18 \x01(\x0b\x32\x19.eddid.quote.TrstSnapshotH\x00\x12+\n\x05index\x18\x19 \x01(\x0b\x32\x1a.eddid.quote.IndexSnapshotH\x00\x12.\n\tdata_type\x18\x32 \x01(\x0e\x32\x1b.eddid.quote.SnapshotExTypeB\x06\n\x04\x64\x61ta\"\x9c\x01\n\x17GreyMarketQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04last\x18\x02 \x01(\x03\x12\x11\n\trise_fall\x18\x03 \x01(\x12\x12\x11\n\tr_f_ratio\x18\x04 \x01(\x12\x12\x1a\n\x12source_update_time\x18\x05 \x01(\x04\"\xf3\x02\n\x16NewsharesQuoteSnapshot\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12\x0c\n\x04last\x18\x02 \x01(\x03\x12\x1d\n\x15grey_market_rise_fall\x18\x03 \x01(\x03\x12\x1d\n\x15grey_market_r_f_ratio\x18\x04 \x01(\x03\x12\x17\n\x0f\x66irst_rise_fall\x18\x05 \x01(\x03\x12\x17\n\x0f\x66irst_r_f_ratio\x18\x06 \x01(\x03\x12\x1f\n\x17highest20days_rise_fall\x18\x07 \x01(\x03\x12\x1f\n\x17highest20days_r_f_ratio\x18\x08 \x01(\x03\x12$\n\x1ctophighestfromyesr_rise_fall\x18\t \x01(\x03\x12$\n\x1ctophighestfromyesr_r_f_ratio\x18\n \x01(\x03\x12\x1a\n\x12source_update_time\x18\x0b \x01(\x04\"\xcc\x01\n\rIndexSnapshot\x12\x13\n\x0bindexstatus\x18\x01 \x01(\t\x12\x10\n\x08preclose\x18\x02 \x01(\x03\x12\x10\n\x08\x65\x61svalue\x18\x03 \x01(\x04\x12\x11\n\tamplitude\x18\x04 \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x05 \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\x06 \x01(\x03\x12\x0f\n\x07\x61\x64vance\x18\x07 \x01(\x05\x12\x0f\n\x07\x64\x65\x63line\x18\x08 \x01(\x05\x12\x12\n\nflat_flate\x18\t \x01(\x05\"\x86\x03\n\rStockSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x11\n\tamplitude\x18\x02 \x01(\x12\x12\x11\n\tcommittee\x18\x03 \x01(\x12\x12\x16\n\x0equantity_ratio\x18\x04 \x01(\x12\x12\x18\n\x10total_market_val\x18\x05 \x01(\x03\x12\x1b\n\x13\x63ircular_market_val\x18\x06 \x01(\x03\x12\x15\n\rturnover_rate\x18\x07 \x01(\x03\x12\x10\n\x08pe_ratio\x18\x08 \x01(\x12\x12\x14\n\x0cpe_ttm_ratio\x18\t \x01(\x12\x12\x10\n\x08pb_ratio\x18\n \x01(\x12\x12\x14\n\x0c\x64ividend_ttm\x18\x0b \x01(\x05\x12\x14\n\x0c\x64ividend_lfy\x18\x0c \x01(\x05\x12\x1a\n\x12\x64ividend_ratio_ttm\x18\r \x01(\x12\x12\x1a\n\x12\x64ividend_ratio_lfy\x18\x0e \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x0f \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\x10 \x01(\x03\"B\n\x0e\x46utureSnapshot\x12\x16\n\x0eopen_interrest\x18\x01 \x01(\x04\x12\x18\n\x10settlement_price\x18\x02 \x01(\x03\"!\n\x0eOptionSnapshot\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"*\n\x17\x46oreignExchangeSnapshot\x12\x0f\n\x07reverse\x18\x01 \x01(\r\"\x8f\x03\n\x0fWarrantSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x13\n\x0bstrikeprice\x18\x02 \x01(\x03\x12\x0f\n\x07premium\x18\x03 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x04 \x01(\x12\x12\x12\n\nmake_point\x18\x05 \x01(\x05\x12\x1a\n\x12\x65\x66\x66\x65\x63tive_leverage\x18\x06 \x01(\x05\x12\x18\n\x10\x63onversion_price\x18\x07 \x01(\x03\x12.\n\x0c\x63\x61llput_type\x18\x08 \x01(\x0e\x32\x18.eddid.quote.CallPutType\x12\x18\n\x10\x63onversion_ratio\x18\n \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x0b \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x0c \x01(\x03\x12\x1a\n\x12implied_volatility\x18\r \x01(\x03\x12\x13\n\x0bhedge_value\x18\x0e \x01(\x03\x12.\n\x0cwarrent_type\x18\x10 \x01(\x0e\x32\x18.eddid.quote.WarrentType\"\xda\x02\n\x0c\x43\x42\x42\x43Snapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x13\n\x0bstrikeprice\x18\x02 \x01(\x03\x12\x0f\n\x07premium\x18\x03 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x04 \x01(\x12\x12\x12\n\nmake_point\x18\x05 \x01(\x05\x12\x17\n\x0f\x64ist_call_price\x18\x08 \x01(\x05\x12\x1a\n\x12\x64ist_decimal_price\x18\t \x01(\x05\x12\x18\n\x10\x63onversion_price\x18\n \x01(\x03\x12.\n\x0c\x63\x61llput_type\x18\x0b \x01(\x0e\x32\x18.eddid.quote.CallPutType\x12\x18\n\x10\x63onversion_ratio\x18\r \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x0e \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x0f \x01(\x03\x12\x14\n\x0cin_out_price\x18\x10 \x01(\x03\"\x96\x03\n\rInnerSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x0f\n\x07premium\x18\x02 \x01(\x12\x12\x16\n\x0eleverage_ratio\x18\x03 \x01(\x12\x12\x18\n\x10\x63onversion_ratio\x18\x05 \x01(\x12\x12\x1c\n\x14outstanding_quantity\x18\x06 \x01(\x03\x12\x19\n\x11outstanding_ratio\x18\x07 \x01(\x03\x12\x1a\n\x12\x65\x66\x66\x65\x63tive_leverage\x18\x08 \x01(\x05\x12\x1a\n\x12implied_volatility\x18\t \x01(\x03\x12\x13\n\x0bhedge_value\x18\n \x01(\x03\x12\x12\n\nin_out_ner\x18\x0b \x01(\x03\x12\x13\n\x0bupper_price\x18\x0c \x01(\x03\x12\x13\n\x0blower_price\x18\r \x01(\x03\x12\x1c\n\x14\x64istance_upper_price\x18\x0e \x01(\x12\x12\x1c\n\x14\x64istance_lower_price\x18\x0f \x01(\x12\x12\x18\n\x10potential_profit\x18\x10 \x01(\x12\x12\x16\n\x0epotential_loss\x18\x11 \x01(\x12\"\x9e\x02\n\x0cTrstSnapshot\x12\x10\n\x08preclose\x18\x01 \x01(\x03\x12\x11\n\tamplitude\x18\x02 \x01(\x12\x12\x11\n\tcommittee\x18\x03 \x01(\x12\x12\x16\n\x0equantity_ratio\x18\x04 \x01(\x12\x12\x15\n\rturnover_rate\x18\x05 \x01(\x03\x12\x14\n\x0c\x64ividend_ttm\x18\x06 \x01(\x05\x12\x1a\n\x12\x64ividend_ratio_ttm\x18\x07 \x01(\x12\x12\x1c\n\x14highest52weeks_price\x18\x08 \x01(\x03\x12\x1b\n\x13lowest52weeks_price\x18\t \x01(\x03\x12\x10\n\x08\x65y_ratio\x18\n \x01(\x12\x12\x11\n\tnet_asset\x18\x0b \x01(\x03\x12\x15\n\rexpense_price\x18\r \x01(\x12\"4\n\x08\x42rokerBS\x12\x13\n\x0b\x62roker_code\x18\x01 \x01(\t\x12\x13\n\x0b\x62roker_name\x18\x02 \x01(\t\"A\n\x06\x42roker\x12\x10\n\x08position\x18\x01 \x01(\x05\x12%\n\x06\x62rokes\x18\x02 \x03(\x0b\x32\x15.eddid.quote.BrokerBS\"\x9e\x01\n\x0e\x42rokerSnapshot\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12&\n\tqueue_buy\x18\x02 \x03(\x0b\x32\x13.eddid.quote.Broker\x12\'\n\nqueue_sell\x18\x03 \x03(\x0b\x32\x13.eddid.quote.Broker\x12\x15\n\rtimestamp_buy\x18\x04 \x01(\x04\x12\x16\n\x0etimestamp_sell\x18\x05 \x01(\x04\"\x8f\x01\n\x12QuoteOrderBookData\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12*\n\norder_book\x18\x02 \x01(\x0b\x32\x16.eddid.quote.OrderBook\x12\x1a\n\x12source_update_time\x18\x03 \x01(\x04\"D\n\x0eOrderBookEntry\x12\r\n\x05price\x18\x01 \x01(\x03\x12\x0e\n\x06volume\x18\x02 \x01(\x04\x12\x13\n\x0border_count\x18\x03 \x01(\x05\"\x8d\x01\n\tOrderBook\x12\x0f\n\x07\x61sk_vol\x18\x01 \x01(\x03\x12\x0f\n\x07\x62id_vol\x18\x02 \x01(\x03\x12.\n\tasks_data\x18\x03 \x03(\x0b\x32\x1b.eddid.quote.OrderBookEntry\x12.\n\tbids_data\x18\x04 \x03(\x0b\x32\x1b.eddid.quote.OrderBookEntry\"\x8b\x01\n\x0eQuoteTradeData\x12\x31\n\x0b\x63ommon_info\x18\x01 \x01(\x0b\x32\x1c.eddid.quote.QuoteCommonInfo\x12*\n\ntrade_tick\x18\x02 \x01(\x0b\x32\x16.eddid.quote.TradeTick\x12\x1a\n\x12source_update_time\x18\x03 \x01(\x04\"\xfe\x01\n\tTradeTick\x12\r\n\x05price\x18\x01 \x01(\x03\x12\x0b\n\x03vol\x18\x02 \x01(\x04\x12\x0c\n\x04time\x18\x03 \x01(\x04\x12)\n\x06\x64irect\x18\x04 \x01(\x0e\x32\x19.eddid.common.TicksDirect\x12,\n\x05stock\x18\x05 \x01(\x0e\x32\x1b.eddid.quote.StockTradeTypeH\x00\x12.\n\x06\x66uture\x18\x06 \x01(\x0e\x32\x1c.eddid.quote.FutureTradeTypeH\x00\x12\x31\n\x08us_stock\x18\x07 \x01(\x0e\x32\x1d.eddid.quote.USStockTradeTypeH\x00\x42\x0b\n\ttradeType\"\xa8\x01\n\x1aSubscribeBrokerSnapshotReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd3\x01\n\x1aSubscribeBrokerSnapshotRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xaa\x01\n\x1cUnSubscribeBrokerSnapshotReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd5\x01\n\x1cUnSubscribeBrokerSnapshotRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"{\n\x12PushBrokerSnapshot\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12)\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1b.eddid.quote.BrokerSnapshot\"\xf7\x02\n\x14QueryTradeTickMsgReq\x12\x12\n\nisSubTrade\x18\x01 \x01(\x08\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12,\n\x04type\x18\x04 \x01(\x0e\x32\x1e.eddid.quote.QueryKLineMsgType\x12\x31\n\x06\x64irect\x18\x05 \x01(\x0e\x32!.eddid.quote.QueryKLineDirectType\x12\r\n\x05start\x18\x06 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x07 \x01(\x04\x12\x0b\n\x03vol\x18\x08 \x01(\x04\x12\x18\n\x10start_time_stamp\x18\t \x01(\x04\x12\x34\n\x0esub_quote_type\x18\n \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\x12\x35\n\x10req_hisdata_type\x18\x0b \x01(\x0e\x32\x1b.eddid.quote.ReqHisDataType\"\xa3\x01\n\x15SubscribeTradeTickReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x05 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xce\x01\n\x15SubscribeTradeTickRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xa5\x01\n\x17UnsubscribeTradeTickReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x18\n\x10start_time_stamp\x18\x03 \x01(\x04\x12\x34\n\x0esub_quote_type\x18\x04 \x01(\x0e\x32\x1c.eddid.quote.SubQuoteMsgType\"\xd0\x01\n\x17UnsubscribeTradeTickRsp\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12*\n\nret_result\x18\x03 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x18\n\x10start_time_stamp\x18\x04 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x05 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x06 \x01(\x04\"\xf7\x01\n\x14QueryTradeTickMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12(\n\x08tickData\x18\x04 \x03(\x0b\x32\x16.eddid.quote.TradeTick\x12\x18\n\x10start_time_stamp\x18\x05 \x01(\x04\x12\x1b\n\x13recv_req_time_stamp\x18\x06 \x01(\x04\x12\x16\n\x0ersp_time_stamp\x18\x07 \x01(\x04\"\xa4\x01\n\x10QueryTradeDayReq\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.eddid.quote.QueryTradeDayType\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x12\n\nstart_date\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_date\x18\x04 \x01(\r\x12\x0e\n\x06\x61\x64\x64\x65nd\x18\x05 \x01(\x05\"F\n\x08TradeDay\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\r\x12,\n\x05times\x18\x02 \x03(\x0b\x32\x1d.eddid.common.TradingTimespin\"\x91\x01\n\x10QueryTradeDayRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12,\n\x08\x65xchange\x18\x02 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12#\n\x04\x64\x61ys\x18\x03 \x03(\x0b\x32\x15.eddid.quote.TradeDay\"\xa4\x01\n\x10\x45xchangeRateInfo\x12\x32\n\x0elocal_currency\x18\x01 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x14\n\x0c\x65xchangeRate\x18\x02 \x01(\x04\x12\x33\n\x0ftarget_currency\x18\x03 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\x12\x11\n\tprecision\x18\x04 \x01(\r\"J\n\x13QueryExchageRateReq\x12\x33\n\x0ftarget_currency\x18\x01 \x01(\x0e\x32\x1a.eddid.common.CurrencyType\"n\n\x13QueryExchageRateRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12+\n\x04rate\x18\x02 \x03(\x0b\x32\x1d.eddid.quote.ExchangeRateInfo\"u\n\x11QueryInstrSortReq\x12-\n\x04type\x18\x01 \x01(\x0e\x32\x1f.eddid.quote.QueryInstrSortType\x12\x31\n\x03\x63on\x18\x02 \x01(\x0e\x32$.eddid.quote.QueryInstrSortCondition\"F\n\x08SortInfo\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"e\n\x11QueryInstrSortRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12$\n\x05infos\x18\x02 \x03(\x0b\x32\x15.eddid.quote.SortInfo\"[\n\x16QueryTradeStatusMsgReq\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x13\n\x0bproductList\x18\x02 \x03(\t\"\x9a\x01\n\x0fTradeStatusData\x12,\n\x08\x65xchange\x18\x01 \x01(\x0e\x32\x1a.eddid.common.ExchangeType\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x30\n\x06status\x18\x03 \x01(\x0e\x32 .eddid.common.ProductTradeStatus\x12\x12\n\ntime_stamp\x18\x04 \x01(\x04\"p\n\x16QueryTradeStatusMsgRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12*\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x1c.eddid.quote.TradeStatusData\"\x18\n\x07\x41uthReq\x12\r\n\x05token\x18\x01 \x01(\t\"{\n\x07\x41uthRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x01(\t\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x03\x12\r\n\x05scope\x18\x05 \x01(\t\x12\x0e\n\x06\x63ustom\x18\x06 \x01(\t\"\xd6\x01\n\tPlateInfo\x12\x12\n\nplate_name\x18\x01 \x01(\t\x12\x17\n\x0fmain_net_inflow\x18\x02 \x01(\x03\x12\x13\n\x0bp_r_f_ratio\x18\x03 \x01(\x12\x12\x11\n\tl_r_stock\x18\x04 \x01(\t\x12\x1b\n\x13l_r_stock_r_f_ratio\x18\x05 \x01(\x12\x12\x15\n\rr_stock_count\x18\x06 \x01(\x05\x12\x15\n\rf_stock_count\x18\x07 \x01(\x05\x12\x13\n\x0bmain_inflow\x18\x08 \x01(\x03\x12\x14\n\x0cmain_outflow\x18\t \x01(\x03\"o\n\x0c\x42reakNewHigh\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x11\n\tlastprice\x18\x03 \x01(\x03\x12\x0e\n\x06\x63hange\x18\x04 \x01(\x11\x12\x1c\n\x14\x62reak_new_high_price\x18\x05 \x01(\x03\"\xb0\x01\n\x0eListedNewShare\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x11\n\tlastprice\x18\x03 \x01(\x03\x12\x12\n\nissueprice\x18\x04 \x01(\x03\x12\x14\n\x0c\x66irstday_chg\x18\x05 \x01(\x11\x12\x1a\n\x12\x63hange_rate_20_day\x18\x06 \x01(\x11\x12\x0f\n\x07ytd_chg\x18\x07 \x01(\x11\x12\x14\n\x0cListing_date\x18\x08 \x01(\t\"\x94\x02\n\x0bRangeChange\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x10\n\x08\x63odeName\x18\x02 \x01(\t\x12\x15\n\rfive_mins_chg\x18\x03 \x01(\x11\x12\x11\n\ttoday_chg\x18\x04 \x01(\x11\x12\x19\n\x11\x63hange_rate_5_day\x18\x05 \x01(\x11\x12\x1a\n\x12\x63hange_rate_10_day\x18\x06 \x01(\x11\x12\x1a\n\x12\x63hange_rate_20_day\x18\x07 \x01(\x11\x12\x1a\n\x12\x63hange_rate_60_day\x18\x08 \x01(\x11\x12\x1b\n\x13\x63hange_rate_120_day\x18\t \x01(\x11\x12\x1b\n\x13\x63hange_rate_250_day\x18\n \x01(\x11\x12\x12\n\nchange_ytd\x18\x0b \x01(\x11\"{\n\x1bQueryListedNewSharedListRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12\x30\n\x05infos\x18\x02 \x03(\x0b\x32!.eddid.common.ListedNewSharedInfo\"q\n\x16QueryGreyMarketInfoRsp\x12*\n\nret_result\x18\x01 \x01(\x0b\x32\x16.eddid.quote.RetResult\x12+\n\x05infos\x18\x02 \x03(\x0b\x32\x1c.eddid.common.GreyMarketInfo*,\n\x0cProtoVersion\x12\r\n\tVERSION_0\x10\x00\x12\r\n\tVERSION_1\x10\x01\x42\x02P\x01\x62\x06proto3'
   ,
   dependencies=[common__type__def__pb2.DESCRIPTOR,quote__type__def__pb2.DESCRIPTOR,common__msg__def__pb2.DESCRIPTOR,])
 
@@ -32,23 +31,20 @@ _PROTOVERSION = _descriptor.EnumDescriptor(
   full_name='eddid.quote.ProtoVersion',
   filename=None,
   file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='VERSION_0', index=0, number=0,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
     _descriptor.EnumValueDescriptor(
       name='VERSION_1', index=1, number=1,
       serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=26103,
-  serialized_end=26147,
+  serialized_start=26838,
+  serialized_end=26882,
 )
 _sym_db.RegisterEnumDescriptor(_PROTOVERSION)
 
@@ -64,7 +60,6 @@ _QUOTEMSGCARRIER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='eddid.quote.QuoteMsgCarrier.id', index=0,
@@ -72,28 +67,28 @@ _QUOTEMSGCARRIER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QuoteMsgCarrier.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='version', full_name='eddid.quote.QuoteMsgCarrier.version', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.QuoteMsgCarrier.data', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -117,7 +112,6 @@ _RETRESULT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_code', full_name='eddid.quote.RetResult.ret_code', index=0,
@@ -125,14 +119,14 @@ _RETRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_msg', full_name='eddid.quote.RetResult.ret_msg', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -156,7 +150,6 @@ _LOGINREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='user_name', full_name='eddid.quote.LoginReq.user_name', index=0,
@@ -164,28 +157,28 @@ _LOGINREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auto_token', full_name='eddid.quote.LoginReq.auto_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='frequence', full_name='eddid.quote.LoginReq.frequence', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.LoginReq.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -209,7 +202,6 @@ _LOGINRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.LoginRsp.ret_result', index=0,
@@ -217,35 +209,35 @@ _LOGINRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='eddid.quote.LoginRsp.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.LoginRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.LoginRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.LoginRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -269,7 +261,6 @@ _LOGOUTREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='user_name', full_name='eddid.quote.LogoutReq.user_name', index=0,
@@ -277,14 +268,14 @@ _LOGOUTREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.LogoutReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -308,7 +299,6 @@ _LOGOUTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.LogoutRsp.ret_result', index=0,
@@ -316,35 +306,35 @@ _LOGOUTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='eddid.quote.LogoutRsp.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.LogoutRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.LogoutRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.LogoutRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -368,7 +358,6 @@ _SYNCINSTRREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.SyncInstrReq.type', index=0,
@@ -376,21 +365,21 @@ _SYNCINSTRREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date_time', full_name='eddid.quote.SyncInstrReq.date_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SyncInstrReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -414,7 +403,6 @@ _SYNCINSTRRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SyncInstrRsp.ret_result', index=0,
@@ -422,35 +410,35 @@ _SYNCINSTRRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='instruments', full_name='eddid.quote.SyncInstrRsp.instruments', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SyncInstrRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SyncInstrRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SyncInstrRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -474,7 +462,6 @@ _RECOVERYDATAREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.RecoveryDataReq.start_time_stamp', index=0,
@@ -482,7 +469,7 @@ _RECOVERYDATAREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -506,7 +493,6 @@ _RECOVERYDATARSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.RecoveryDataRsp.ret_result', index=0,
@@ -514,63 +500,70 @@ _RECOVERYDATARSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='broker_snapshot_infos', full_name='eddid.quote.RecoveryDataRsp.broker_snapshot_infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='basic_infos', full_name='eddid.quote.RecoveryDataRsp.basic_infos', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_Infos', full_name='eddid.quote.RecoveryDataRsp.snapshot_Infos', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='orderbook_Infos', full_name='eddid.quote.RecoveryDataRsp.orderbook_Infos', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tradetick_Infos', full_name='eddid.quote.RecoveryDataRsp.tradetick_Infos', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.RecoveryDataRsp.start_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.RecoveryDataRsp.recv_req_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.RecoveryDataRsp.rsp_time_stamp', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='equiprice_infos', full_name='eddid.quote.RecoveryDataRsp.equiprice_infos', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -584,7 +577,7 @@ _RECOVERYDATARSP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1113,
-  serialized_end=1531,
+  serialized_end=1584,
 )
 
 
@@ -594,7 +587,6 @@ _QUERYINDEXSHAREMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryIndexShareMsgReq.isSubTrade', index=0,
@@ -602,49 +594,49 @@ _QUERYINDEXSHAREMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryIndexShareMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='indexCode', full_name='eddid.quote.QueryIndexShareMsgReq.indexCode', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryIndexShareMsgReq.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='count', full_name='eddid.quote.QueryIndexShareMsgReq.count', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryIndexShareMsgReq.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryIndexShareMsgReq.sub_quote_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -657,8 +649,8 @@ _QUERYINDEXSHAREMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1534,
-  serialized_end=1791,
+  serialized_start=1587,
+  serialized_end=1844,
 )
 
 
@@ -668,7 +660,6 @@ _QUERYINDEXSHAREMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryIndexShareMsgRsp.ret_result', index=0,
@@ -676,56 +667,56 @@ _QUERYINDEXSHAREMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryIndexShareMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='indexCode', full_name='eddid.quote.QueryIndexShareMsgRsp.indexCode', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='info', full_name='eddid.quote.QueryIndexShareMsgRsp.info', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_data', full_name='eddid.quote.QueryIndexShareMsgRsp.snapshot_data', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryIndexShareMsgRsp.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryIndexShareMsgRsp.recv_req_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryIndexShareMsgRsp.rsp_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -738,8 +729,8 @@ _QUERYINDEXSHAREMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1794,
-  serialized_end=2099,
+  serialized_start=1847,
+  serialized_end=2152,
 )
 
 
@@ -749,7 +740,6 @@ _QUERYPLATESORTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryPlateSortMsgReq.isSubTrade', index=0,
@@ -757,49 +747,49 @@ _QUERYPLATESORTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone', full_name='eddid.quote.QueryPlateSortMsgReq.zone', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='plate_type', full_name='eddid.quote.QueryPlateSortMsgReq.plate_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryPlateSortMsgReq.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='count', full_name='eddid.quote.QueryPlateSortMsgReq.count', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryPlateSortMsgReq.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryPlateSortMsgReq.sub_quote_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -812,8 +802,8 @@ _QUERYPLATESORTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2102,
-  serialized_end=2376,
+  serialized_start=2155,
+  serialized_end=2429,
 )
 
 
@@ -823,7 +813,6 @@ _QUERYPLATESORTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryPlateSortMsgRsp.ret_result', index=0,
@@ -831,56 +820,56 @@ _QUERYPLATESORTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone', full_name='eddid.quote.QueryPlateSortMsgRsp.zone', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='plate_type', full_name='eddid.quote.QueryPlateSortMsgRsp.plate_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='info', full_name='eddid.quote.QueryPlateSortMsgRsp.info', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_data', full_name='eddid.quote.QueryPlateSortMsgRsp.snapshot_data', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryPlateSortMsgRsp.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryPlateSortMsgRsp.recv_req_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryPlateSortMsgRsp.rsp_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -893,8 +882,8 @@ _QUERYPLATESORTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2379,
-  serialized_end=2701,
+  serialized_start=2432,
+  serialized_end=2754,
 )
 
 
@@ -904,7 +893,6 @@ _QUERYEXCHANGESORTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryExchangeSortMsgReq.isSubTrade', index=0,
@@ -912,42 +900,42 @@ _QUERYEXCHANGESORTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryExchangeSortMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryExchangeSortMsgReq.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='count', full_name='eddid.quote.QueryExchangeSortMsgReq.count', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryExchangeSortMsgReq.start_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryExchangeSortMsgReq.sub_quote_type', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -960,8 +948,8 @@ _QUERYEXCHANGESORTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2704,
-  serialized_end=2942,
+  serialized_start=2757,
+  serialized_end=2995,
 )
 
 
@@ -971,7 +959,6 @@ _QUERYEXCHANGESORTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryExchangeSortMsgRsp.ret_result', index=0,
@@ -979,56 +966,56 @@ _QUERYEXCHANGESORTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryExchangeSortMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryExchangeSortMsgRsp.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='info', full_name='eddid.quote.QueryExchangeSortMsgRsp.info', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_data', full_name='eddid.quote.QueryExchangeSortMsgRsp.snapshot_data', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryExchangeSortMsgRsp.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryExchangeSortMsgRsp.recv_req_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryExchangeSortMsgRsp.rsp_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1041,8 +1028,8 @@ _QUERYEXCHANGESORTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2945,
-  serialized_end=3285,
+  serialized_start=2998,
+  serialized_end=3338,
 )
 
 
@@ -1052,7 +1039,6 @@ _QUERYSTOCKSORTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryStockSortMsgReq.isSubTrade', index=0,
@@ -1060,49 +1046,49 @@ _QUERYSTOCKSORTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone', full_name='eddid.quote.QueryStockSortMsgReq.zone', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryStockSortMsgReq.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryStockSortMsgReq.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='count', full_name='eddid.quote.QueryStockSortMsgReq.count', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryStockSortMsgReq.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryStockSortMsgReq.sub_quote_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1115,8 +1101,8 @@ _QUERYSTOCKSORTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3288,
-  serialized_end=3569,
+  serialized_start=3341,
+  serialized_end=3622,
 )
 
 
@@ -1126,7 +1112,6 @@ _QUERYSTOCKSORTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryStockSortMsgRsp.ret_result', index=0,
@@ -1134,63 +1119,63 @@ _QUERYSTOCKSORTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone', full_name='eddid.quote.QueryStockSortMsgRsp.zone', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryStockSortMsgRsp.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryStockSortMsgRsp.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='info', full_name='eddid.quote.QueryStockSortMsgRsp.info', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_data', full_name='eddid.quote.QueryStockSortMsgRsp.snapshot_data', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryStockSortMsgRsp.start_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryStockSortMsgRsp.recv_req_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryStockSortMsgRsp.rsp_time_stamp', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1203,8 +1188,8 @@ _QUERYSTOCKSORTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3572,
-  serialized_end=3955,
+  serialized_start=3625,
+  serialized_end=4008,
 )
 
 
@@ -1214,7 +1199,6 @@ _QUERYSHAREWARRANTSORTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryShareWarrantSortMsgReq.isSubTrade', index=0,
@@ -1222,49 +1206,49 @@ _QUERYSHAREWARRANTSORTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryShareWarrantSortMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryShareWarrantSortMsgReq.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryShareWarrantSortMsgReq.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='count', full_name='eddid.quote.QueryShareWarrantSortMsgReq.count', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryShareWarrantSortMsgReq.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryShareWarrantSortMsgReq.sub_quote_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1277,8 +1261,8 @@ _QUERYSHAREWARRANTSORTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3958,
-  serialized_end=4254,
+  serialized_start=4011,
+  serialized_end=4307,
 )
 
 
@@ -1288,7 +1272,6 @@ _QUERYSHAREWARRANTSORTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.ret_result', index=0,
@@ -1296,63 +1279,63 @@ _QUERYSHAREWARRANTSORTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sortFiled', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.sortFiled', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sort_direct', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.sort_direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='info', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.info', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_data', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.snapshot_data', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.start_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.recv_req_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryShareWarrantSortMsgRsp.rsp_time_stamp', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1365,8 +1348,8 @@ _QUERYSHAREWARRANTSORTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4257,
-  serialized_end=4655,
+  serialized_start=4310,
+  serialized_end=4708,
 )
 
 
@@ -1376,7 +1359,6 @@ _QUERYINDEXSHAREDLISTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='index', full_name='eddid.quote.QueryIndexSharedListMsgReq.index', index=0,
@@ -1384,21 +1366,21 @@ _QUERYINDEXSHAREDLISTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryIndexSharedListMsgReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryIndexSharedListMsgReq.sub_quote_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1411,8 +1393,8 @@ _QUERYINDEXSHAREDLISTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4657,
-  serialized_end=4780,
+  serialized_start=4710,
+  serialized_end=4833,
 )
 
 
@@ -1422,7 +1404,6 @@ _QUERYINDEXSHAREDLISTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryIndexSharedListMsgRsp.ret_result', index=0,
@@ -1430,35 +1411,35 @@ _QUERYINDEXSHAREDLISTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='infos', full_name='eddid.quote.QueryIndexSharedListMsgRsp.infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryIndexSharedListMsgRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryIndexSharedListMsgRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryIndexSharedListMsgRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1471,8 +1452,8 @@ _QUERYINDEXSHAREDLISTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4783,
-  serialized_end=4980,
+  serialized_start=4836,
+  serialized_end=5033,
 )
 
 
@@ -1482,7 +1463,6 @@ _QUERYPLATESHAREDLISTMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='zone', full_name='eddid.quote.QueryPlateSharedListMsgReq.zone', index=0,
@@ -1490,28 +1470,28 @@ _QUERYPLATESHAREDLISTMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='plate_type', full_name='eddid.quote.QueryPlateSharedListMsgReq.plate_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryPlateSharedListMsgReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryPlateSharedListMsgReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1524,8 +1504,8 @@ _QUERYPLATESHAREDLISTMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4983,
-  serialized_end=5174,
+  serialized_start=5036,
+  serialized_end=5227,
 )
 
 
@@ -1535,7 +1515,6 @@ _QUERYPLATESHAREDLISTMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryPlateSharedListMsgRsp.ret_result', index=0,
@@ -1543,35 +1522,35 @@ _QUERYPLATESHAREDLISTMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='infos', full_name='eddid.quote.QueryPlateSharedListMsgRsp.infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryPlateSharedListMsgRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryPlateSharedListMsgRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryPlateSharedListMsgRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1584,8 +1563,8 @@ _QUERYPLATESHAREDLISTMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5177,
-  serialized_end=5374,
+  serialized_start=5230,
+  serialized_end=5427,
 )
 
 
@@ -1595,7 +1574,6 @@ _SYNCBASICREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.SyncBasicReq.type', index=0,
@@ -1603,21 +1581,21 @@ _SYNCBASICREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date_time', full_name='eddid.quote.SyncBasicReq.date_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SyncBasicReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1630,8 +1608,8 @@ _SYNCBASICREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5376,
-  serialized_end=5480,
+  serialized_start=5429,
+  serialized_end=5533,
 )
 
 
@@ -1641,7 +1619,6 @@ _SYNCBASICRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SyncBasicRsp.ret_result', index=0,
@@ -1649,35 +1626,35 @@ _SYNCBASICRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='basic_infos', full_name='eddid.quote.SyncBasicRsp.basic_infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SyncBasicRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SyncBasicRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SyncBasicRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1690,8 +1667,8 @@ _SYNCBASICRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5483,
-  serialized_end=5670,
+  serialized_start=5536,
+  serialized_end=5723,
 )
 
 
@@ -1701,7 +1678,6 @@ _SNAPSHOTREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.SnapshotReq.type', index=0,
@@ -1709,21 +1685,21 @@ _SNAPSHOTREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date_time', full_name='eddid.quote.SnapshotReq.date_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SnapshotReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1736,8 +1712,8 @@ _SNAPSHOTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5672,
-  serialized_end=5775,
+  serialized_start=5725,
+  serialized_end=5828,
 )
 
 
@@ -1747,7 +1723,6 @@ _SNAPSHOTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SnapshotRsp.ret_result', index=0,
@@ -1755,35 +1730,35 @@ _SNAPSHOTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_Infos', full_name='eddid.quote.SnapshotRsp.snapshot_Infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SnapshotRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SnapshotRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SnapshotRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1796,8 +1771,8 @@ _SNAPSHOTRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5778,
-  serialized_end=5966,
+  serialized_start=5831,
+  serialized_end=6019,
 )
 
 
@@ -1807,7 +1782,6 @@ _ORDERBOOKREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.OrderbookReq.type', index=0,
@@ -1815,21 +1789,21 @@ _ORDERBOOKREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='date_time', full_name='eddid.quote.OrderbookReq.date_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.OrderbookReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1842,8 +1816,8 @@ _ORDERBOOKREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5968,
-  serialized_end=6072,
+  serialized_start=6021,
+  serialized_end=6125,
 )
 
 
@@ -1853,7 +1827,6 @@ _ORDERBOOKRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.OrderbookRsp.ret_result', index=0,
@@ -1861,35 +1834,35 @@ _ORDERBOOKRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='orderbook_Infos', full_name='eddid.quote.OrderbookRsp.orderbook_Infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.OrderbookRsp.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.OrderbookRsp.recv_req_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.OrderbookRsp.rsp_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1902,8 +1875,8 @@ _ORDERBOOKRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6075,
-  serialized_end=6270,
+  serialized_start=6128,
+  serialized_end=6323,
 )
 
 
@@ -1913,7 +1886,6 @@ _PUSHKLINEMINDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.PushKLineMinData.exchange', index=0,
@@ -1921,21 +1893,21 @@ _PUSHKLINEMINDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.PushKLineMinData.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.PushKLineMinData.data', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1948,8 +1920,8 @@ _PUSHKLINEMINDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6272,
-  serialized_end=6391,
+  serialized_start=6325,
+  serialized_end=6444,
 )
 
 
@@ -1959,7 +1931,6 @@ _SUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeKlineMinReq.exchange', index=0,
@@ -1967,28 +1938,28 @@ _SUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeKlineMinReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeKlineMinReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeKlineMinReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2001,8 +1972,8 @@ _SUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6394,
-  serialized_end=6556,
+  serialized_start=6447,
+  serialized_end=6609,
 )
 
 
@@ -2012,7 +1983,6 @@ _SUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeKlineMinRsp.exchange', index=0,
@@ -2020,42 +1990,42 @@ _SUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeKlineMinRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeKlineMinRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeKlineMinRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeKlineMinRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeKlineMinRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2068,8 +2038,8 @@ _SUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6559,
-  serialized_end=6764,
+  serialized_start=6612,
+  serialized_end=6817,
 )
 
 
@@ -2079,7 +2049,6 @@ _UNSUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnsubscribeKlineMinReq.exchange', index=0,
@@ -2087,28 +2056,28 @@ _UNSUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnsubscribeKlineMinReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeKlineMinReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnsubscribeKlineMinReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2121,8 +2090,8 @@ _UNSUBSCRIBEKLINEMINREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6767,
-  serialized_end=6931,
+  serialized_start=6820,
+  serialized_end=6984,
 )
 
 
@@ -2132,7 +2101,6 @@ _UNSUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnsubscribeKlineMinRsp.exchange', index=0,
@@ -2140,42 +2108,42 @@ _UNSUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnsubscribeKlineMinRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnsubscribeKlineMinRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeKlineMinRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeKlineMinRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeKlineMinRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2188,8 +2156,8 @@ _UNSUBSCRIBEKLINEMINRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6934,
-  serialized_end=7141,
+  serialized_start=6987,
+  serialized_end=7194,
 )
 
 
@@ -2199,7 +2167,6 @@ _STARTCHARTDATAREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.StartChartDataReq.exchange', index=0,
@@ -2207,28 +2174,28 @@ _STARTCHARTDATAREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.StartChartDataReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.StartChartDataReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.StartChartDataReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2241,8 +2208,8 @@ _STARTCHARTDATAREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7144,
-  serialized_end=7303,
+  serialized_start=7197,
+  serialized_end=7356,
 )
 
 
@@ -2252,7 +2219,6 @@ _STARTCHARTDATARSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.StartChartDataRsp.ret_result', index=0,
@@ -2260,63 +2226,63 @@ _STARTCHARTDATARSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.StartChartDataRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.StartChartDataRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.StartChartDataRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.StartChartDataRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.StartChartDataRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='basic_data', full_name='eddid.quote.StartChartDataRsp.basic_data', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot', full_name='eddid.quote.StartChartDataRsp.snapshot', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='orderbook', full_name='eddid.quote.StartChartDataRsp.orderbook', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2329,8 +2295,8 @@ _STARTCHARTDATARSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7306,
-  serialized_end=7655,
+  serialized_start=7359,
+  serialized_end=7708,
 )
 
 
@@ -2340,7 +2306,6 @@ _STOPCHARTDATAREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.StopChartDataReq.exchange', index=0,
@@ -2348,28 +2313,28 @@ _STOPCHARTDATAREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.StopChartDataReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.StopChartDataReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.StopChartDataReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2382,8 +2347,8 @@ _STOPCHARTDATAREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7658,
-  serialized_end=7816,
+  serialized_start=7711,
+  serialized_end=7869,
 )
 
 
@@ -2393,7 +2358,6 @@ _STOPCHARTDATARSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.StopChartDataRsp.ret_result', index=0,
@@ -2401,42 +2365,42 @@ _STOPCHARTDATARSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.StopChartDataRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.StopChartDataRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.StopChartDataRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.StopChartDataRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.StopChartDataRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2449,8 +2413,278 @@ _STOPCHARTDATARSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7819,
-  serialized_end=8020,
+  serialized_start=7872,
+  serialized_end=8073,
+)
+
+
+_PUSHEQUIPRICEDATA = _descriptor.Descriptor(
+  name='PushEquipriceData',
+  full_name='eddid.quote.PushEquipriceData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='eData', full_name='eddid.quote.PushEquipriceData.eData', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8075,
+  serialized_end=8137,
+)
+
+
+_EQUIPRICEDATA = _descriptor.Descriptor(
+  name='EquipriceData',
+  full_name='eddid.quote.EquipriceData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='common_info', full_name='eddid.quote.EquipriceData.common_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='iep', full_name='eddid.quote.EquipriceData.iep', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='iev', full_name='eddid.quote.EquipriceData.iev', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8139,
+  serialized_end=8231,
+)
+
+
+_SUBSCRIBEEQUIPRICEREQ = _descriptor.Descriptor(
+  name='SubscribeEquipriceReq',
+  full_name='eddid.quote.SubscribeEquipriceReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='eddid.quote.SubscribeEquipriceReq.exchange', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='code', full_name='eddid.quote.SubscribeEquipriceReq.code', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_time_stamp', full_name='eddid.quote.SubscribeEquipriceReq.start_time_stamp', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8233,
+  serialized_end=8342,
+)
+
+
+_SUBSCRIBEEQUIPRICERSP = _descriptor.Descriptor(
+  name='SubscribeEquipriceRsp',
+  full_name='eddid.quote.SubscribeEquipriceRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ret_result', full_name='eddid.quote.SubscribeEquipriceRsp.ret_result', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_time_stamp', full_name='eddid.quote.SubscribeEquipriceRsp.start_time_stamp', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='recv_req_time_stamp', full_name='eddid.quote.SubscribeEquipriceRsp.recv_req_time_stamp', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='rsp_time_stamp', full_name='eddid.quote.SubscribeEquipriceRsp.rsp_time_stamp', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8345,
+  serialized_end=8491,
+)
+
+
+_UNSUBSCRIBEEQUIPRICEREQ = _descriptor.Descriptor(
+  name='UnsubscribeEquipriceReq',
+  full_name='eddid.quote.UnsubscribeEquipriceReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='eddid.quote.UnsubscribeEquipriceReq.exchange', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='code', full_name='eddid.quote.UnsubscribeEquipriceReq.code', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_time_stamp', full_name='eddid.quote.UnsubscribeEquipriceReq.start_time_stamp', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8493,
+  serialized_end=8604,
+)
+
+
+_UNSUBSCRIBEEQUIPRICERSP = _descriptor.Descriptor(
+  name='UnsubscribeEquipriceRsp',
+  full_name='eddid.quote.UnsubscribeEquipriceRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ret_result', full_name='eddid.quote.UnsubscribeEquipriceRsp.ret_result', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_time_stamp', full_name='eddid.quote.UnsubscribeEquipriceRsp.start_time_stamp', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeEquipriceRsp.recv_req_time_stamp', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeEquipriceRsp.rsp_time_stamp', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8607,
+  serialized_end=8755,
 )
 
 
@@ -2460,7 +2694,6 @@ _QUERYKLINEMINMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubKLineMin', full_name='eddid.quote.QueryKLineMinMsgReq.isSubKLineMin', index=0,
@@ -2468,70 +2701,70 @@ _QUERYKLINEMINMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryKLineMinMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryKLineMinMsgReq.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryKLineMinMsgReq.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='direct', full_name='eddid.quote.QueryKLineMinMsgReq.direct', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start', full_name='eddid.quote.QueryKLineMinMsgReq.start', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end', full_name='eddid.quote.QueryKLineMinMsgReq.end', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.QueryKLineMinMsgReq.vol', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryKLineMinMsgReq.start_time_stamp', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryKLineMinMsgReq.sub_quote_type', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2544,8 +2777,8 @@ _QUERYKLINEMINMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8023,
-  serialized_end=8345,
+  serialized_start=8758,
+  serialized_end=9080,
 )
 
 
@@ -2555,7 +2788,6 @@ _QUERYKLINEMINMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryKLineMinMsgRsp.ret_result', index=0,
@@ -2563,49 +2795,49 @@ _QUERYKLINEMINMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryKLineMinMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryKLineMinMsgRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryKLineMinMsgRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryKLineMinMsgRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryKLineMinMsgRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.QueryKLineMinMsgRsp.data', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2618,8 +2850,8 @@ _QUERYKLINEMINMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8348,
-  serialized_end=8593,
+  serialized_start=9083,
+  serialized_end=9328,
 )
 
 
@@ -2629,7 +2861,6 @@ _QUERYFIVEDAYSKLINEMINREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubKLineMin', full_name='eddid.quote.QueryFiveDaysKLineMinReq.isSubKLineMin', index=0,
@@ -2637,49 +2868,49 @@ _QUERYFIVEDAYSKLINEMINREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryFiveDaysKLineMinReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryFiveDaysKLineMinReq.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start', full_name='eddid.quote.QueryFiveDaysKLineMinReq.start', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end', full_name='eddid.quote.QueryFiveDaysKLineMinReq.end', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryFiveDaysKLineMinReq.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryFiveDaysKLineMinReq.sub_quote_type', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2692,8 +2923,8 @@ _QUERYFIVEDAYSKLINEMINREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8596,
-  serialized_end=8813,
+  serialized_start=9331,
+  serialized_end=9548,
 )
 
 
@@ -2703,7 +2934,6 @@ _ONEDAYKLINEMINMSG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='date', full_name='eddid.quote.OneDayKLineMinMsg.date', index=0,
@@ -2711,21 +2941,21 @@ _ONEDAYKLINEMINMSG = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='settlement_price', full_name='eddid.quote.OneDayKLineMinMsg.settlement_price', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.OneDayKLineMinMsg.data', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2738,8 +2968,8 @@ _ONEDAYKLINEMINMSG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8815,
-  serialized_end=8915,
+  serialized_start=9550,
+  serialized_end=9650,
 )
 
 
@@ -2749,7 +2979,6 @@ _QUERYFIVEDAYSKLINEMINRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.ret_result', index=0,
@@ -2757,49 +2986,49 @@ _QUERYFIVEDAYSKLINEMINRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dayData', full_name='eddid.quote.QueryFiveDaysKLineMinRsp.dayData', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2812,8 +3041,8 @@ _QUERYFIVEDAYSKLINEMINRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8918,
-  serialized_end=9176,
+  serialized_start=9653,
+  serialized_end=9911,
 )
 
 
@@ -2823,7 +3052,6 @@ _KLINEDATAMIN = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='high', full_name='eddid.quote.KlineDataMin.high', index=0,
@@ -2831,70 +3059,70 @@ _KLINEDATAMIN = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='open', full_name='eddid.quote.KlineDataMin.open', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='low', full_name='eddid.quote.KlineDataMin.low', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='close', full_name='eddid.quote.KlineDataMin.close', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='average', full_name='eddid.quote.KlineDataMin.average', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.KlineDataMin.vol', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rise_fall', full_name='eddid.quote.KlineDataMin.rise_fall', index=6,
       number=7, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='r_f_ratio', full_name='eddid.quote.KlineDataMin.r_f_ratio', index=7,
       number=8, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_date_time', full_name='eddid.quote.KlineDataMin.update_date_time', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='settlement_price', full_name='eddid.quote.KlineDataMin.settlement_price', index=9,
       number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2907,8 +3135,8 @@ _KLINEDATAMIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9179,
-  serialized_end=9369,
+  serialized_start=9914,
+  serialized_end=10104,
 )
 
 
@@ -2918,7 +3146,6 @@ _QUERYKLINEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubKLine', full_name='eddid.quote.QueryKLineMsgReq.isSubKLine', index=0,
@@ -2926,77 +3153,77 @@ _QUERYKLINEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryKLineMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryKLineMsgReq.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.QueryKLineMsgReq.peroid_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryKLineMsgReq.type', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='direct', full_name='eddid.quote.QueryKLineMsgReq.direct', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start', full_name='eddid.quote.QueryKLineMsgReq.start', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end', full_name='eddid.quote.QueryKLineMsgReq.end', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.QueryKLineMsgReq.vol', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryKLineMsgReq.start_time_stamp', index=9,
       number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryKLineMsgReq.sub_quote_type', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3009,8 +3236,8 @@ _QUERYKLINEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9372,
-  serialized_end=9739,
+  serialized_start=10107,
+  serialized_end=10474,
 )
 
 
@@ -3020,7 +3247,6 @@ _QUERYKLINEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryKLineMsgRsp.ret_result', index=0,
@@ -3028,56 +3254,56 @@ _QUERYKLINEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryKLineMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryKLineMsgRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.QueryKLineMsgRsp.peroid_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='kData', full_name='eddid.quote.QueryKLineMsgRsp.kData', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryKLineMsgRsp.start_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryKLineMsgRsp.recv_req_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryKLineMsgRsp.rsp_time_stamp', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3090,8 +3316,8 @@ _QUERYKLINEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9742,
-  serialized_end=10033,
+  serialized_start=10477,
+  serialized_end=10768,
 )
 
 
@@ -3101,7 +3327,6 @@ _KLINEDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='high', full_name='eddid.quote.KlineData.high', index=0,
@@ -3109,126 +3334,126 @@ _KLINEDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='open', full_name='eddid.quote.KlineData.open', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='low', full_name='eddid.quote.KlineData.low', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='close', full_name='eddid.quote.KlineData.close', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='curr_vol', full_name='eddid.quote.KlineData.curr_vol', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.KlineData.vol', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='open_interest', full_name='eddid.quote.KlineData.open_interest', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amount', full_name='eddid.quote.KlineData.amount', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rise_fall', full_name='eddid.quote.KlineData.rise_fall', index=8,
       number=9, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='r_f_ratio', full_name='eddid.quote.KlineData.r_f_ratio', index=9,
       number=10, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='settlement_price', full_name='eddid.quote.KlineData.settlement_price', index=10,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pre_settlement', full_name='eddid.quote.KlineData.pre_settlement', index=11,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pre_close', full_name='eddid.quote.KlineData.pre_close', index=12,
       number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_date_time', full_name='eddid.quote.KlineData.update_date_time', index=13,
       number=14, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.KlineData.peroid_type', index=14,
       number=15, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='KLineKey', full_name='eddid.quote.KlineData.KLineKey', index=15,
       number=16, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='total_amount', full_name='eddid.quote.KlineData.total_amount', index=16,
       number=17, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='incr_open_interrest', full_name='eddid.quote.KlineData.incr_open_interrest', index=17,
       number=18, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3241,8 +3466,8 @@ _KLINEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10036,
-  serialized_end=10426,
+  serialized_start=10771,
+  serialized_end=11161,
 )
 
 
@@ -3252,7 +3477,6 @@ _QUERYKLINEHISREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryKLineHisReq.exchange', index=0,
@@ -3260,56 +3484,56 @@ _QUERYKLINEHISREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryKLineHisReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.QueryKLineHisReq.peroid_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryKLineHisReq.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='direct', full_name='eddid.quote.QueryKLineHisReq.direct', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start', full_name='eddid.quote.QueryKLineHisReq.start', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end', full_name='eddid.quote.QueryKLineHisReq.end', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.QueryKLineHisReq.vol', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3322,8 +3546,8 @@ _QUERYKLINEHISREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10429,
-  serialized_end=10696,
+  serialized_start=11164,
+  serialized_end=11431,
 )
 
 
@@ -3333,7 +3557,6 @@ _KLINEDATAHIS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.KlineDataHis.exchange', index=0,
@@ -3341,324 +3564,28 @@ _KLINEDATAHIS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.KlineDataHis.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.KlineDataHis.peroid_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='kData', full_name='eddid.quote.KlineDataHis.kData', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=10699,
-  serialized_end=10863,
-)
-
-
-_QUERYKLINEHISRSP = _descriptor.Descriptor(
-  name='QueryKLineHisRsp',
-  full_name='eddid.quote.QueryKLineHisRsp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ret_result', full_name='eddid.quote.QueryKLineHisRsp.ret_result', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='exchange', full_name='eddid.quote.QueryKLineHisRsp.exchange', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kDataHis', full_name='eddid.quote.QueryKLineHisRsp.kDataHis', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=10866,
-  serialized_end=11019,
-)
-
-
-_PUSHKLINEDATA = _descriptor.Descriptor(
-  name='PushKLineData',
-  full_name='eddid.quote.PushKLineData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='exchange', full_name='eddid.quote.PushKLineData.exchange', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='code', full_name='eddid.quote.PushKLineData.code', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='peroid_type', full_name='eddid.quote.PushKLineData.peroid_type', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kData', full_name='eddid.quote.PushKLineData.kData', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=11022,
-  serialized_end=11187,
-)
-
-
-_QUERYTICKMSGREQ = _descriptor.Descriptor(
-  name='QueryTickMsgReq',
-  full_name='eddid.quote.QueryTickMsgReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='exchange', full_name='eddid.quote.QueryTickMsgReq.exchange', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='code', full_name='eddid.quote.QueryTickMsgReq.code', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='eddid.quote.QueryTickMsgReq.type', index=2,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='direct', full_name='eddid.quote.QueryTickMsgReq.direct', index=3,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='start', full_name='eddid.quote.QueryTickMsgReq.start', index=4,
-      number=6, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='end', full_name='eddid.quote.QueryTickMsgReq.end', index=5,
-      number=7, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='vol', full_name='eddid.quote.QueryTickMsgReq.vol', index=6,
-      number=8, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='start_time_stamp', full_name='eddid.quote.QueryTickMsgReq.start_time_stamp', index=7,
-      number=10, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=11190,
-  serialized_end=11431,
-)
-
-
-_TICKDATA = _descriptor.Descriptor(
-  name='TickData',
-  full_name='eddid.quote.TickData',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='last', full_name='eddid.quote.TickData.last', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='high', full_name='eddid.quote.TickData.high', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='low', full_name='eddid.quote.TickData.low', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='turnover', full_name='eddid.quote.TickData.turnover', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='average', full_name='eddid.quote.TickData.average', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='volume', full_name='eddid.quote.TickData.volume', index=5,
-      number=6, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='open_interest', full_name='eddid.quote.TickData.open_interest', index=6,
-      number=7, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='buy_price', full_name='eddid.quote.TickData.buy_price', index=7,
-      number=8, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='buy_volume', full_name='eddid.quote.TickData.buy_volume', index=8,
-      number=9, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sell_price', full_name='eddid.quote.TickData.sell_price', index=9,
-      number=10, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sell_volume', full_name='eddid.quote.TickData.sell_volume', index=10,
-      number=11, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_datetime', full_name='eddid.quote.TickData.update_datetime', index=11,
-      number=12, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='last_update_mill', full_name='eddid.quote.TickData.last_update_mill', index=12,
-      number=13, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3672,7 +3599,299 @@ _TICKDATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=11434,
-  serialized_end=11690,
+  serialized_end=11598,
+)
+
+
+_QUERYKLINEHISRSP = _descriptor.Descriptor(
+  name='QueryKLineHisRsp',
+  full_name='eddid.quote.QueryKLineHisRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ret_result', full_name='eddid.quote.QueryKLineHisRsp.ret_result', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='eddid.quote.QueryKLineHisRsp.exchange', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='kDataHis', full_name='eddid.quote.QueryKLineHisRsp.kDataHis', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11601,
+  serialized_end=11754,
+)
+
+
+_PUSHKLINEDATA = _descriptor.Descriptor(
+  name='PushKLineData',
+  full_name='eddid.quote.PushKLineData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='eddid.quote.PushKLineData.exchange', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='code', full_name='eddid.quote.PushKLineData.code', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='peroid_type', full_name='eddid.quote.PushKLineData.peroid_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='kData', full_name='eddid.quote.PushKLineData.kData', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11757,
+  serialized_end=11922,
+)
+
+
+_QUERYTICKMSGREQ = _descriptor.Descriptor(
+  name='QueryTickMsgReq',
+  full_name='eddid.quote.QueryTickMsgReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='eddid.quote.QueryTickMsgReq.exchange', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='code', full_name='eddid.quote.QueryTickMsgReq.code', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='eddid.quote.QueryTickMsgReq.type', index=2,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='direct', full_name='eddid.quote.QueryTickMsgReq.direct', index=3,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start', full_name='eddid.quote.QueryTickMsgReq.start', index=4,
+      number=6, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='end', full_name='eddid.quote.QueryTickMsgReq.end', index=5,
+      number=7, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='vol', full_name='eddid.quote.QueryTickMsgReq.vol', index=6,
+      number=8, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='start_time_stamp', full_name='eddid.quote.QueryTickMsgReq.start_time_stamp', index=7,
+      number=10, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11925,
+  serialized_end=12166,
+)
+
+
+_TICKDATA = _descriptor.Descriptor(
+  name='TickData',
+  full_name='eddid.quote.TickData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='last', full_name='eddid.quote.TickData.last', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='high', full_name='eddid.quote.TickData.high', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='low', full_name='eddid.quote.TickData.low', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='turnover', full_name='eddid.quote.TickData.turnover', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='average', full_name='eddid.quote.TickData.average', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='volume', full_name='eddid.quote.TickData.volume', index=5,
+      number=6, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='open_interest', full_name='eddid.quote.TickData.open_interest', index=6,
+      number=7, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='buy_price', full_name='eddid.quote.TickData.buy_price', index=7,
+      number=8, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='buy_volume', full_name='eddid.quote.TickData.buy_volume', index=8,
+      number=9, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sell_price', full_name='eddid.quote.TickData.sell_price', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sell_volume', full_name='eddid.quote.TickData.sell_volume', index=10,
+      number=11, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='update_datetime', full_name='eddid.quote.TickData.update_datetime', index=11,
+      number=12, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='last_update_mill', full_name='eddid.quote.TickData.last_update_mill', index=12,
+      number=13, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12169,
+  serialized_end=12425,
 )
 
 
@@ -3682,7 +3901,6 @@ _QUERYTICKMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryTickMsgRsp.ret_result', index=0,
@@ -3690,49 +3908,49 @@ _QUERYTICKMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTickMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryTickMsgRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tickData', full_name='eddid.quote.QueryTickMsgRsp.tickData', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryTickMsgRsp.start_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryTickMsgRsp.recv_req_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryTickMsgRsp.rsp_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3745,8 +3963,8 @@ _QUERYTICKMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11693,
-  serialized_end=11934,
+  serialized_start=12428,
+  serialized_end=12669,
 )
 
 
@@ -3756,7 +3974,6 @@ _PUSHTICKDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.PushTickData.exchange', index=0,
@@ -3764,21 +3981,21 @@ _PUSHTICKDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.PushTickData.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tickData', full_name='eddid.quote.PushTickData.tickData', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3791,8 +4008,8 @@ _PUSHTICKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11936,
-  serialized_end=12051,
+  serialized_start=12671,
+  serialized_end=12786,
 )
 
 
@@ -3802,7 +4019,6 @@ _SUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='sub_type', full_name='eddid.quote.SubscribeQuoteMsgReq.sub_type', index=0,
@@ -3810,35 +4026,35 @@ _SUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='child_type', full_name='eddid.quote.SubscribeQuoteMsgReq.child_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.SubscribeQuoteMsgReq.base_info', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeQuoteMsgReq.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeQuoteMsgReq.sub_quote_type', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3851,8 +4067,8 @@ _SUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12054,
-  serialized_end=12311,
+  serialized_start=12789,
+  serialized_end=13046,
 )
 
 
@@ -3862,7 +4078,6 @@ _SUBSCRIBEINSTRBASEINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeInstrBaseInfo.exchange', index=0,
@@ -3870,21 +4085,21 @@ _SUBSCRIBEINSTRBASEINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeInstrBaseInfo.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='product_code', full_name='eddid.quote.SubscribeInstrBaseInfo.product_code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3897,8 +4112,8 @@ _SUBSCRIBEINSTRBASEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12313,
-  serialized_end=12419,
+  serialized_start=13048,
+  serialized_end=13154,
 )
 
 
@@ -3908,7 +4123,6 @@ _SUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeQuoteMsgRsp.ret_result', index=0,
@@ -3916,42 +4130,42 @@ _SUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_type', full_name='eddid.quote.SubscribeQuoteMsgRsp.sub_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='child_type', full_name='eddid.quote.SubscribeQuoteMsgRsp.child_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeQuoteMsgRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeQuoteMsgRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeQuoteMsgRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3964,8 +4178,8 @@ _SUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12422,
-  serialized_end=12666,
+  serialized_start=13157,
+  serialized_end=13401,
 )
 
 
@@ -3975,7 +4189,6 @@ _UNSUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='sub_type', full_name='eddid.quote.UnsubscribeQuoteMsgReq.sub_type', index=0,
@@ -3983,35 +4196,35 @@ _UNSUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='child_type', full_name='eddid.quote.UnsubscribeQuoteMsgReq.child_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.UnsubscribeQuoteMsgReq.base_info', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeQuoteMsgReq.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnsubscribeQuoteMsgReq.sub_quote_type', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4024,8 +4237,8 @@ _UNSUBSCRIBEQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12669,
-  serialized_end=12928,
+  serialized_start=13404,
+  serialized_end=13663,
 )
 
 
@@ -4035,7 +4248,6 @@ _UNSUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnsubscribeQuoteMsgRsp.ret_result', index=0,
@@ -4043,28 +4255,28 @@ _UNSUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeQuoteMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeQuoteMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeQuoteMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4077,8 +4289,8 @@ _UNSUBSCRIBEQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12931,
-  serialized_end=13078,
+  serialized_start=13666,
+  serialized_end=13813,
 )
 
 
@@ -4088,7 +4300,6 @@ _SUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgReq.base_info', index=0,
@@ -4096,21 +4307,21 @@ _SUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgReq.sub_quote_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4123,8 +4334,8 @@ _SUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13081,
-  serialized_end=13249,
+  serialized_start=13816,
+  serialized_end=13984,
 )
 
 
@@ -4134,7 +4345,6 @@ _SUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgRsp.ret_result', index=0,
@@ -4142,28 +4352,28 @@ _SUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeGreyMarketQuoteMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4176,8 +4386,8 @@ _SUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13252,
-  serialized_end=13407,
+  serialized_start=13987,
+  serialized_end=14142,
 )
 
 
@@ -4187,7 +4397,6 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgReq.base_info', index=0,
@@ -4195,21 +4404,21 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgReq.sub_quote_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4222,8 +4431,8 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13410,
-  serialized_end=13580,
+  serialized_start=14145,
+  serialized_end=14315,
 )
 
 
@@ -4233,7 +4442,6 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgRsp.ret_result', index=0,
@@ -4241,28 +4449,28 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeGreyMarketQuoteMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4275,8 +4483,8 @@ _UNSUBSCRIBEGREYMARKETQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13583,
-  serialized_end=13740,
+  serialized_start=14318,
+  serialized_end=14475,
 )
 
 
@@ -4286,7 +4494,6 @@ _SUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.SubscribeNewSharesQuoteMsgReq.base_info', index=0,
@@ -4294,21 +4501,21 @@ _SUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeNewSharesQuoteMsgReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeNewSharesQuoteMsgReq.sub_quote_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4321,8 +4528,8 @@ _SUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13743,
-  serialized_end=13910,
+  serialized_start=14478,
+  serialized_end=14645,
 )
 
 
@@ -4332,7 +4539,6 @@ _SUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeNewSharesQuoteMsgRsp.ret_result', index=0,
@@ -4340,28 +4546,28 @@ _SUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeNewSharesQuoteMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeNewSharesQuoteMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeNewSharesQuoteMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4374,8 +4580,8 @@ _SUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13913,
-  serialized_end=14067,
+  serialized_start=14648,
+  serialized_end=14802,
 )
 
 
@@ -4385,7 +4591,6 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgReq.base_info', index=0,
@@ -4393,21 +4598,21 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgReq.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgReq.sub_quote_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4420,8 +4625,8 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14070,
-  serialized_end=14239,
+  serialized_start=14805,
+  serialized_end=14974,
 )
 
 
@@ -4431,7 +4636,6 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgRsp.ret_result', index=0,
@@ -4439,28 +4643,28 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeNewSharesQuoteMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4473,8 +4677,8 @@ _UNSUBSCRIBENEWSHARESQUOTEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14242,
-  serialized_end=14398,
+  serialized_start=14977,
+  serialized_end=15133,
 )
 
 
@@ -4484,7 +4688,6 @@ _SUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.SubscribeKLineMsgReq.peroid_type', index=0,
@@ -4492,28 +4695,28 @@ _SUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.SubscribeKLineMsgReq.base_info', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeKLineMsgReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeKLineMsgReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4526,8 +4729,8 @@ _SUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14401,
-  serialized_end=14610,
+  serialized_start=15136,
+  serialized_end=15345,
 )
 
 
@@ -4537,7 +4740,6 @@ _SUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeKLineMsgRsp.ret_result', index=0,
@@ -4545,28 +4747,28 @@ _SUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeKLineMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeKLineMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeKLineMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4579,8 +4781,8 @@ _SUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14613,
-  serialized_end=14758,
+  serialized_start=15348,
+  serialized_end=15493,
 )
 
 
@@ -4590,7 +4792,6 @@ _UNSUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='peroid_type', full_name='eddid.quote.UnSubscribeKLineMsgReq.peroid_type', index=0,
@@ -4598,28 +4799,28 @@ _UNSUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='base_info', full_name='eddid.quote.UnSubscribeKLineMsgReq.base_info', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnSubscribeKLineMsgReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnSubscribeKLineMsgReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4632,8 +4833,8 @@ _UNSUBSCRIBEKLINEMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14761,
-  serialized_end=14972,
+  serialized_start=15496,
+  serialized_end=15707,
 )
 
 
@@ -4643,7 +4844,6 @@ _UNSUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnSubscribeKLineMsgRsp.ret_result', index=0,
@@ -4651,28 +4851,28 @@ _UNSUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnSubscribeKLineMsgRsp.start_time_stamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnSubscribeKLineMsgRsp.recv_req_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnSubscribeKLineMsgRsp.rsp_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4685,8 +4885,8 @@ _UNSUBSCRIBEKLINEMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14975,
-  serialized_end=15122,
+  serialized_start=15710,
+  serialized_end=15857,
 )
 
 
@@ -4696,7 +4896,6 @@ _QUOTEOPEN = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QuoteOpen.exchange', index=0,
@@ -4704,35 +4903,35 @@ _QUOTEOPEN = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='init', full_name='eddid.quote.QuoteOpen.init', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='action', full_name='eddid.quote.QuoteOpen.action', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='day', full_name='eddid.quote.QuoteOpen.day', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='night', full_name='eddid.quote.QuoteOpen.night', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4745,8 +4944,8 @@ _QUOTEOPEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15125,
-  serialized_end=15364,
+  serialized_start=15860,
+  serialized_end=16099,
 )
 
 
@@ -4756,7 +4955,6 @@ _QUOTECOMMONINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QuoteCommonInfo.exchange', index=0,
@@ -4764,56 +4962,56 @@ _QUOTECOMMONINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='product_code', full_name='eddid.quote.QuoteCommonInfo.product_code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='instr_code', full_name='eddid.quote.QuoteCommonInfo.instr_code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='precision', full_name='eddid.quote.QuoteCommonInfo.precision', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='collector_recv_time', full_name='eddid.quote.QuoteCommonInfo.collector_recv_time', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='collector_send_time', full_name='eddid.quote.QuoteCommonInfo.collector_send_time', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='publisher_recv_time', full_name='eddid.quote.QuoteCommonInfo.publisher_recv_time', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='publisher_send_time', full_name='eddid.quote.QuoteCommonInfo.publisher_send_time', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4826,8 +5024,8 @@ _QUOTECOMMONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15367,
-  serialized_end=15607,
+  serialized_start=16102,
+  serialized_end=16342,
 )
 
 
@@ -4837,7 +5035,6 @@ _QUOTEBASICINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.QuoteBasicInfo.common_info', index=0,
@@ -4845,119 +5042,119 @@ _QUOTEBASICINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QuoteBasicInfo.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tradind_day', full_name='eddid.quote.QuoteBasicInfo.tradind_day', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='instr_name', full_name='eddid.quote.QuoteBasicInfo.instr_name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='instr_en_name', full_name='eddid.quote.QuoteBasicInfo.instr_en_name', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange_instr', full_name='eddid.quote.QuoteBasicInfo.exchange_instr', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='market_status', full_name='eddid.quote.QuoteBasicInfo.market_status', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='instr_status', full_name='eddid.quote.QuoteBasicInfo.instr_status', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='upper_limit', full_name='eddid.quote.QuoteBasicInfo.upper_limit', index=8,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lower_limit', full_name='eddid.quote.QuoteBasicInfo.lower_limit', index=9,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pre_close', full_name='eddid.quote.QuoteBasicInfo.pre_close', index=10,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source', full_name='eddid.quote.QuoteBasicInfo.source', index=11,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_timestamp', full_name='eddid.quote.QuoteBasicInfo.update_timestamp', index=12,
       number=14, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stock', full_name='eddid.quote.QuoteBasicInfo.stock', index=13,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='future', full_name='eddid.quote.QuoteBasicInfo.future', index=14,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='opt', full_name='eddid.quote.QuoteBasicInfo.opt', index=15,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forexs', full_name='eddid.quote.QuoteBasicInfo.forexs', index=16,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4971,12 +5168,10 @@ _QUOTEBASICINFO = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='data', full_name='eddid.quote.QuoteBasicInfo.data',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=15610,
-  serialized_end=16217,
+  serialized_start=16345,
+  serialized_end=16952,
 )
 
 
@@ -4986,7 +5181,6 @@ _STOCKBASICINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='lot_size', full_name='eddid.quote.StockBasicInfo.lot_size', index=0,
@@ -4994,91 +5188,91 @@ _STOCKBASICINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='issued_shares', full_name='eddid.quote.StockBasicInfo.issued_shares', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_shares', full_name='eddid.quote.StockBasicInfo.outstanding_shares', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='casflag', full_name='eddid.quote.StockBasicInfo.casflag', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vcmflag', full_name='eddid.quote.StockBasicInfo.vcmflag', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lasttradeday', full_name='eddid.quote.StockBasicInfo.lasttradeday', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='release_day', full_name='eddid.quote.StockBasicInfo.release_day', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='maturity_date', full_name='eddid.quote.StockBasicInfo.maturity_date', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='trade_currency', full_name='eddid.quote.StockBasicInfo.trade_currency', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='listingdate', full_name='eddid.quote.StockBasicInfo.listingdate', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='delistingdate', full_name='eddid.quote.StockBasicInfo.delistingdate', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='call_price', full_name='eddid.quote.StockBasicInfo.call_price', index=11,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='decimal_price', full_name='eddid.quote.StockBasicInfo.decimal_price', index=12,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5091,8 +5285,8 @@ _STOCKBASICINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16220,
-  serialized_end=16544,
+  serialized_start=16955,
+  serialized_end=17279,
 )
 
 
@@ -5102,7 +5296,6 @@ _FUTUREBASICINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='pre_settlement_price', full_name='eddid.quote.FutureBasicInfo.pre_settlement_price', index=0,
@@ -5110,14 +5303,14 @@ _FUTUREBASICINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pre_open_interrest', full_name='eddid.quote.FutureBasicInfo.pre_open_interrest', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5130,8 +5323,8 @@ _FUTUREBASICINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16546,
-  serialized_end=16621,
+  serialized_start=17281,
+  serialized_end=17356,
 )
 
 
@@ -5141,7 +5334,6 @@ _OPTIONBASICINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='reverse', full_name='eddid.quote.OptionBasicInfo.reverse', index=0,
@@ -5149,7 +5341,7 @@ _OPTIONBASICINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5162,8 +5354,8 @@ _OPTIONBASICINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16623,
-  serialized_end=16657,
+  serialized_start=17358,
+  serialized_end=17392,
 )
 
 
@@ -5173,7 +5365,6 @@ _FOREIGNEXCHANGEBASICINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='reverse', full_name='eddid.quote.ForeignExchangeBasicInfo.reverse', index=0,
@@ -5181,7 +5372,7 @@ _FOREIGNEXCHANGEBASICINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5194,8 +5385,8 @@ _FOREIGNEXCHANGEBASICINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16659,
-  serialized_end=16702,
+  serialized_start=17394,
+  serialized_end=17437,
 )
 
 
@@ -5205,7 +5396,6 @@ _QUOTESNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.QuoteSnapshot.common_info', index=0,
@@ -5213,168 +5403,168 @@ _QUOTESNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='open', full_name='eddid.quote.QuoteSnapshot.open', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='high', full_name='eddid.quote.QuoteSnapshot.high', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='low', full_name='eddid.quote.QuoteSnapshot.low', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='close', full_name='eddid.quote.QuoteSnapshot.close', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last', full_name='eddid.quote.QuoteSnapshot.last', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='normal', full_name='eddid.quote.QuoteSnapshot.normal', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='turnover', full_name='eddid.quote.QuoteSnapshot.turnover', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='volume', full_name='eddid.quote.QuoteSnapshot.volume', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='average', full_name='eddid.quote.QuoteSnapshot.average', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rise_fall', full_name='eddid.quote.QuoteSnapshot.rise_fall', index=10,
       number=11, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='r_f_ratio', full_name='eddid.quote.QuoteSnapshot.r_f_ratio', index=11,
       number=12, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='daily_increase', full_name='eddid.quote.QuoteSnapshot.daily_increase', index=12,
       number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source_update_time', full_name='eddid.quote.QuoteSnapshot.source_update_time', index=13,
       number=15, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stock', full_name='eddid.quote.QuoteSnapshot.stock', index=14,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='future', full_name='eddid.quote.QuoteSnapshot.future', index=15,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='opt', full_name='eddid.quote.QuoteSnapshot.opt', index=16,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='forexs', full_name='eddid.quote.QuoteSnapshot.forexs', index=17,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='warrant', full_name='eddid.quote.QuoteSnapshot.warrant', index=18,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cbbc', full_name='eddid.quote.QuoteSnapshot.cbbc', index=19,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inner', full_name='eddid.quote.QuoteSnapshot.inner', index=20,
       number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='trst', full_name='eddid.quote.QuoteSnapshot.trst', index=21,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='index', full_name='eddid.quote.QuoteSnapshot.index', index=22,
       number=25, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data_type', full_name='eddid.quote.QuoteSnapshot.data_type', index=23,
       number=50, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5388,12 +5578,10 @@ _QUOTESNAPSHOT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='data', full_name='eddid.quote.QuoteSnapshot.data',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=16705,
-  serialized_end=17471,
+  serialized_start=17440,
+  serialized_end=18206,
 )
 
 
@@ -5403,7 +5591,6 @@ _GREYMARKETQUOTESNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.GreyMarketQuoteSnapshot.common_info', index=0,
@@ -5411,35 +5598,35 @@ _GREYMARKETQUOTESNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last', full_name='eddid.quote.GreyMarketQuoteSnapshot.last', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rise_fall', full_name='eddid.quote.GreyMarketQuoteSnapshot.rise_fall', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='r_f_ratio', full_name='eddid.quote.GreyMarketQuoteSnapshot.r_f_ratio', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source_update_time', full_name='eddid.quote.GreyMarketQuoteSnapshot.source_update_time', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5452,8 +5639,8 @@ _GREYMARKETQUOTESNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17474,
-  serialized_end=17630,
+  serialized_start=18209,
+  serialized_end=18365,
 )
 
 
@@ -5463,7 +5650,6 @@ _NEWSHARESQUOTESNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.NewsharesQuoteSnapshot.common_info', index=0,
@@ -5471,77 +5657,77 @@ _NEWSHARESQUOTESNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last', full_name='eddid.quote.NewsharesQuoteSnapshot.last', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='grey_market_rise_fall', full_name='eddid.quote.NewsharesQuoteSnapshot.grey_market_rise_fall', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='grey_market_r_f_ratio', full_name='eddid.quote.NewsharesQuoteSnapshot.grey_market_r_f_ratio', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='first_rise_fall', full_name='eddid.quote.NewsharesQuoteSnapshot.first_rise_fall', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='first_r_f_ratio', full_name='eddid.quote.NewsharesQuoteSnapshot.first_r_f_ratio', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='highest20days_rise_fall', full_name='eddid.quote.NewsharesQuoteSnapshot.highest20days_rise_fall', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='highest20days_r_f_ratio', full_name='eddid.quote.NewsharesQuoteSnapshot.highest20days_r_f_ratio', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tophighestfromyesr_rise_fall', full_name='eddid.quote.NewsharesQuoteSnapshot.tophighestfromyesr_rise_fall', index=8,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tophighestfromyesr_r_f_ratio', full_name='eddid.quote.NewsharesQuoteSnapshot.tophighestfromyesr_r_f_ratio', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source_update_time', full_name='eddid.quote.NewsharesQuoteSnapshot.source_update_time', index=10,
       number=11, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5554,8 +5740,8 @@ _NEWSHARESQUOTESNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17633,
-  serialized_end=18004,
+  serialized_start=18368,
+  serialized_end=18739,
 )
 
 
@@ -5565,7 +5751,6 @@ _INDEXSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='indexstatus', full_name='eddid.quote.IndexSnapshot.indexstatus', index=0,
@@ -5573,63 +5758,63 @@ _INDEXSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.IndexSnapshot.preclose', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='easvalue', full_name='eddid.quote.IndexSnapshot.easvalue', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amplitude', full_name='eddid.quote.IndexSnapshot.amplitude', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='highest52weeks_price', full_name='eddid.quote.IndexSnapshot.highest52weeks_price', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lowest52weeks_price', full_name='eddid.quote.IndexSnapshot.lowest52weeks_price', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='advance', full_name='eddid.quote.IndexSnapshot.advance', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='decline', full_name='eddid.quote.IndexSnapshot.decline', index=7,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='flat_flate', full_name='eddid.quote.IndexSnapshot.flat_flate', index=8,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5642,8 +5827,8 @@ _INDEXSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18007,
-  serialized_end=18211,
+  serialized_start=18742,
+  serialized_end=18946,
 )
 
 
@@ -5653,7 +5838,6 @@ _STOCKSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.StockSnapshot.preclose', index=0,
@@ -5661,112 +5845,112 @@ _STOCKSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amplitude', full_name='eddid.quote.StockSnapshot.amplitude', index=1,
       number=2, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='committee', full_name='eddid.quote.StockSnapshot.committee', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='quantity_ratio', full_name='eddid.quote.StockSnapshot.quantity_ratio', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='total_market_val', full_name='eddid.quote.StockSnapshot.total_market_val', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='circular_market_val', full_name='eddid.quote.StockSnapshot.circular_market_val', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='turnover_rate', full_name='eddid.quote.StockSnapshot.turnover_rate', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pe_ratio', full_name='eddid.quote.StockSnapshot.pe_ratio', index=7,
       number=8, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pe_ttm_ratio', full_name='eddid.quote.StockSnapshot.pe_ttm_ratio', index=8,
       number=9, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pb_ratio', full_name='eddid.quote.StockSnapshot.pb_ratio', index=9,
       number=10, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_ttm', full_name='eddid.quote.StockSnapshot.dividend_ttm', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_lfy', full_name='eddid.quote.StockSnapshot.dividend_lfy', index=11,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_ratio_ttm', full_name='eddid.quote.StockSnapshot.dividend_ratio_ttm', index=12,
       number=13, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_ratio_lfy', full_name='eddid.quote.StockSnapshot.dividend_ratio_lfy', index=13,
       number=14, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='highest52weeks_price', full_name='eddid.quote.StockSnapshot.highest52weeks_price', index=14,
       number=15, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lowest52weeks_price', full_name='eddid.quote.StockSnapshot.lowest52weeks_price', index=15,
       number=16, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5779,8 +5963,8 @@ _STOCKSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18214,
-  serialized_end=18604,
+  serialized_start=18949,
+  serialized_end=19339,
 )
 
 
@@ -5790,7 +5974,6 @@ _FUTURESNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='open_interrest', full_name='eddid.quote.FutureSnapshot.open_interrest', index=0,
@@ -5798,14 +5981,14 @@ _FUTURESNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='settlement_price', full_name='eddid.quote.FutureSnapshot.settlement_price', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5818,8 +6001,8 @@ _FUTURESNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18606,
-  serialized_end=18672,
+  serialized_start=19341,
+  serialized_end=19407,
 )
 
 
@@ -5829,7 +6012,6 @@ _OPTIONSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='reverse', full_name='eddid.quote.OptionSnapshot.reverse', index=0,
@@ -5837,7 +6019,7 @@ _OPTIONSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5850,8 +6032,8 @@ _OPTIONSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18674,
-  serialized_end=18707,
+  serialized_start=19409,
+  serialized_end=19442,
 )
 
 
@@ -5861,7 +6043,6 @@ _FOREIGNEXCHANGESNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='reverse', full_name='eddid.quote.ForeignExchangeSnapshot.reverse', index=0,
@@ -5869,7 +6050,7 @@ _FOREIGNEXCHANGESNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5882,8 +6063,8 @@ _FOREIGNEXCHANGESNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18709,
-  serialized_end=18751,
+  serialized_start=19444,
+  serialized_end=19486,
 )
 
 
@@ -5893,7 +6074,6 @@ _WARRANTSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.WarrantSnapshot.preclose', index=0,
@@ -5901,98 +6081,98 @@ _WARRANTSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='strikeprice', full_name='eddid.quote.WarrantSnapshot.strikeprice', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='premium', full_name='eddid.quote.WarrantSnapshot.premium', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='leverage_ratio', full_name='eddid.quote.WarrantSnapshot.leverage_ratio', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='make_point', full_name='eddid.quote.WarrantSnapshot.make_point', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='effective_leverage', full_name='eddid.quote.WarrantSnapshot.effective_leverage', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='conversion_price', full_name='eddid.quote.WarrantSnapshot.conversion_price', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='callput_type', full_name='eddid.quote.WarrantSnapshot.callput_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='conversion_ratio', full_name='eddid.quote.WarrantSnapshot.conversion_ratio', index=8,
       number=10, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_quantity', full_name='eddid.quote.WarrantSnapshot.outstanding_quantity', index=9,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_ratio', full_name='eddid.quote.WarrantSnapshot.outstanding_ratio', index=10,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='implied_volatility', full_name='eddid.quote.WarrantSnapshot.implied_volatility', index=11,
       number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hedge_value', full_name='eddid.quote.WarrantSnapshot.hedge_value', index=12,
       number=14, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='warrent_type', full_name='eddid.quote.WarrantSnapshot.warrent_type', index=13,
       number=16, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6005,8 +6185,8 @@ _WARRANTSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18754,
-  serialized_end=19153,
+  serialized_start=19489,
+  serialized_end=19888,
 )
 
 
@@ -6016,7 +6196,6 @@ _CBBCSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.CBBCSnapshot.preclose', index=0,
@@ -6024,91 +6203,91 @@ _CBBCSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='strikeprice', full_name='eddid.quote.CBBCSnapshot.strikeprice', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='premium', full_name='eddid.quote.CBBCSnapshot.premium', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='leverage_ratio', full_name='eddid.quote.CBBCSnapshot.leverage_ratio', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='make_point', full_name='eddid.quote.CBBCSnapshot.make_point', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dist_call_price', full_name='eddid.quote.CBBCSnapshot.dist_call_price', index=5,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dist_decimal_price', full_name='eddid.quote.CBBCSnapshot.dist_decimal_price', index=6,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='conversion_price', full_name='eddid.quote.CBBCSnapshot.conversion_price', index=7,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='callput_type', full_name='eddid.quote.CBBCSnapshot.callput_type', index=8,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='conversion_ratio', full_name='eddid.quote.CBBCSnapshot.conversion_ratio', index=9,
       number=13, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_quantity', full_name='eddid.quote.CBBCSnapshot.outstanding_quantity', index=10,
       number=14, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_ratio', full_name='eddid.quote.CBBCSnapshot.outstanding_ratio', index=11,
       number=15, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='in_out_price', full_name='eddid.quote.CBBCSnapshot.in_out_price', index=12,
       number=16, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6121,8 +6300,8 @@ _CBBCSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19156,
-  serialized_end=19502,
+  serialized_start=19891,
+  serialized_end=20237,
 )
 
 
@@ -6132,7 +6311,6 @@ _INNERSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.InnerSnapshot.preclose', index=0,
@@ -6140,112 +6318,112 @@ _INNERSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='premium', full_name='eddid.quote.InnerSnapshot.premium', index=1,
       number=2, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='leverage_ratio', full_name='eddid.quote.InnerSnapshot.leverage_ratio', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='conversion_ratio', full_name='eddid.quote.InnerSnapshot.conversion_ratio', index=3,
       number=5, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_quantity', full_name='eddid.quote.InnerSnapshot.outstanding_quantity', index=4,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='outstanding_ratio', full_name='eddid.quote.InnerSnapshot.outstanding_ratio', index=5,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='effective_leverage', full_name='eddid.quote.InnerSnapshot.effective_leverage', index=6,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='implied_volatility', full_name='eddid.quote.InnerSnapshot.implied_volatility', index=7,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hedge_value', full_name='eddid.quote.InnerSnapshot.hedge_value', index=8,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='in_out_ner', full_name='eddid.quote.InnerSnapshot.in_out_ner', index=9,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='upper_price', full_name='eddid.quote.InnerSnapshot.upper_price', index=10,
       number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lower_price', full_name='eddid.quote.InnerSnapshot.lower_price', index=11,
       number=13, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='distance_upper_price', full_name='eddid.quote.InnerSnapshot.distance_upper_price', index=12,
       number=14, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='distance_lower_price', full_name='eddid.quote.InnerSnapshot.distance_lower_price', index=13,
       number=15, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='potential_profit', full_name='eddid.quote.InnerSnapshot.potential_profit', index=14,
       number=16, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='potential_loss', full_name='eddid.quote.InnerSnapshot.potential_loss', index=15,
       number=17, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6258,8 +6436,8 @@ _INNERSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19505,
-  serialized_end=19911,
+  serialized_start=20240,
+  serialized_end=20646,
 )
 
 
@@ -6269,7 +6447,6 @@ _TRSTSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='preclose', full_name='eddid.quote.TrstSnapshot.preclose', index=0,
@@ -6277,84 +6454,84 @@ _TRSTSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amplitude', full_name='eddid.quote.TrstSnapshot.amplitude', index=1,
       number=2, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='committee', full_name='eddid.quote.TrstSnapshot.committee', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='quantity_ratio', full_name='eddid.quote.TrstSnapshot.quantity_ratio', index=3,
       number=4, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='turnover_rate', full_name='eddid.quote.TrstSnapshot.turnover_rate', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_ttm', full_name='eddid.quote.TrstSnapshot.dividend_ttm', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dividend_ratio_ttm', full_name='eddid.quote.TrstSnapshot.dividend_ratio_ttm', index=6,
       number=7, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='highest52weeks_price', full_name='eddid.quote.TrstSnapshot.highest52weeks_price', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lowest52weeks_price', full_name='eddid.quote.TrstSnapshot.lowest52weeks_price', index=8,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ey_ratio', full_name='eddid.quote.TrstSnapshot.ey_ratio', index=9,
       number=10, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='net_asset', full_name='eddid.quote.TrstSnapshot.net_asset', index=10,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='expense_price', full_name='eddid.quote.TrstSnapshot.expense_price', index=11,
       number=13, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6367,8 +6544,8 @@ _TRSTSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19914,
-  serialized_end=20200,
+  serialized_start=20649,
+  serialized_end=20935,
 )
 
 
@@ -6378,7 +6555,6 @@ _BROKERBS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='broker_code', full_name='eddid.quote.BrokerBS.broker_code', index=0,
@@ -6386,14 +6562,14 @@ _BROKERBS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='broker_name', full_name='eddid.quote.BrokerBS.broker_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6406,8 +6582,8 @@ _BROKERBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20202,
-  serialized_end=20254,
+  serialized_start=20937,
+  serialized_end=20989,
 )
 
 
@@ -6417,7 +6593,6 @@ _BROKER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='position', full_name='eddid.quote.Broker.position', index=0,
@@ -6425,14 +6600,14 @@ _BROKER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='brokes', full_name='eddid.quote.Broker.brokes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6445,8 +6620,8 @@ _BROKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20256,
-  serialized_end=20321,
+  serialized_start=20991,
+  serialized_end=21056,
 )
 
 
@@ -6456,7 +6631,6 @@ _BROKERSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.BrokerSnapshot.code', index=0,
@@ -6464,35 +6638,35 @@ _BROKERSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='queue_buy', full_name='eddid.quote.BrokerSnapshot.queue_buy', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='queue_sell', full_name='eddid.quote.BrokerSnapshot.queue_sell', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timestamp_buy', full_name='eddid.quote.BrokerSnapshot.timestamp_buy', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timestamp_sell', full_name='eddid.quote.BrokerSnapshot.timestamp_sell', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6505,8 +6679,8 @@ _BROKERSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20324,
-  serialized_end=20482,
+  serialized_start=21059,
+  serialized_end=21217,
 )
 
 
@@ -6516,7 +6690,6 @@ _QUOTEORDERBOOKDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.QuoteOrderBookData.common_info', index=0,
@@ -6524,21 +6697,21 @@ _QUOTEORDERBOOKDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='order_book', full_name='eddid.quote.QuoteOrderBookData.order_book', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source_update_time', full_name='eddid.quote.QuoteOrderBookData.source_update_time', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6551,8 +6724,8 @@ _QUOTEORDERBOOKDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20485,
-  serialized_end=20628,
+  serialized_start=21220,
+  serialized_end=21363,
 )
 
 
@@ -6562,7 +6735,6 @@ _ORDERBOOKENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='price', full_name='eddid.quote.OrderBookEntry.price', index=0,
@@ -6570,21 +6742,21 @@ _ORDERBOOKENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='volume', full_name='eddid.quote.OrderBookEntry.volume', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='order_count', full_name='eddid.quote.OrderBookEntry.order_count', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6597,8 +6769,8 @@ _ORDERBOOKENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20630,
-  serialized_end=20698,
+  serialized_start=21365,
+  serialized_end=21433,
 )
 
 
@@ -6608,7 +6780,6 @@ _ORDERBOOK = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ask_vol', full_name='eddid.quote.OrderBook.ask_vol', index=0,
@@ -6616,28 +6787,28 @@ _ORDERBOOK = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bid_vol', full_name='eddid.quote.OrderBook.bid_vol', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='asks_data', full_name='eddid.quote.OrderBook.asks_data', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bids_data', full_name='eddid.quote.OrderBook.bids_data', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6650,8 +6821,8 @@ _ORDERBOOK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20701,
-  serialized_end=20842,
+  serialized_start=21436,
+  serialized_end=21577,
 )
 
 
@@ -6661,7 +6832,6 @@ _QUOTETRADEDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='common_info', full_name='eddid.quote.QuoteTradeData.common_info', index=0,
@@ -6669,21 +6839,21 @@ _QUOTETRADEDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='trade_tick', full_name='eddid.quote.QuoteTradeData.trade_tick', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='source_update_time', full_name='eddid.quote.QuoteTradeData.source_update_time', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6696,8 +6866,8 @@ _QUOTETRADEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20845,
-  serialized_end=20984,
+  serialized_start=21580,
+  serialized_end=21719,
 )
 
 
@@ -6707,7 +6877,6 @@ _TRADETICK = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='price', full_name='eddid.quote.TradeTick.price', index=0,
@@ -6715,49 +6884,49 @@ _TRADETICK = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.TradeTick.vol', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time', full_name='eddid.quote.TradeTick.time', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='direct', full_name='eddid.quote.TradeTick.direct', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stock', full_name='eddid.quote.TradeTick.stock', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='future', full_name='eddid.quote.TradeTick.future', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='us_stock', full_name='eddid.quote.TradeTick.us_stock', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6771,12 +6940,10 @@ _TRADETICK = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='tradeType', full_name='eddid.quote.TradeTick.tradeType',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=20987,
-  serialized_end=21241,
+  serialized_start=21722,
+  serialized_end=21976,
 )
 
 
@@ -6786,7 +6953,6 @@ _SUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeBrokerSnapshotReq.exchange', index=0,
@@ -6794,28 +6960,28 @@ _SUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeBrokerSnapshotReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeBrokerSnapshotReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeBrokerSnapshotReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6828,8 +6994,8 @@ _SUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21244,
-  serialized_end=21412,
+  serialized_start=21979,
+  serialized_end=22147,
 )
 
 
@@ -6839,7 +7005,6 @@ _SUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.exchange', index=0,
@@ -6847,42 +7012,42 @@ _SUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeBrokerSnapshotRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6895,8 +7060,8 @@ _SUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21415,
-  serialized_end=21626,
+  serialized_start=22150,
+  serialized_end=22361,
 )
 
 
@@ -6906,7 +7071,6 @@ _UNSUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnSubscribeBrokerSnapshotReq.exchange', index=0,
@@ -6914,28 +7078,28 @@ _UNSUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnSubscribeBrokerSnapshotReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnSubscribeBrokerSnapshotReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnSubscribeBrokerSnapshotReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -6948,8 +7112,8 @@ _UNSUBSCRIBEBROKERSNAPSHOTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21629,
-  serialized_end=21799,
+  serialized_start=22364,
+  serialized_end=22534,
 )
 
 
@@ -6959,7 +7123,6 @@ _UNSUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.exchange', index=0,
@@ -6967,42 +7130,42 @@ _UNSUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnSubscribeBrokerSnapshotRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7015,8 +7178,8 @@ _UNSUBSCRIBEBROKERSNAPSHOTRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21802,
-  serialized_end=22015,
+  serialized_start=22537,
+  serialized_end=22750,
 )
 
 
@@ -7026,7 +7189,6 @@ _PUSHBROKERSNAPSHOT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.PushBrokerSnapshot.exchange', index=0,
@@ -7034,21 +7196,21 @@ _PUSHBROKERSNAPSHOT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.PushBrokerSnapshot.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.PushBrokerSnapshot.data', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7061,8 +7223,8 @@ _PUSHBROKERSNAPSHOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22017,
-  serialized_end=22140,
+  serialized_start=22752,
+  serialized_end=22875,
 )
 
 
@@ -7072,7 +7234,6 @@ _QUERYTRADETICKMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='isSubTrade', full_name='eddid.quote.QueryTradeTickMsgReq.isSubTrade', index=0,
@@ -7080,77 +7241,77 @@ _QUERYTRADETICKMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTradeTickMsgReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryTradeTickMsgReq.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryTradeTickMsgReq.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='direct', full_name='eddid.quote.QueryTradeTickMsgReq.direct', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start', full_name='eddid.quote.QueryTradeTickMsgReq.start', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end', full_name='eddid.quote.QueryTradeTickMsgReq.end', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vol', full_name='eddid.quote.QueryTradeTickMsgReq.vol', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryTradeTickMsgReq.start_time_stamp', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.QueryTradeTickMsgReq.sub_quote_type', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='req_hisdata_type', full_name='eddid.quote.QueryTradeTickMsgReq.req_hisdata_type', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7163,8 +7324,8 @@ _QUERYTRADETICKMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22143,
-  serialized_end=22518,
+  serialized_start=22878,
+  serialized_end=23253,
 )
 
 
@@ -7174,7 +7335,6 @@ _SUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeTradeTickReq.exchange', index=0,
@@ -7182,28 +7342,28 @@ _SUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeTradeTickReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeTradeTickReq.start_time_stamp', index=2,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.SubscribeTradeTickReq.sub_quote_type', index=3,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7216,8 +7376,8 @@ _SUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22521,
-  serialized_end=22684,
+  serialized_start=23256,
+  serialized_end=23419,
 )
 
 
@@ -7227,7 +7387,6 @@ _SUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SubscribeTradeTickRsp.exchange', index=0,
@@ -7235,42 +7394,42 @@ _SUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SubscribeTradeTickRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.SubscribeTradeTickRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.SubscribeTradeTickRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.SubscribeTradeTickRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.SubscribeTradeTickRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7283,8 +7442,8 @@ _SUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22687,
-  serialized_end=22893,
+  serialized_start=23422,
+  serialized_end=23628,
 )
 
 
@@ -7294,7 +7453,6 @@ _UNSUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnsubscribeTradeTickReq.exchange', index=0,
@@ -7302,28 +7460,28 @@ _UNSUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnsubscribeTradeTickReq.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeTradeTickReq.start_time_stamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub_quote_type', full_name='eddid.quote.UnsubscribeTradeTickReq.sub_quote_type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7336,8 +7494,8 @@ _UNSUBSCRIBETRADETICKREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22896,
-  serialized_end=23061,
+  serialized_start=23631,
+  serialized_end=23796,
 )
 
 
@@ -7347,7 +7505,6 @@ _UNSUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.UnsubscribeTradeTickRsp.exchange', index=0,
@@ -7355,42 +7512,42 @@ _UNSUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.UnsubscribeTradeTickRsp.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.UnsubscribeTradeTickRsp.ret_result', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.UnsubscribeTradeTickRsp.start_time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.UnsubscribeTradeTickRsp.recv_req_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.UnsubscribeTradeTickRsp.rsp_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7403,8 +7560,8 @@ _UNSUBSCRIBETRADETICKRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23064,
-  serialized_end=23272,
+  serialized_start=23799,
+  serialized_end=24007,
 )
 
 
@@ -7414,7 +7571,6 @@ _QUERYTRADETICKMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryTradeTickMsgRsp.ret_result', index=0,
@@ -7422,49 +7578,49 @@ _QUERYTRADETICKMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTradeTickMsgRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.QueryTradeTickMsgRsp.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tickData', full_name='eddid.quote.QueryTradeTickMsgRsp.tickData', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_time_stamp', full_name='eddid.quote.QueryTradeTickMsgRsp.start_time_stamp', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recv_req_time_stamp', full_name='eddid.quote.QueryTradeTickMsgRsp.recv_req_time_stamp', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rsp_time_stamp', full_name='eddid.quote.QueryTradeTickMsgRsp.rsp_time_stamp', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7477,8 +7633,8 @@ _QUERYTRADETICKMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23275,
-  serialized_end=23522,
+  serialized_start=24010,
+  serialized_end=24257,
 )
 
 
@@ -7488,7 +7644,6 @@ _QUERYTRADEDAYREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryTradeDayReq.type', index=0,
@@ -7496,35 +7651,35 @@ _QUERYTRADEDAYREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTradeDayReq.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='start_date', full_name='eddid.quote.QueryTradeDayReq.start_date', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='end_date', full_name='eddid.quote.QueryTradeDayReq.end_date', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='addend', full_name='eddid.quote.QueryTradeDayReq.addend', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7537,8 +7692,8 @@ _QUERYTRADEDAYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23525,
-  serialized_end=23689,
+  serialized_start=24260,
+  serialized_end=24424,
 )
 
 
@@ -7548,7 +7703,6 @@ _TRADEDAY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='date', full_name='eddid.quote.TradeDay.date', index=0,
@@ -7556,14 +7710,14 @@ _TRADEDAY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='times', full_name='eddid.quote.TradeDay.times', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7576,8 +7730,8 @@ _TRADEDAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23691,
-  serialized_end=23761,
+  serialized_start=24426,
+  serialized_end=24496,
 )
 
 
@@ -7587,7 +7741,6 @@ _QUERYTRADEDAYRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryTradeDayRsp.ret_result', index=0,
@@ -7595,21 +7748,21 @@ _QUERYTRADEDAYRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTradeDayRsp.exchange', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='days', full_name='eddid.quote.QueryTradeDayRsp.days', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7622,8 +7775,8 @@ _QUERYTRADEDAYRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23764,
-  serialized_end=23909,
+  serialized_start=24499,
+  serialized_end=24644,
 )
 
 
@@ -7633,7 +7786,6 @@ _EXCHANGERATEINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='local_currency', full_name='eddid.quote.ExchangeRateInfo.local_currency', index=0,
@@ -7641,28 +7793,28 @@ _EXCHANGERATEINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exchangeRate', full_name='eddid.quote.ExchangeRateInfo.exchangeRate', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='target_currency', full_name='eddid.quote.ExchangeRateInfo.target_currency', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='precision', full_name='eddid.quote.ExchangeRateInfo.precision', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7675,8 +7827,8 @@ _EXCHANGERATEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23912,
-  serialized_end=24076,
+  serialized_start=24647,
+  serialized_end=24811,
 )
 
 
@@ -7686,7 +7838,6 @@ _QUERYEXCHAGERATEREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='target_currency', full_name='eddid.quote.QueryExchageRateReq.target_currency', index=0,
@@ -7694,7 +7845,7 @@ _QUERYEXCHAGERATEREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7707,8 +7858,8 @@ _QUERYEXCHAGERATEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24078,
-  serialized_end=24152,
+  serialized_start=24813,
+  serialized_end=24887,
 )
 
 
@@ -7718,7 +7869,6 @@ _QUERYEXCHAGERATERSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryExchageRateRsp.ret_result', index=0,
@@ -7726,14 +7876,14 @@ _QUERYEXCHAGERATERSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rate', full_name='eddid.quote.QueryExchageRateRsp.rate', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7746,8 +7896,8 @@ _QUERYEXCHAGERATERSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24154,
-  serialized_end=24264,
+  serialized_start=24889,
+  serialized_end=24999,
 )
 
 
@@ -7757,7 +7907,6 @@ _QUERYINSTRSORTREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='eddid.quote.QueryInstrSortReq.type', index=0,
@@ -7765,14 +7914,14 @@ _QUERYINSTRSORTREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='con', full_name='eddid.quote.QueryInstrSortReq.con', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7785,8 +7934,8 @@ _QUERYINSTRSORTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24266,
-  serialized_end=24383,
+  serialized_start=25001,
+  serialized_end=25118,
 )
 
 
@@ -7796,7 +7945,6 @@ _SORTINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.SortInfo.exchange', index=0,
@@ -7804,14 +7952,14 @@ _SORTINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.SortInfo.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7824,8 +7972,8 @@ _SORTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24385,
-  serialized_end=24455,
+  serialized_start=25120,
+  serialized_end=25190,
 )
 
 
@@ -7835,7 +7983,6 @@ _QUERYINSTRSORTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryInstrSortRsp.ret_result', index=0,
@@ -7843,14 +7990,14 @@ _QUERYINSTRSORTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='infos', full_name='eddid.quote.QueryInstrSortRsp.infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7863,8 +8010,8 @@ _QUERYINSTRSORTRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24457,
-  serialized_end=24558,
+  serialized_start=25192,
+  serialized_end=25293,
 )
 
 
@@ -7874,7 +8021,6 @@ _QUERYTRADESTATUSMSGREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.QueryTradeStatusMsgReq.exchange', index=0,
@@ -7882,14 +8028,14 @@ _QUERYTRADESTATUSMSGREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='productList', full_name='eddid.quote.QueryTradeStatusMsgReq.productList', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7902,8 +8048,8 @@ _QUERYTRADESTATUSMSGREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24560,
-  serialized_end=24651,
+  serialized_start=25295,
+  serialized_end=25386,
 )
 
 
@@ -7913,7 +8059,6 @@ _TRADESTATUSDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='exchange', full_name='eddid.quote.TradeStatusData.exchange', index=0,
@@ -7921,28 +8066,28 @@ _TRADESTATUSDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='productCode', full_name='eddid.quote.TradeStatusData.productCode', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='eddid.quote.TradeStatusData.status', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_stamp', full_name='eddid.quote.TradeStatusData.time_stamp', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7955,8 +8100,8 @@ _TRADESTATUSDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24654,
-  serialized_end=24808,
+  serialized_start=25389,
+  serialized_end=25543,
 )
 
 
@@ -7966,7 +8111,6 @@ _QUERYTRADESTATUSMSGRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryTradeStatusMsgRsp.ret_result', index=0,
@@ -7974,14 +8118,14 @@ _QUERYTRADESTATUSMSGRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='eddid.quote.QueryTradeStatusMsgRsp.data', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -7994,8 +8138,8 @@ _QUERYTRADESTATUSMSGRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24810,
-  serialized_end=24922,
+  serialized_start=25545,
+  serialized_end=25657,
 )
 
 
@@ -8005,7 +8149,6 @@ _AUTHREQ = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='token', full_name='eddid.quote.AuthReq.token', index=0,
@@ -8013,7 +8156,7 @@ _AUTHREQ = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8026,8 +8169,8 @@ _AUTHREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24924,
-  serialized_end=24948,
+  serialized_start=25659,
+  serialized_end=25683,
 )
 
 
@@ -8037,7 +8180,6 @@ _AUTHRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.AuthRsp.ret_result', index=0,
@@ -8045,42 +8187,42 @@ _AUTHRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub', full_name='eddid.quote.AuthRsp.sub', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='aud', full_name='eddid.quote.AuthRsp.aud', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exp', full_name='eddid.quote.AuthRsp.exp', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='scope', full_name='eddid.quote.AuthRsp.scope', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='custom', full_name='eddid.quote.AuthRsp.custom', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8093,8 +8235,8 @@ _AUTHRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24950,
-  serialized_end=25073,
+  serialized_start=25685,
+  serialized_end=25808,
 )
 
 
@@ -8104,7 +8246,6 @@ _PLATEINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='plate_name', full_name='eddid.quote.PlateInfo.plate_name', index=0,
@@ -8112,63 +8253,63 @@ _PLATEINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='main_net_inflow', full_name='eddid.quote.PlateInfo.main_net_inflow', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='p_r_f_ratio', full_name='eddid.quote.PlateInfo.p_r_f_ratio', index=2,
       number=3, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='l_r_stock', full_name='eddid.quote.PlateInfo.l_r_stock', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='l_r_stock_r_f_ratio', full_name='eddid.quote.PlateInfo.l_r_stock_r_f_ratio', index=4,
       number=5, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='r_stock_count', full_name='eddid.quote.PlateInfo.r_stock_count', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_stock_count', full_name='eddid.quote.PlateInfo.f_stock_count', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='main_inflow', full_name='eddid.quote.PlateInfo.main_inflow', index=7,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='main_outflow', full_name='eddid.quote.PlateInfo.main_outflow', index=8,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8181,8 +8322,8 @@ _PLATEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25076,
-  serialized_end=25290,
+  serialized_start=25811,
+  serialized_end=26025,
 )
 
 
@@ -8192,7 +8333,6 @@ _BREAKNEWHIGH = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.BreakNewHigh.code', index=0,
@@ -8200,35 +8340,35 @@ _BREAKNEWHIGH = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='codeName', full_name='eddid.quote.BreakNewHigh.codeName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lastprice', full_name='eddid.quote.BreakNewHigh.lastprice', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change', full_name='eddid.quote.BreakNewHigh.change', index=3,
       number=4, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='break_new_high_price', full_name='eddid.quote.BreakNewHigh.break_new_high_price', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8241,8 +8381,8 @@ _BREAKNEWHIGH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25292,
-  serialized_end=25403,
+  serialized_start=26027,
+  serialized_end=26138,
 )
 
 
@@ -8252,7 +8392,6 @@ _LISTEDNEWSHARE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.ListedNewShare.code', index=0,
@@ -8260,56 +8399,56 @@ _LISTEDNEWSHARE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='codeName', full_name='eddid.quote.ListedNewShare.codeName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lastprice', full_name='eddid.quote.ListedNewShare.lastprice', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='issueprice', full_name='eddid.quote.ListedNewShare.issueprice', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='firstday_chg', full_name='eddid.quote.ListedNewShare.firstday_chg', index=4,
       number=5, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_20_day', full_name='eddid.quote.ListedNewShare.change_rate_20_day', index=5,
       number=6, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ytd_chg', full_name='eddid.quote.ListedNewShare.ytd_chg', index=6,
       number=7, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Listing_date', full_name='eddid.quote.ListedNewShare.Listing_date', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8322,8 +8461,8 @@ _LISTEDNEWSHARE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25406,
-  serialized_end=25582,
+  serialized_start=26141,
+  serialized_end=26317,
 )
 
 
@@ -8333,7 +8472,6 @@ _RANGECHANGE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='eddid.quote.RangeChange.code', index=0,
@@ -8341,77 +8479,77 @@ _RANGECHANGE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='codeName', full_name='eddid.quote.RangeChange.codeName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='five_mins_chg', full_name='eddid.quote.RangeChange.five_mins_chg', index=2,
       number=3, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='today_chg', full_name='eddid.quote.RangeChange.today_chg', index=3,
       number=4, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_5_day', full_name='eddid.quote.RangeChange.change_rate_5_day', index=4,
       number=5, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_10_day', full_name='eddid.quote.RangeChange.change_rate_10_day', index=5,
       number=6, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_20_day', full_name='eddid.quote.RangeChange.change_rate_20_day', index=6,
       number=7, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_60_day', full_name='eddid.quote.RangeChange.change_rate_60_day', index=7,
       number=8, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_120_day', full_name='eddid.quote.RangeChange.change_rate_120_day', index=8,
       number=9, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_rate_250_day', full_name='eddid.quote.RangeChange.change_rate_250_day', index=9,
       number=10, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='change_ytd', full_name='eddid.quote.RangeChange.change_ytd', index=10,
       number=11, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8424,8 +8562,8 @@ _RANGECHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25585,
-  serialized_end=25861,
+  serialized_start=26320,
+  serialized_end=26596,
 )
 
 
@@ -8435,7 +8573,6 @@ _QUERYLISTEDNEWSHAREDLISTRSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryListedNewSharedListRsp.ret_result', index=0,
@@ -8443,14 +8580,14 @@ _QUERYLISTEDNEWSHAREDLISTRSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='infos', full_name='eddid.quote.QueryListedNewSharedListRsp.infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8463,8 +8600,8 @@ _QUERYLISTEDNEWSHAREDLISTRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25863,
-  serialized_end=25986,
+  serialized_start=26598,
+  serialized_end=26721,
 )
 
 
@@ -8474,7 +8611,6 @@ _QUERYGREYMARKETINFORSP = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
-  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='ret_result', full_name='eddid.quote.QueryGreyMarketInfoRsp.ret_result', index=0,
@@ -8482,14 +8618,14 @@ _QUERYGREYMARKETINFORSP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='infos', full_name='eddid.quote.QueryGreyMarketInfoRsp.infos', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -8502,8 +8638,8 @@ _QUERYGREYMARKETINFORSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25988,
-  serialized_end=26101,
+  serialized_start=26723,
+  serialized_end=26836,
 )
 
 _QUOTEMSGCARRIER.fields_by_name['type'].enum_type = quote__type__def__pb2._QUOTEMSGTYPE
@@ -8520,6 +8656,7 @@ _RECOVERYDATARSP.fields_by_name['basic_infos'].message_type = _QUOTEBASICINFO
 _RECOVERYDATARSP.fields_by_name['snapshot_Infos'].message_type = _QUOTESNAPSHOT
 _RECOVERYDATARSP.fields_by_name['orderbook_Infos'].message_type = _QUOTEORDERBOOKDATA
 _RECOVERYDATARSP.fields_by_name['tradetick_Infos'].message_type = _QUOTETRADEDATA
+_RECOVERYDATARSP.fields_by_name['equiprice_infos'].message_type = _EQUIPRICEDATA
 _QUERYINDEXSHAREMSGREQ.fields_by_name['exchange'].enum_type = common__type__def__pb2._EXCHANGETYPE
 _QUERYINDEXSHAREMSGREQ.fields_by_name['sort_direct'].enum_type = quote__type__def__pb2._QUERYINSTRSORTTYPE
 _QUERYINDEXSHAREMSGREQ.fields_by_name['sub_quote_type'].enum_type = quote__type__def__pb2._SUBQUOTEMSGTYPE
@@ -8602,6 +8739,12 @@ _STOPCHARTDATAREQ.fields_by_name['exchange'].enum_type = common__type__def__pb2.
 _STOPCHARTDATAREQ.fields_by_name['sub_quote_type'].enum_type = quote__type__def__pb2._SUBQUOTEMSGTYPE
 _STOPCHARTDATARSP.fields_by_name['ret_result'].message_type = _RETRESULT
 _STOPCHARTDATARSP.fields_by_name['exchange'].enum_type = common__type__def__pb2._EXCHANGETYPE
+_PUSHEQUIPRICEDATA.fields_by_name['eData'].message_type = _EQUIPRICEDATA
+_EQUIPRICEDATA.fields_by_name['common_info'].message_type = _QUOTECOMMONINFO
+_SUBSCRIBEEQUIPRICEREQ.fields_by_name['exchange'].enum_type = common__type__def__pb2._EXCHANGETYPE
+_SUBSCRIBEEQUIPRICERSP.fields_by_name['ret_result'].message_type = _RETRESULT
+_UNSUBSCRIBEEQUIPRICEREQ.fields_by_name['exchange'].enum_type = common__type__def__pb2._EXCHANGETYPE
+_UNSUBSCRIBEEQUIPRICERSP.fields_by_name['ret_result'].message_type = _RETRESULT
 _QUERYKLINEMINMSGREQ.fields_by_name['exchange'].enum_type = common__type__def__pb2._EXCHANGETYPE
 _QUERYKLINEMINMSGREQ.fields_by_name['type'].enum_type = quote__type__def__pb2._QUERYKLINEMSGTYPE
 _QUERYKLINEMINMSGREQ.fields_by_name['direct'].enum_type = quote__type__def__pb2._QUERYKLINEDIRECTTYPE
@@ -8862,6 +9005,12 @@ DESCRIPTOR.message_types_by_name['StartChartDataReq'] = _STARTCHARTDATAREQ
 DESCRIPTOR.message_types_by_name['StartChartDataRsp'] = _STARTCHARTDATARSP
 DESCRIPTOR.message_types_by_name['StopChartDataReq'] = _STOPCHARTDATAREQ
 DESCRIPTOR.message_types_by_name['StopChartDataRsp'] = _STOPCHARTDATARSP
+DESCRIPTOR.message_types_by_name['PushEquipriceData'] = _PUSHEQUIPRICEDATA
+DESCRIPTOR.message_types_by_name['EquipriceData'] = _EQUIPRICEDATA
+DESCRIPTOR.message_types_by_name['SubscribeEquipriceReq'] = _SUBSCRIBEEQUIPRICEREQ
+DESCRIPTOR.message_types_by_name['SubscribeEquipriceRsp'] = _SUBSCRIBEEQUIPRICERSP
+DESCRIPTOR.message_types_by_name['UnsubscribeEquipriceReq'] = _UNSUBSCRIBEEQUIPRICEREQ
+DESCRIPTOR.message_types_by_name['UnsubscribeEquipriceRsp'] = _UNSUBSCRIBEEQUIPRICERSP
 DESCRIPTOR.message_types_by_name['QueryKLineMinMsgReq'] = _QUERYKLINEMINMSGREQ
 DESCRIPTOR.message_types_by_name['QueryKLineMinMsgRsp'] = _QUERYKLINEMINMSGRSP
 DESCRIPTOR.message_types_by_name['QueryFiveDaysKLineMinReq'] = _QUERYFIVEDAYSKLINEMINREQ
@@ -9229,6 +9378,48 @@ StopChartDataRsp = _reflection.GeneratedProtocolMessageType('StopChartDataRsp', 
   # @@protoc_insertion_point(class_scope:eddid.quote.StopChartDataRsp)
   })
 _sym_db.RegisterMessage(StopChartDataRsp)
+
+PushEquipriceData = _reflection.GeneratedProtocolMessageType('PushEquipriceData', (_message.Message,), {
+  'DESCRIPTOR' : _PUSHEQUIPRICEDATA,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.PushEquipriceData)
+  })
+_sym_db.RegisterMessage(PushEquipriceData)
+
+EquipriceData = _reflection.GeneratedProtocolMessageType('EquipriceData', (_message.Message,), {
+  'DESCRIPTOR' : _EQUIPRICEDATA,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.EquipriceData)
+  })
+_sym_db.RegisterMessage(EquipriceData)
+
+SubscribeEquipriceReq = _reflection.GeneratedProtocolMessageType('SubscribeEquipriceReq', (_message.Message,), {
+  'DESCRIPTOR' : _SUBSCRIBEEQUIPRICEREQ,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.SubscribeEquipriceReq)
+  })
+_sym_db.RegisterMessage(SubscribeEquipriceReq)
+
+SubscribeEquipriceRsp = _reflection.GeneratedProtocolMessageType('SubscribeEquipriceRsp', (_message.Message,), {
+  'DESCRIPTOR' : _SUBSCRIBEEQUIPRICERSP,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.SubscribeEquipriceRsp)
+  })
+_sym_db.RegisterMessage(SubscribeEquipriceRsp)
+
+UnsubscribeEquipriceReq = _reflection.GeneratedProtocolMessageType('UnsubscribeEquipriceReq', (_message.Message,), {
+  'DESCRIPTOR' : _UNSUBSCRIBEEQUIPRICEREQ,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.UnsubscribeEquipriceReq)
+  })
+_sym_db.RegisterMessage(UnsubscribeEquipriceReq)
+
+UnsubscribeEquipriceRsp = _reflection.GeneratedProtocolMessageType('UnsubscribeEquipriceRsp', (_message.Message,), {
+  'DESCRIPTOR' : _UNSUBSCRIBEEQUIPRICERSP,
+  '__module__' : 'quote_msg_def_pb2'
+  # @@protoc_insertion_point(class_scope:eddid.quote.UnsubscribeEquipriceRsp)
+  })
+_sym_db.RegisterMessage(UnsubscribeEquipriceRsp)
 
 QueryKLineMinMsgReq = _reflection.GeneratedProtocolMessageType('QueryKLineMinMsgReq', (_message.Message,), {
   'DESCRIPTOR' : _QUERYKLINEMINMSGREQ,

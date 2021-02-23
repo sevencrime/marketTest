@@ -29,27 +29,27 @@ def exchange_convert(input_str):
 
 def k_type_min(peroid):
     # 返回K线频率对应的分钟数
-    if peroid == 'MINUTE' or int(peroid) == 8:
+    if peroid == 'MINUTE':
         return 1
-    elif peroid == 'THREE_MIN' or int(peroid) == 10:
+    elif peroid == 'THREE_MIN':
         return 3
-    elif peroid == 'FIVE_MIN' or int(peroid) == 11:
+    elif peroid == 'FIVE_MIN':
         return 5
-    elif peroid == 'FIFTEEN_MIN' or int(peroid) == 13:
+    elif peroid == 'FIFTEEN_MIN':
         return 15
-    elif peroid == 'THIRTY_MIN' or int(peroid) == 14:
+    elif peroid == 'THIRTY_MIN':
         return 30
-    elif peroid == 'HOUR' or int(peroid) == 15:
+    elif peroid == 'HOUR':
         return 60
-    elif peroid == 'TWO_HOUR' or int(peroid) == 16:
+    elif peroid == 'TWO_HOUR':
         return 2*60
-    elif peroid == 'FOUR_HOUR' or int(peroid) == 17:
+    elif peroid == 'FOUR_HOUR':
         return 4*60
-    elif peroid == 'DAY' or int(peroid) == 18:
+    elif peroid == 'DAY':
         return 24*60
-    elif peroid == 'WEEK' or int(peroid) == 19:
+    elif peroid == 'WEEK':
         return 24*60*7
-    elif peroid == 'MONTH' or int(peroid) == 20:
+    elif peroid == 'MONTH':
         return 24*60*30
     else:
         logger.debug("不支持的K线频率")

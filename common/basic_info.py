@@ -95,6 +95,7 @@ stockIndexFuture = {
     'HSI': {'lotSize': 50, 'contractMultiplier': 50, 'priceTick': 1, 'EsunnyCode': 'HSI', 'fluctuation': 'One index point=HK$50'},
     'MCH': {'lotSize': 10, 'contractMultiplier': 10, 'priceTick': 1, 'EsunnyCode': 'MCH', 'fluctuation': 'One index point=HK$10'},
     'MHI': {'lotSize': 10, 'contractMultiplier': 10, 'priceTick': 1, 'EsunnyCode': 'MHI', 'fluctuation': 'One index point=HK$10'},
+    'HTI': {'lotSize': 50, 'contractMultiplier': 50, 'priceTick': 1, 'EsunnyCode': 'HTI', 'fluctuation': 'One index point=HK$50'},
 }
 
 rateFuture = {
@@ -206,7 +207,7 @@ exchangeTradeTime = {
     "COMEX_QO" : ["06:00","05:00"],
     "COMEX_QI" : ["06:00","05:00"],
     "COMEX_QC" : ["06:00","05:00"],
-    "HKFE_CUS" : ["17:15","03:00","08:30", "16:30"],
+    "HKFE_CUS" : ["17:15","03:00","08:30","16:30"],
     "HKFE_HSI" : ["17:15","03:00","09:15","12:00","13:00","16:30"],
     "HKFE_HHI" : ["17:15","03:00","09:15","12:00","13:00","16:30"],
     "HKFE_MHI" : ["17:15","03:00","09:15","12:00","13:00","16:30"],
@@ -227,6 +228,7 @@ exchangeTradeTime = {
 # 每个品种的 品种类型、品种简体简称、品种英文简称
 procDict = {'CUS': {'productType': 'FOREIGN_EXCHANGE_FUTURE', 'cnSimpleName': '美元兑人民币', 'enSimpleName': 'CUS', 'timespin': '171500-030000 083000-163000'},
             'HHI': {'productType': 'EQUITY_INDEX_FUTURE', 'cnSimpleName': 'H股指数', 'enSimpleName': 'HHI', 'timespin': '171500-030000 091500-120000 130000-163000 084500-091500 123000-130000'},
+            'HTI': {'productType': 'EQUITY_INDEX_FUTURE', 'cnSimpleName': 'H股指数', 'enSimpleName': 'HTI', 'timespin': '171500-030000 091500-120000 130000-163000 084500-091500 123000-130000'},
             'HSI': {'productType': 'EQUITY_INDEX_FUTURE', 'cnSimpleName': '恒生指数', 'enSimpleName': 'HSI', 'timespin': '171500-030000 091500-120000 130000-163000 084500-091500 123000-130000'},
             'MCH': {'productType': 'EQUITY_INDEX_FUTURE', 'cnSimpleName': '小型H股指数', 'enSimpleName': 'MCH', 'timespin': '171500-030000 091500-120000 130000-163000 084500-091500 123000-130000'},
             'MHI': {'productType': 'EQUITY_INDEX_FUTURE', 'cnSimpleName': '小型恒生指数', 'enSimpleName': 'MHI', 'timespin': '171500-030000 091500-120000 130000-163000 084500-091500 123000-130000'},
@@ -270,7 +272,7 @@ procDict = {'CUS': {'productType': 'FOREIGN_EXCHANGE_FUTURE', 'cnSimpleName': '�
             }
 
 # APP用到的42个品种
-appCodelist = ["YM", "MYM", "ZT", "ZF", "ZN", "ZB", "ZC", "ZS", "ZM", "ZW", "6A", "6B", "6C", "6E", "6J", "6N", "6S", "E7", "J7", "NQ", "MNQ", "ES", "MES", "NIY", "GC", "SI", "HG", "QO", "QI", "QC", "CUS", "HSI", "HHI", "MHI", "MCH", "CL", "QM", "NG", "BZ", "NK", "TW", "CN"]
+appCodelist = ["YM", "MYM", "ZT", "ZF", "ZN", "ZB", "ZC", "ZS", "ZM", "ZW", "6A", "6B", "6C", "6E", "6J", "6N", "6S", "E7", "J7", "NQ", "MNQ", "ES", "MES", "NIY", "GC", "SI", "HG", "QO", "QI", "QC", "CUS", "HSI", "HHI", "MHI", "MCH", "HTI", "CL", "QM", "NG", "BZ", "NK", "TW", "CN"]
 
 
 
